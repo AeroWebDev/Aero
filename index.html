@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Aero team" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aero - We Build Clean & Powerful Websites" />
+    <title>Aero</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="style.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" referrerpolicy="no-referrer" />
+
+    <!-- i8next -->
+    <script src="https://unpkg.com/i18next@22.5.0/dist/umd/i18next.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favico.png" />
+  </head>
+
+  <body>
+    <!-- ===================== HEADER ===================== -->
+    <header class="animate__animated animate__slideInDown animate__slow">
+      <div id="logoContainer">
+        <img loading="lazy" src="assets/logo.png" alt="Aero Logo" />
+      </div>
+
+      <nav class="links" aria-label="Main Navigation">
+        <a href="./index.html" data-i18n="Home" class="headerLink"></a>
+        <a href="#projects" data-i18n="Projects" class="headerLink"></a>
+        <a href="#contact" data-i18n="Contact Us" class="headerLink"></a>
+      </nav>
+
+      <div>
+        <button id="GetStartedBtn" data-i18n="Get Started"></button>
+      </div>
+    </header>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <main class="snap-section animate__animated animate__fadeIn animate__slow animate__delay-1s">
+      <div class="main">
+        <div class="imgContainer">
+          <img loading="lazy" src="assets/HearoSectionLogo.png" alt="Hero Section Logo" />
+        </div>
+
+        <div class="content">
+          <h1>Aero Tech</h1>
+          <p data-i18n="Aero – We Build Clean & Powerful Websites"></p>
+          <div class="btns">
+            <button data-i18n="PROJECT">PROJECT</button>
+            <button data-i18n="OUR SERVICES">OUR SERVICES</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="icons">
+        <!-- placeholder for icons -->
+      </div>
+    </main>
+
+    <!-- ===================== IFRAME SECTIONS ===================== -->
+    <iframe src="pages/services/index.html" title="Our Services Page" loading="lazy" class="snap-section"></iframe>
+    <iframe src="pages/projects/index.html" id="projects" title="Projects Page" loading="lazy" class="snap-section"></iframe>
+    <iframe src="pages/pricing/index.html" id="pricing" title="Pricing Page" loading="lazy" class="snap-section"></iframe>
+    <iframe src="pages/contact/index.html" id="contact" title="Contact Page" loading="lazy" class="snap-section"></iframe>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+      <div id="footerInfo">
+        <div id="Contact">
+          <p><strong>© 2025 Aero TEAM. All rights reserved.</strong></p>
+          <p><strong>Contact Info</strong></p>
+          <div id="ContactInfo">
+            <a href="mailto:aero1code@gmail.com" class="info">📧 aero1code@gmail.com</a>
+            <a href="tel:+201105487365" class="info">📞 +20 110 548 7365</a>
+          </div>
+        </div>
+
+        <div id="sectiones">
+          <a href="./index.html" data-i18n="Home" class="link"></a>
+          <a href="#projects" data-i18n="Projects" class="link"></a>
+          <a href="#contact" data-i18n="Contact Us" class="link"></a>
+        </div>
+
+        <div id="links">
+          <a href="pages/Policy/Privacy Policy.html" data-i18n="Privacy Policy" class="link"></a>
+          <a href="pages/Policy/Terms of Service.html" data-i18n="Terms of Service" class="link"></a>
+          <a href="pages/Policy/Cookie Policy.html" data-i18n="Cookie Policy" class="link"></a>
+        </div>
+      </div>
+
+      <div class="footer-credits">
+        <span data-i18n="“Dev team crafting clean digital work.”"></span>
+        <p>MADE BY: <strong>Aero TEAM</strong></p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script src="i18next.js"></script>
+  </body>
+</html>

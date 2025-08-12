@@ -1,0 +1,253 @@
+/* ========== GLOBAL TAGS ========== */
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+button {
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    background-color: var(--secondary);
+    color: var(--text);
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--text);
+    color: var(--secondary);
+    transform: scale(1.05);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: bolder;
+    color: var(--text);
+}
+
+/* ========== HEADER ========== */
+header {
+    background-color: var(--primary);
+    color: var(--text);
+    position: fixed;
+    top: 10px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-self: center;
+
+    padding: 10px 20px;
+    margin: 8px auto;
+    border-radius: 30px;
+    width: calc(100% - 20px);
+    height: 60px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: top 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.header--hidden {
+    top: -100px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+#logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: auto;
+    width: 65px;
+    object-fit: contain;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.headerLink {
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.headerLink:hover {
+    transform: scale(1.1);
+}
+
+/* ========== GET STARTED BUTTON ========== */
+#GetStartedBtn {
+    border: 2px dashed var(--text);
+    border-radius: 15px;
+    background-color: transparent;
+    text-shadow: 0 0 5px var(--text);
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+#GetStartedBtn:hover {
+    transform: rotate(-10deg);
+    font-size: larger;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #26bdeb, 0 0 30px #26bdeb;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #26bdeb, 0 0 40px #26bdeb;
+    }
+}
+
+/* ========== MAIN / HERO SECTION ========== */
+main {
+    height: calc(100vh - 80px); /* adjust for header height */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+main .main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+main .imgContainer {
+    border-radius: 10px;
+    height: 300px;
+    max-width: 500px;
+}
+
+main .imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+main .content {
+    text-align: center;
+    max-width: 500px;
+}
+
+main .btns {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ========== IFRAME SECTIONS ========== */
+iframe {
+    width: 100%;
+    height: 100vh;
+    border: none;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    width: 100%;
+    padding: 30px 20px;
+    background-color: var(--primary);
+    box-shadow: inset var(--shadow);
+
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    color: var(--text);
+}
+
+#footerInfo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+#Contact p:first-child {
+    font-weight: bold;
+}
+
+#ContactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 18px;
+    width: 100%;
+}
+
+.info {
+    font-size: 0.9rem;
+}
+
+#links, #sectiones {
+    width: calc(100% / 3 - 100px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.link {
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+
+.link:hover {
+    font-weight: bold;
+    color: #fff;
+}
+
+.link::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 100%;
+    margin-right: 8px;
+    background-color: var(--background);
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.link:hover::before {
+    width: 10px;
+    background-color: var(--secondary);
+}
+
+.footer-credits {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ========== UTILITIES ========== */
+.snap-section {
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.6s ease-out;
+    border: none;
+}
+
+.snap-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.goBackBtn {
+    display: none;
+}
