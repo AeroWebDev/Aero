@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" referrerpolicy="no-referrer" />
 
+    <!-- i8next -->
+    <script src="https://unpkg.com/i18next@22.5.0/dist/umd/i18next.min.js"></script>
+
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favico.png" />
   </head>
@@ -21,21 +25,22 @@
     <main>
         <div class="servcies">
             <i class="fa-solid fa-pen-ruler"></i>
-            <h2>UI/UX Design</h2>
-            <p>Designing  initiative and engaging user imnier faces</p>
+            <h2 data-i18n="UI/UX Design"></h2>
+            <p data-i18n="Designing  initiative"></p>
         </div>
 
         <div class="servcies">
             <i class="fa-solid fa-globe"></i>
-            <h2>Web Development</h2>
-            <p>Busing responsive and scale able web applications</p>
+            <h2 data-i18n="Web Development"></h2>
+            <p data-i18n="Busing responsive">Busing responsive and scale able web applications</p>
         </div>
 
         <div class="servcies">
             <i class="fa-solid fa-desktop"></i>
-            <h2>DeskTop app Development</h2>
-            <p>Build fast, smart, and reliable desktop solutions tailored to your needs</p>
+            <h2 data-i18n="DeskTop app Development"></h2>
+            <p data-i18n="Build fast, smart, and reliable"></p>
         </div>
     </main>
+    <script src="../../i18next.js"></script>
 </body>
 </html>

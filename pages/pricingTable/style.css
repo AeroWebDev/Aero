@@ -1,76 +1,79 @@
-  * {
-    transition: all 0.3s ease;
-  }
-  body{
-    height: auto !important;
-  }
-  table {
-    width: 100%;
-    height: auto !important;
-    border-collapse: collapse;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 14px;
-    margin: 20px auto;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    border: none;
-  }
+* {
+  transition: all 0.3s ease;
+}
 
-  thead {
-    /* background-color: var(--secondary); */
-    color: white;
-  }
+body {
+  height: auto !important;
+}
 
-  tbody th , tbody td {
-    padding: 14px 16px;
-    text-align: center;
-    border: 1px dashed #f2f2f223;
-  }
+table {
+  width: 100%;
+  height: auto !important;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  margin: 20px auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: none;
+}
 
-  /* tbody tr:nth-child(even) {
+thead {
+  /* background-color: var(--secondary); */
+  color: white;
+}
+
+tbody th,
+tbody td {
+  padding: 14px 16px;
+  text-align: center;
+  border: 1px dashed #f2f2f223;
+}
+
+/* tbody tr:nth-child(even) {
     background-color: #f9f9f9;
     color: var(--text-2);
     box-shadow:  0 0 10px rgba(0,0,0,0.5);
   } */
 
-  tbody tr:hover {
-    background-color: #f1f1f1;
-    color: black;
-  }
+tbody tr:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
 
-  th:first-child,
-  td:first-child {
-    text-align: left;
-    background-color: var(--primary);
-    color: var(--text);
-    font-weight: bold;
-    width: 20%;
-    box-shadow:  0 0 10px rgba(0,0,0,0.05);
-  }
+th:first-child,
+td:first-child {
+  text-align: left;
+  background-color: var(--primary);
+  color: var(--text);
+  font-weight: bold;
+  width: 20%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
 
 thead tr {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 thead th {
-    padding: 12px 16px;
-    text-align: center;
-    font-weight: bold;
-    color: var(--text);
-    background-color: var(--secondary);
-    border-bottom: 2px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 12px 16px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--text);
+  background-color: var(--secondary);
+  border-bottom: 2px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 thead th:first-child {
-    opacity: 0;
-    background-color: transparent;
+  opacity: 0;
+  background-color: transparent;
 }
 
 thead th:nth-child(2) {
-    border-top-left-radius: 16px;
+  border-top-left-radius: 16px;
 }
 
 thead th:last-child {
-    border-top-right-radius: 16px;
+  border-top-right-radius: 16px;
 }
