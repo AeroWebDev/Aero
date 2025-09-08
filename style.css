@@ -163,6 +163,12 @@ main .btns a {
     transition: all 0.3s ease;
 }
 
+main .btns a:hover {
+    background-color: var(--text);
+    color: var(--secondary);
+    transform: scale(1.05);
+}
+
 /* ========== IFRAME SECTIONS ========== */
 iframe {
     width: 100%;
