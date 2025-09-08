@@ -42,15 +42,12 @@ function sendEmbedMessage(title, description, color = 0x00ff99) {
   })
   .then(res => {
     if (res.ok) {
-      // console.log('✅ Embed اتبعتت!');
+      console.log('✅ Embed اتبعتت!');
     } else {
       console.error('❌ في مشكلة في إرسال الـ embed.');
     }
   });
-}
 
-// sendPlainMessage('يا أهلاً بأصحابي! 😄');
-// sendEmbedMessage('تنبيه مهم!', 'دي رسالة بشكل Embed ✨'); // Embed
 
 SendBtn.addEventListener('click', function() {
   let name = document.getElementById('n').value;

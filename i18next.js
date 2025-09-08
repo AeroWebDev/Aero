@@ -97,7 +97,7 @@ function updateContent() {
   });
 }
 
-changeLang('ar');
+changeLang('en');
 
 
 // Set default language
