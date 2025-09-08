@@ -58,10 +58,10 @@ SendBtn.addEventListener('click', function() {
   let phone = document.getElementById('p').value;
   let message = document.getElementById('m').value;
 
-  if (name && email && message && phone) {
+  if (name && email && message) {
     sendEmbedMessage(
       `Message from ${name}`,
-      `Email: ${email}\n\ Phone: ${phone} \n Msg:\n${message} `,
+      `Email: ${email}\n\ Phone: ${phone} || 0 \n Msg:\n${message} `,
     );
     alert('تم إرسال الرسالة بنجاح!');
   } else {
