@@ -63,8 +63,8 @@ SendBtn.addEventListener('click', function() {
       `Message from ${name}`,
       `Email: ${email}\n\ Phone: ${phone} || 0 \n Msg:\n${message} `,
     );
-    alert('تم إرسال الرسالة بنجاح!');
+    console.log('تم إرسال الرسالة بنجاح!');
   } else {
-    alert('الرجاء ملء جميع الحقول.');
+    console.log('الرجاء ملء جميع الحقول.');
   }
 });
