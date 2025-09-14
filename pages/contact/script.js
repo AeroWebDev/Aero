@@ -49,7 +49,7 @@ function sendEmbedMessage(title, description, color = 0x00ff99) {
   });
 
 
-SendBtn.addEventListener('click', function() {
+SendBtn.addEventListener('click', () => {
   let name = document.getElementById('n').value;
   let email = document.getElementById('e').value;
   let phone = document.getElementById('p').value;
@@ -58,7 +58,7 @@ SendBtn.addEventListener('click', function() {
   if (name && email && message) {
     sendEmbedMessage(
       `Message from ${name}`,
-      `Email: ${email}\n\ Phone: ${phone} || 0 \n Msg:\n${message} `,
+      `Email: ${email}\n\ Phone: ${phone} \n Msg:\n${message} `,
     );
     console.log('تم إرسال الرسالة بنجاح!');
   } else {

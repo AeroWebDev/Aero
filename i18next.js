@@ -101,7 +101,7 @@ changeLang('en');
 setFlag('en')
 
 const langSwitch = document.getElementById("langSwitch");
-const langFlag = document.getElementById("langPic")
+const langFlag = document.getElementById("langPic");
 
 langSwitch.addEventListener("click", () => {
   let getCurruntLang = localStorage.get("lang") || "en";
