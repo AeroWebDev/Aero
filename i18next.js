@@ -141,19 +141,3 @@ function setFlag(lang) {
       break;
   }
 }
-
-// Set default language
-document.querySelectorAll(".headerLink").forEach(link => {
-    link.addEventListener("click", function() {
-        const lang = this.getAttribute("data-lang");
-        if (lang) {
-            changeLang(lang);
-        }
-    });
-});
-document.querySelectorAll(".lang-switch").forEach(button => {
-    button.addEventListener("click", function() {
-        const lang = this.getAttribute("data-lang");
-        changeLang(lang);
-    });
-}
