@@ -103,23 +103,23 @@ const langSwitch = document.getElementById("langSwitch");
 const langFlag = document.getElementById("langPic");
 
 langSwitch.addEventListener("click", () => {
-  let getCurruntLang = localStorage.get("lang") || "en";
+  let getCurruntLang = localStorage.getItem("lang") || "en";
 
   switch (getCurruntLang) {
     case "en":
-      localStorage.set("lang", "ar");
+      localStorage.setItem("lang", "ar");
       changeLang('ar');
       setFlag('ar')
       break;
 
     case "ar":
-      localStorage.set("lang", "en");
+      localStorage.setItem("lang", "en");
       changeLang('en');
       setFlag('en')
       break;
   
     default:
-      localStorage.set("lang", "en");
+      localStorage.setItem("lang", "en");
       changeLang('en');
       setFlag('en')
       break;
@@ -141,5 +141,6 @@ function setFlag(lang) {
   }
 }
 
+localStorage.setItem('lang', 'en')
 changeLang('en');
 setFlag('en')
