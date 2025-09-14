@@ -1,6 +1,8 @@
 let lastScrollTop = 0;
 const header = document.querySelector("header");
 
+const modeSwitch = document.getElementById("modeSwitch");
+
 window.addEventListener("scroll", function () {
   const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 

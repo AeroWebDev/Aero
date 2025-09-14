@@ -98,20 +98,62 @@ function updateContent() {
 }
 
 changeLang('en');
+setFlag('en')
 
+const langSwitch = document.getElementById("langSwitch");
+const langFlag = document.getElementById("langPic")
+
+langSwitch.addEventListener("click", () => {
+  let getCurruntLang = localStorage.get("lang") : "en";
+
+  switch (getCurruntLang) {
+    case "en":
+      localStorage.set("lang", "ar");
+      changeLang('ar');
+      setFlag('ar')
+      break;
+
+    case "ar":
+      localStorage.set("lang", "en");
+      changeLang('en');
+      setFlag('en')
+      break;
+  
+    default:
+      localStorage.set("lang", "en");
+      changeLang('en');
+      setFlag('en')
+      break;
+  }
+})
+
+function setFlag(lang) {
+  switch (lang) {
+    case "ar":
+      langFlag.src = "https://upload.wikimedia.org/wikipedia/commons/0/0e/Flag_of_the_Arabic_language.svg";
+      break;
+
+    case "en":
+      langFlag.src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg";
+      break;
+  
+    default:
+      break;
+  }
+}
 
 // Set default language
-// document.querySelectorAll(".headerLink").forEach(link => {
-//     link.addEventListener("click", function() {
-//         const lang = this.getAttribute("data-lang");
-//         if (lang) {
-//             changeLang(lang);
-//         }
-//     });
-// });
-// document.querySelectorAll(".lang-switch").forEach(button => {
-//     button.addEventListener("click", function() {
-//         const lang = this.getAttribute("data-lang");
-//         changeLang(lang);
-//     });
-// }
+document.querySelectorAll(".headerLink").forEach(link => {
+    link.addEventListener("click", function() {
+        const lang = this.getAttribute("data-lang");
+        if (lang) {
+            changeLang(lang);
+        }
+    });
+});
+document.querySelectorAll(".lang-switch").forEach(button => {
+    button.addEventListener("click", function() {
+        const lang = this.getAttribute("data-lang");
+        changeLang(lang);
+    });
+}
