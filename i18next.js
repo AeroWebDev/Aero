@@ -75,46 +75,77 @@ const resources = {
   }
 };
 
+// Change language function
 function changeLang(lang) {
   i18next.changeLanguage(lang, () => {
     updateContent();
   });
   setFlag(lang);
   localStorage.setItem("lang", lang);
+
+  // RTL support
+  if (lang === "ar") {
+    document.documentElement.setAttribute("dir", "rtl");
+  } else {
+    document.documentElement.setAttribute("dir", "ltr");
+  }
 }
 
-i18next.init({
-  lng: localStorage.getItem("lang") || "en",
-  debug: false,
-  resources
-}, function () {
-  updateContent();
-  setFlag(i18next.language);
+// Init
+document.addEventListener("DOMContentLoaded", () => {
+  i18next.init({
+    lng: localStorage.getItem("lang") || "en",
+    debug: false,
+    resources
+  }, function () {
+    updateContent();
+    setFlag(i18next.language);
+  });
+
+  const langSwitch = document.getElementById("langSwitch");
+  if (langSwitch) {
+    langSwitch.addEventListener("click", () => {
+      let currentLang = i18next.language;
+      changeLang(currentLang === "en" ? "ar" : "en");
+    });
+  }
 });
 
+// Update content in page + iframes
 function updateContent() {
+  // Main document
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     el.innerHTML = i18next.t(key);
   });
+
+  // Inside iframes
+  document.querySelectorAll("iframe").forEach(frame => {
+    try {
+      const doc = frame.contentDocument || frame.contentWindow.document;
+      if (doc) {
+        doc.querySelectorAll("[data-i18n]").forEach(el => {
+          const key = el.getAttribute("data-i18n");
+          el.innerHTML = i18next.t(key);
+        });
+      }
+    } catch (e) {
+      console.warn("Cannot access iframe due to cross-origin:", frame.src);
+    }
+  });
 }
 
-const langSwitch = document.getElementById("langSwitch");
-const langFlag = document.getElementById("langPic");
-
-langSwitch.addEventListener("click", () => {
-  let currentLang = i18next.language;
-  changeLang(currentLang === "en" ? "ar" : "en");
-});
-
+// Flag setter
 function setFlag(lang) {
+  const langFlag = document.getElementById("langPic");
+  if (!langFlag) return; // prevent crash if element not found
+
   switch (lang) {
     case "ar":
-      document.getElementById("langPic").src = "https://upload.wikimedia.org/wikipedia/commons/0/0e/Flag_of_the_Arabic_language.svg";
+      langFlag.src = "https://upload.wikimedia.org/wikipedia/commons/0/0e/Flag_of_the_Arabic_language.svg";
       break;
     case "en":
-      document.getElementById("langPic").src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg";
+      langFlag.src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg";
       break;
   }
 }
-
