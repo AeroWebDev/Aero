@@ -23,17 +23,17 @@ const resources = {
       "Call": "Call",
       "Send mail": "Send mail!",
       "UI/UX Design": "UI/UX Design",
-      "Designing  initiative": "Designing innovative and engaging user interfaces",
+      "Designing innovative": "Designing innovative and engaging user interfaces",
       "Web Development": "Web Development",
-      "Busing responsive": "Building responsive and scalable web applications",
-      "DeskTop app Development": "Desktop App Development",
+      "Building responsive": "Building responsive and scalable web applications",
+      "Desktop App Development": "Desktop App Development",
       "Build fast, smart, and reliable": "Build fast, smart, and reliable desktop solutions tailored to your needs",
-      "press here to see details": "Press here to see details",
+      "Press here to see details": "Press here to see details",
       "Design Only": "Design Only",
       "Starter": "Starter",
       "Business": "Business",
       "Pro": "Pro",
-      "commpare": "Commpare",
+      "Compare": "Compare",
     }
   },
   ar: {
@@ -60,34 +60,36 @@ const resources = {
       "Call": "اتصل",
       "Send mail": "أرسل بريدًا!",
       "UI/UX Design": "تصميم واجهة المستخدم وتجربة المستخدم",
-      "Designing  initiative": "تصميم واجهات مستخدم مبتكرة وجذابة",
+      "Designing innovative": "تصميم واجهات مستخدم مبتكرة وجذابة",
       "Web Development": "تطوير الويب",
-      "Busing responsive": "بناء تطبيقات ويب متجاوبة وقابلة للتوسع",
-      "DeskTop app Development": "تطوير تطبيقات سطح المكتب",
+      "Building responsive": "بناء تطبيقات ويب متجاوبة وقابلة للتوسع",
+      "Desktop App Development": "تطوير تطبيقات سطح المكتب",
       "Build fast, smart, and reliable": "بناء حلول سطح مكتب سريعة وذكية وموثوقة مصممة حسب احتياجاتك",
       "Press here to see details": "اضغط هنا لرؤية التفاصيل",
       "Design Only": "تصميم فقط",
       "Starter": "المبتدئ",
       "Business": "الأعمال",
       "Pro": "المحترف",
-      "commpare": "قارن",
+      "Compare": "قارن",
     }
   }
 };
 
 function changeLang(lang) {
-  i18next.changeLanguage(lang, updateContent);
-  console.log(lang);
-
+  i18next.changeLanguage(lang, () => {
+    updateContent();
+  });
+  setFlag(lang);
+  localStorage.setItem("lang", lang);
 }
 
-
 i18next.init({
-  lng: 'en',
+  lng: localStorage.getItem("lang") || "en",
   debug: false,
   resources
 }, function () {
   updateContent();
+  setFlag(i18next.language);
 });
 
 function updateContent() {
@@ -97,50 +99,21 @@ function updateContent() {
   });
 }
 
-
-
 const langSwitch = document.getElementById("langSwitch");
 const langFlag = document.getElementById("langPic");
 
 langSwitch.addEventListener("click", () => {
-  let getCurruntLang = localStorage.getItem("lang") || "en";
-
-  switch (getCurruntLang) {
-    case "en":
-      localStorage.setItem("lang", "ar");
-      changeLang('ar');
-      setFlag('ar')
-      break;
-
-    case "ar":
-      localStorage.setItem("lang", "en");
-      changeLang('en');
-      setFlag('en')
-      break;
-  
-    default:
-      localStorage.setItem("lang", "en");
-      changeLang('en');
-      setFlag('en')
-      break;
-  }
-})
+  let currentLang = i18next.language;
+  changeLang(currentLang === "en" ? "ar" : "en");
+});
 
 function setFlag(lang) {
   switch (lang) {
     case "ar":
       langFlag.src = "https://upload.wikimedia.org/wikipedia/commons/0/0e/Flag_of_the_Arabic_language.svg";
       break;
-
     case "en":
       langFlag.src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg";
       break;
-  
-    default:
-      break;
   }
 }
-
-localStorage.setItem('lang', 'en')
-changeLang('en');
-setFlag('en')
