@@ -110,10 +110,11 @@ langSwitch.addEventListener("click", () => {
 function setFlag(lang) {
   switch (lang) {
     case "ar":
-      langFlag.src = "https://upload.wikimedia.org/wikipedia/commons/0/0e/Flag_of_the_Arabic_language.svg";
+      document.getElementById("langPic").src = "https://upload.wikimedia.org/wikipedia/commons/0/0e/Flag_of_the_Arabic_language.svg";
       break;
     case "en":
-      langFlag.src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg";
+      document.getElementById("langPic").src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg";
       break;
   }
 }
+
