@@ -104,7 +104,7 @@ const langSwitch = document.getElementById("langSwitch");
 const langFlag = document.getElementById("langPic")
 
 langSwitch.addEventListener("click", () => {
-  let getCurruntLang = localStorage.get("lang") : "en";
+  let getCurruntLang = localStorage.get("lang") || "en";
 
   switch (getCurruntLang) {
     case "en":
