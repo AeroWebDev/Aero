@@ -97,8 +97,7 @@ function updateContent() {
   });
 }
 
-changeLang('en');
-setFlag('en')
+
 
 const langSwitch = document.getElementById("langSwitch");
 const langFlag = document.getElementById("langPic");
@@ -141,3 +140,6 @@ function setFlag(lang) {
       break;
   }
 }
+
+changeLang('en');
+setFlag('en')
