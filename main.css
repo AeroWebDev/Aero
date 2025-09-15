@@ -23,6 +23,18 @@
     --shadow-hover: 0 0 15px 15px #00000080;
 }
 
+html[data-theme="dark"]{
+      --primary: #4ea8ff;
+      --secondary: #adb5bd;
+      --background: #0f1720;
+      --text: #e6eef8;
+      --text-2: #98a0ab;
+      --font-heading: 'Roboto', sans-serif;
+      --font-text: 'Poppins', sans-serif;
+      --shadow: 0 8px 24px rgba(0,0,0,0.6);
+      --shadow-hover: 0 0 15px 15px #00000080;
+}
+
 body {
     background-color: var(--background);
     color: var(--text);

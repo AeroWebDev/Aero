@@ -2,6 +2,7 @@ let lastScrollTop = 0;
 const header = document.querySelector("header");
 
 const modeSwitch = document.getElementById("modeSwitch");
+const root = document.documentElement;
 
 window.addEventListener("scroll", function () {
   const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -32,3 +33,22 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 snapSections.forEach(section => observer.observe(section));
+
+  // استعادة الثيم عند تحميل الصفحة
+  if(localStorage.theme === "dark"){
+    root.setAttribute("data-theme","dark");
+    modeSwitch.classList.replace("fa-moon","fa-sun");
+  }
+
+  modeSwitch.addEventListener("click", ()=>{
+    const dark = root.getAttribute("data-theme") === "dark";
+    if(dark){
+      root.removeAttribute("data-theme");
+      localStorage.theme = "light";
+      modeSwitch.classList.replace("fa-sun","fa-moon");
+    }else{
+      root.setAttribute("data-theme","dark");
+      localStorage.theme = "dark";
+      modeSwitch.classList.replace("fa-moon","fa-sun");
+    }
+  });
