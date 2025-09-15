@@ -82,6 +82,7 @@ function changeLang(lang) {
   });
   setFlag(lang);
   localStorage.setItem("lang", lang);
+
 }
 
 // Update content in page + iframes
