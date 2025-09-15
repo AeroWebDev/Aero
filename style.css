@@ -74,6 +74,7 @@ header #options img {
     border-radius: 50px;
     border: #fff 1px dashed;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .links {
