@@ -55,6 +55,7 @@ SendBtn.addEventListener('click', () => {
       `📧 Email: ${email}\n📱 Phone: ${phone || "N/A"}\n💬 Msg:\n${message}`
     );
     console.log('تم إرسال الرسالة بنجاح!');
+    alert("message sent");
   } else {
     console.log('⚠️ الرجاء ملء جميع الحقول.');
   }
