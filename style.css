@@ -73,6 +73,7 @@ header #options img {
     height: 50px;
     border-radius: 50px;
     border: #fff 1px dashed;
+    object-fit: fill;
 }
 
 .links {
