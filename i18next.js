@@ -91,26 +91,6 @@ function changeLang(lang) {
   }
 }
 
-// Init
-document.addEventListener("DOMContentLoaded", () => {
-  i18next.init({
-    lng: localStorage.getItem("lang") || "en",
-    debug: false,
-    resources
-  }, function () {
-    updateContent();
-    setFlag(i18next.language);
-  });
-
-  const langSwitch = document.getElementById("langSwitch");
-  if (langSwitch) {
-    langSwitch.addEventListener("click", () => {
-      let currentLang = i18next.language;
-      changeLang(currentLang === "en" ? "ar" : "en");
-    });
-  }
-});
-
 // Update content in page + iframes
 function updateContent() {
   // Main document
@@ -150,4 +130,24 @@ function setFlag(lang) {
   }
 }
 
-setFlag(lang)
+setFlag('en')
+
+// Init
+document.addEventListener("DOMContentLoaded", () => {
+  i18next.init({
+    lng: localStorage.getItem("lang") || "en",
+    debug: false,
+    resources
+  }, function () {
+    updateContent();
+    setFlag(i18next.language);
+  });
+
+  const langSwitch = document.getElementById("langSwitch");
+  if (langSwitch) {
+    langSwitch.addEventListener("click", () => {
+      let currentLang = i18next.language;
+      changeLang(currentLang === "en" ? "ar" : "en");
+    });
+  }
+});
