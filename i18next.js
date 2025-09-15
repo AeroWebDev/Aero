@@ -149,3 +149,5 @@ function setFlag(lang) {
       break;
   }
 }
+
+setFlag(lang)
