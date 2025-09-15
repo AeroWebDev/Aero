@@ -69,8 +69,10 @@ header #logoContainer img {
 }
 
 header #options {
+    width: 100px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 header #options img {
