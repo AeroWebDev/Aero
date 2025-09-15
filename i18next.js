@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setFlag(i18next.language);
   });
 
-  const langSwitch = document.getElementById("langSwitch");
+  const langSwitch = document.getElementById("langFlag");
   if (langSwitch) {
     langSwitch.addEventListener("click", () => {
       let currentLang = i18next.language;
@@ -151,3 +151,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
