@@ -82,13 +82,6 @@ function changeLang(lang) {
   });
   setFlag(lang);
   localStorage.setItem("lang", lang);
-
-  // RTL support
-  if (lang === "ar") {
-    document.documentElement.setAttribute("dir", "rtl");
-  } else {
-    document.documentElement.setAttribute("dir", "ltr");
-  }
 }
 
 // Update content in page + iframes
@@ -143,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const langSwitch = document.getElementById("langPic");
   langSwitch.addEventListener("click", () => {
-    console.log(132);
     let currentLang = i18next.language;
     changeLang(currentLang === "en" ? "ar" : "en");
   });
