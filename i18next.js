@@ -130,8 +130,6 @@ function setFlag(lang) {
   }
 }
 
-setFlag('en')
-
 // Init
 document.addEventListener("DOMContentLoaded", () => {
   i18next.init({
@@ -144,11 +142,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const langSwitch = document.getElementById("langFlag");
-  if (langSwitch) {
-    langSwitch.addEventListener("click", () => {
-      let currentLang = i18next.language;
-      changeLang(currentLang === "en" ? "ar" : "en");
-    });
-  }
+  langSwitch.addEventListener("click", () => {
+    console.log(132);
+    let currentLang = i18next.language;
+    changeLang(currentLang === "en" ? "ar" : "en");
+  });
+
 });
 
