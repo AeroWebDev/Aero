@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setFlag(i18next.language);
   });
 
-  const langSwitch = document.getElementById("langFlag");
+  const langSwitch = document.getElementById("langPic");
   langSwitch.addEventListener("click", () => {
     console.log(132);
     let currentLang = i18next.language;
