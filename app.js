@@ -52,3 +52,17 @@ snapSections.forEach(section => observer.observe(section));
       modeSwitch.classList.replace("fa-moon","fa-sun");
     }
   });
+
+const testimonialsData = [
+  {name: "Omar", text: "Great team, fast delivery!"},
+  {name: "Sara", text: "Beautiful design & clean code."},
+  {name: "Ali", text: "Very professional and responsive."}
+];
+
+const container = document.querySelector(".testimonials");
+testimonialsData.forEach(t => {
+  let div = document.createElement("div");
+  div.className = "testimonial";
+  div.innerHTML = `<p data-i18n="${t.text}"></p><h4>- ${t.name}</h4>`;
+  container.appendChild(div);
+});

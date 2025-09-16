@@ -227,6 +227,34 @@ main .icons .scroll-down {
   50% {transform: translate(-50%, -10px);}
 }
 
+
+/* ========== TESTIMONIALS  ========== */
+#testimonials {
+  padding: 50px;
+  text-align: center;
+}
+.testimonials-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+.testimonials {
+  display: flex;
+  gap: 20px;
+  animation: slide 15s linear infinite;
+}
+.testimonial {
+  min-width: 300px;
+  background: rgba(255,255,255,0.07);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+}
+@keyframes slide {
+  0% { transform: translateX(0);}
+  100% { transform: translateX(-100%);}
+}
+
+
 /* ========== IFRAME SECTIONS ========== */
 iframe {
     width: 100%;

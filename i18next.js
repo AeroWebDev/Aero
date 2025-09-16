@@ -35,6 +35,10 @@ const resources = {
       "Business": "Business",
       "Pro": "Pro",
       "Compare": "Compare",
+      "What Our Clients Say" : "What Our Clients Say",
+      "Great team, fast Work!" : "Great team, fast Work!" ,
+      "Beautiful design & clean code." : "Beautiful design & clean code.",
+      "Very professional and responsive." :"Very professional and responsive.",
     }
   },
   ar: {
@@ -73,6 +77,10 @@ const resources = {
       "Business": "الأعمال",
       "Pro": "المحترف",
       "Compare": "قارن",
+      "What Our Clients Say" : "اراء العملاء السابقون",
+      "Great team, fast Work!" : "Great team, fast Work!" ,
+      "Beautiful design & clean code." : "Beautiful design & clean code.",
+      "Very professional and responsive." :"Very professional and responsive.",
     }
   }
 };
