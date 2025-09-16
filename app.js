@@ -24,7 +24,6 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
 
     if (entry.target.id == "services") {
-      console.log(12);
       const cards = document.getElementsByClassName("servcies");
       for (let card of cards) {
         console.log(123);
