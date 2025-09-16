@@ -112,4 +112,5 @@ main {
     background: linear-gradient(90deg, #22d3ee, #3b82f6);
     margin: 0 auto;
     border-radius: 9999px;
+    margin-bottom: 20px;
 }
