@@ -33,7 +33,7 @@
     --transition: all 0.3s ease-in-out;
 
     /* ETC. */
-    --border-radius: 20px;
+    --border-radius: 30px;
     --border : 1px solid var(--primary); 
 }
 
@@ -93,7 +93,7 @@ a.link::after {
 }
 
 a.link:hover {
-  color: #fff;
+  color: var(--text);
   text-shadow: 0 0 10px var(--secondary), 0 0 20px #0D6BB8;
 }
 
@@ -107,14 +107,13 @@ button {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    font-family: var(--font-text);
     border-radius: 15px;
     box-shadow: var(--shadow);
-    background-color: var(--secondary);
+    background: var(--secondary-li);
     color: var(--text);
     margin: 10px;
     
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 button:hover {
