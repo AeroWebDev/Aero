@@ -1,11 +1,11 @@
 table {
-  width: 100%;
+  width: 95%;
   border-collapse: collapse;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
+  background: var(--background-box);
+  backdrop-filter: var(--backdrop);
+  border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
