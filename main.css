@@ -38,7 +38,7 @@ html[data-theme="dark"]{
 }
 
 body {
-    background: var(--background);
+    background: transparent !important;
     color: var(--text);
     line-height: 1.6;
 }
