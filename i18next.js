@@ -1,18 +1,25 @@
 const resources = {
   en: {
     translation: {
+      // header
       "Home": "Home",
       "Projects": "Projects",
       "Contact Us": "Contact Us",
+
+      // main
       "Get Started": "Get Started",
       "Servcies" : "Our Servcies",
       "Aero – We Build Clean & Powerful Websites": "Aero – We Build Clean & Powerful Websites",
+
+      // footer
       "“Dev team crafting clean digital work.”": "“Dev team crafting clean digital work.”",
       "Privacy Policy": "Privacy Policy",
       "Terms of Service": "Terms of Service",
       "Cookie Policy": "Cookie Policy",
       "PROJECT": "PROJECTS",
       "OUR SERVICES": "OUR SERVICES",
+
+      // contact
       "Let's get in touch": "Let's get in touch",
       "We would love to hear": "We would love to hear from you! You can reach out to us by clicking on any of the links below, or by filling out the forms on the right side of the page.",
       "Contact us": "Contact us",
@@ -23,22 +30,26 @@ const resources = {
       "Send": "Send",
       "Call": "Call",
       "Send mail": "Send mail!",
+
+      // services
       "UI/UX Design": "UI/UX Design",
       "Designing innovative": "Designing innovative and engaging user interfaces that create memorable experiences and drive user engagement",
       "Web Development": "Web Development",
       "Building responsive": "Building responsive and scalable web applications using modern technologies and best practices",
       "Desktop App Development": "Desktop App Development",
       "Build fast, smart, and reliable": "Build fast, smart, and reliable desktop solutions tailored to your specific business needs",
-      "Press here to see details": "Press here to see details",
-      "Design Only": "Design Only",
+
+      "Design": "Design",
       "Starter": "Starter",
       "Business": "Business",
       "Pro": "Pro",
       "Compare": "Compare",
+
       "What Our Clients Say" : "What Our Clients Say",
       "Great team, fast Work!" : "Great team, fast Work!" ,
       "Beautiful design & clean code." : "Beautiful design & clean code.",
       "Very professional and responsive." : "Very professional and responsive.",
+
       "We deliver cutting-edge" : "We deliver cutting-edge digital solutions tailored to your business needs",
     }
   },

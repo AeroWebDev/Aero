@@ -17,8 +17,12 @@ main {
     height: 210px;
 
     background: var(--background-box);
+    backdrop-filter: var(--backdrop);
+    -webkit-backdrop-filter: var(--backdrop);
+
     padding: 10px;
-    box-shadow: var(--thin-shadow);
+
+    box-shadow: var(--thick-shadow);
     border-radius: var(--border-radius);
 
     display: flex;
@@ -34,10 +38,10 @@ main {
 
 .plan:hover {
     transform: scale(1.05);
-    box-shadow: var(--thick-shadow);
+    box-shadow: 0 8px 40px var(--secondary);
 }
 
-.plan div {
+/* .plan div {
     max-height: 50px;
     min-height: 30px;
     width: 100%;
@@ -46,11 +50,11 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
+} */
 
 .plan p {
     font-size: 16px;
-    color: var(--text);
+    color: var(--muted);
     margin-bottom: 5px;
 }
 
