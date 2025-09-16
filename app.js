@@ -23,7 +23,7 @@ const snapSections = document.querySelectorAll('.snap-section');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
 
-    if (entry.target.classList.contains("servcies")) {
+    if (entry.target.id.contains("services")) {
       console.log(12);
       const cards = document.getElementsByClassName("servcies");
       for (let card of cards) {
