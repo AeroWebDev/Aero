@@ -37,6 +37,10 @@ tbody td:first-child {
   color: #333;
 }
 
+tbody:nth-child(even) {
+  background-color: #333;
+}
+
 /* Highlight packages */
 th:nth-child(2),
 td:nth-child(2) {
