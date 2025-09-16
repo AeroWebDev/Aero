@@ -25,16 +25,16 @@
 }
 
 html[data-theme="dark"]{
-    --primary: #ffffff; /* الأبيض الأساسي */
-  --secondary: #0094c1; /* الأزرق يبقى أفتح عشان يبان فوق الفاتح */
-  --background: linear-gradient(135deg, #f9f9f9, #f1f1f1, #e6e6e6); /* جريديانت فاتح */
-  --text: #121212; /* النص الأساسي أسود/رمادي غامق */
-  --text-2: #444444; /* نص ثانوي */
-  --font-heading: 'Roboto', sans-serif;
-  --font-text: 'Poppins', sans-serif;
-  --shadow: 0 0 8px 4px #00000020; /* ظل ناعم وخفيف */
-  --shadow-hover: 0 0 12px 6px #00000030; /* ظل عند الهوفر */
-  --muted: #333;
+    --primary: #ffffff;
+    --secondary: #0094c1; 
+    --background: linear-gradient(135deg, #f9f9f9, #e3e3e3, #dedede); /* جريديانت فاتح */
+    --text: #121212;
+    --text-2: #444444;
+    --font-heading: 'Roboto', sans-serif;
+    --font-text: 'Poppins', sans-serif;
+    --shadow: 0 0 8px 4px #00000020;
+    --shadow-hover: 0 0 12px 6px #00000030;
+    --muted: #333;
 }
 
 body {

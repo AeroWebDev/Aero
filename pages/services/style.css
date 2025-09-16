@@ -33,7 +33,7 @@ main {
 }
 
 .servcies:hover {
-    border: 1px solid var(--primary);
+    border: 1px solid var(--secondary);
     box-shadow: 0 8px 40px var(--secondary);
     transform: translateY(-8px) scale(1.03)
 }
