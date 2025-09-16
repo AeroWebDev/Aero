@@ -38,16 +38,37 @@
 }
 
 html[data-theme="dark"]{
+    /* 🎨 Main Colors */
     --primary: #ffffff;
+    --primary-li: linear-gradient(135deg, #ffffff, #e8e8e8, #d0d0d0);
+
     --secondary: #0094c1; 
-    --background: linear-gradient(135deg, #f9f9f9, #e3e3e3, #dedede); /* جريديانت فاتح */
+    --secondary-li: linear-gradient(135deg, #0094c1, #08a4d4, #16b9eb);
+
+    /* 🖤 Backgrounds */
+    --background: linear-gradient(135deg, #f9f9f9, #e3e3e3, #dedede);
+    --background-box : rgba(0, 0, 0, 0.27);
+    --backdrop : blur(6px);
+
+    /* ✨ Shadows */
+    --thick-shadow: 0 8px 30px #00000055;
+    --thin-shadow: 0 0 4px 20px #00000020;
+
+    --shadow-hover: 0 0 15px 15px #00000080;
+
+    /* 🔠 Text */
     --text: #121212;
-    --text-2: #444444;
+    --muted: #333;
+
     --font-heading: 'Roboto', sans-serif;
     --font-text: 'Poppins', sans-serif;
-    --shadow: 0 0 8px 4px #00000020;
-    --shadow-hover: 0 0 12px 6px #00000030;
-    --muted: #333;
+
+        /* 🌀 Transitions */
+    --transition: all 0.3s ease-in-out;
+
+    /* ETC. */
+    --border-radius: 30px;
+    --border : 1px solid var(--primary); 
 }
 
 * {
