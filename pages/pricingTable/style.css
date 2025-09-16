@@ -25,10 +25,11 @@ thead th {
 }
 
 thead th span {
-  border: 1px solid var(--myColor);
+  border: 1px solid rgb(var(--myColor));
   width: auto;
   font-size: 12px;
-  font-weight: 200;
+  font-weight: 400;
+  color: rgb(var(--myColor));
   border-radius: var(--border-radius);
   background-color: rgba(var(--myColor),0.1)  ;
 }
