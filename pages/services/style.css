@@ -31,7 +31,7 @@ main {
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 
-    transform: translateX(-150%);
+    transform: translateX(-250%);
     animation: slideIn 0.8s forwards;
 }
 
