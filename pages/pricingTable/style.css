@@ -99,7 +99,7 @@ tbody td:first-child {
     text-align: left;
     padding-left: 15px;
     font-weight: bold;
-    color: #38bdf8;
+    color: var(--text);
   }
 
   tbody td::before {
@@ -109,7 +109,7 @@ tbody td:first-child {
     top: 50%;
     transform: translateY(-50%);
     font-weight: 600;
-    color: #333;
+    color: var(--muted);
   }
 }
 
