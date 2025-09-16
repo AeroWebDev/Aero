@@ -24,14 +24,13 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
 
     if (entry.target.classList.contains("servcies")) {
+      console.log(12);
       const cards = document.getElementsByClassName("servcies");
       for (let card of cards) {
-      card.style.animation = "slideIn 2s forwards";
+        console.log(123);
+        card.style.animation = "slideIn 0.8s forwards";
       }
     }
-
-
-
     
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
