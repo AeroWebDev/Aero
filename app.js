@@ -22,6 +22,10 @@ const snapSections = document.querySelectorAll('.snap-section');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
+    console.log(entry);
+    console.log(entry.isIntersecting);
+    console.log(entry.target);
+    
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     }else {
