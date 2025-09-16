@@ -8,13 +8,13 @@
     scrollbar-color: var(--secondary) transparent;
     box-sizing: border-box;
     font-family: var(--font-text);
-    
+    transition: all 0.3s ease-in-out;
 }
 
 :root {
     --primary: #1A1A1A;
     --secondary: #007EA4;
-    --background: #0C0C0C;
+    --background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     --text: #ffffff;
     --text-2: #121212;
     --font-heading: 'Roboto', sans-serif;
