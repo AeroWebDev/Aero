@@ -21,7 +21,7 @@
     --font-text: 'Poppins', sans-serif;
     --shadow: 0 0 10px 10px #00000080;
     --shadow-hover: 0 0 15px 15px #00000080;
-    --muted: #333;
+    --muted: #ccc;
 }
 
 html[data-theme="dark"]{
@@ -34,7 +34,7 @@ html[data-theme="dark"]{
   --font-text: 'Poppins', sans-serif;
   --shadow: 0 0 8px 4px #00000020; /* ظل ناعم وخفيف */
   --shadow-hover: 0 0 12px 6px #00000030; /* ظل عند الهوفر */
-  --muted: #ccc;
+  --muted: #333;
 }
 
 body {
