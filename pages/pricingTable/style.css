@@ -34,7 +34,7 @@ tbody tr:hover {
 tbody td:first-child {
   text-align: left;
   font-weight: 500;
-  color: #94a3b8;
+  color: #333;
 }
 
 /* Highlight packages */
