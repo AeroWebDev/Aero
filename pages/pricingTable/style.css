@@ -48,7 +48,7 @@ tbody td:first-child {
   color: #333;
 }
 
-tbody:nth-child(even) {
+tbody tr:nth-child(even) {
   background-color: #ffffff;
 }
 
