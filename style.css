@@ -32,9 +32,9 @@ h1, h2, h3, h4, h5, h6 {
 /* ========== HEADER ========== */
 header {
     /* background-color: var(--primary); */
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(5.8px);
-    -webkit-backdrop-filter: blur(5.8px);
+    background: rgba(0, 0, 0, 0.27);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 
     /* border-radius: 16px; */
 
