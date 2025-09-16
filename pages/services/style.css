@@ -46,7 +46,7 @@ main {
 }
 
 .servcies i {
-    font-size: 50px;
+    font-size: 35px;
     color: white;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -56,7 +56,7 @@ main {
     align-items: center;
     justify-content: center;
     transition: 0.3s ease;
-    background: linear-gradient(90deg, var(--secondary), #0D6BB8, var(--secondary));
+    background: linear-gradient(135deg, var(--secondary), #0D6BB8);
 }
 
 .servcies h2 {
