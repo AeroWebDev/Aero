@@ -82,11 +82,7 @@ const resources = {
       "Great team, fast Work!" : "Great team, fast Work!" ,
       "Beautiful design & clean code." : "Beautiful design & clean code.",
       "Very professional and responsive." :"Very professional and responsive.",
-<<<<<<< HEAD
       "We deliver cutting-edge" : "نقدم أحدث الحلول الرقمية المصممة خصيصًا لتلبية احتياجات أعمالك"
-=======
-     "We deliver cutting-edge" : "نقدم أحدث الحلول الرقمية المصممة خصيصًا لتلبية احتياجات أعمالك",
->>>>>>> 94b4958f717c86d572a4d5875e8f9d6cc7656cb8
     }
   }
 };
