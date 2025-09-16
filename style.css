@@ -109,7 +109,7 @@ header #options img {
     border-radius: 50px;
     object-fit: cover;
     cursor: pointer;
-    box-shadow: var(--thin-shadow);
+    /* box-shadow: var(--thin-shadow); */
 }
 
 /* Animation: vibrate effect */
@@ -229,7 +229,9 @@ main .icons .scroll-down {
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(255,255,255,0.1);
+  background: var(--background-box);
+  backdrop-filter: var(--backdrop);
+  -webkit-backdrop-filter: var(--backdrop);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -242,7 +244,7 @@ main .icons .scroll-down {
 }
 .scroll-down span {
   font-size: 22px;
-  color: white;
+  color: var(--text);
 }
 @keyframes bounce {
   0%, 100% {transform: translate(-50%, 0);}
@@ -266,10 +268,11 @@ main .icons .scroll-down {
 }
 .testimonial {
   min-width: 300px;
-  background: rgba(255,255,255,0.07);
+  background: var(--background-box);
+  backdrop-filter: var(--backdrop);
+  -webkit-backdrop-filter: var(--backdrop);
   padding: 20px;
-  border-radius: 15px;
-  backdrop-filter: blur(15px);
+  border-radius: var(--border-radius);
 }
 @keyframes slide {
   0% { transform: translateX(0);}
