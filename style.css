@@ -102,7 +102,7 @@ header #options i {
     backdrop-filter: blur(10px);
 }
 
-.theme-toggle:hover {
+header #options i:hover {
   transform: scale(1.2);
   animation: vibrate 0.3s linear infinite;
 }
