@@ -330,19 +330,19 @@ footer {
     flex-wrap: wrap;
 }
 
-.link {
+footer .link {
     font-size: 0.9rem;
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 400;
 }
 
-.link:hover {
+footer .link:hover {
     font-weight: bold;
     color: #fff;
 }
 
-.link::before {
+footer .link::before {
     content: "";
     display: inline-block;
     width: 3px;
@@ -353,7 +353,7 @@ footer {
     transition: all 0.3s ease;
 }
 
-.link:hover::before {
+footer .link:hover::before {
     width: 10px;
     background-color: var(--secondary);
 }
@@ -375,8 +375,4 @@ footer {
 .snap-section.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-.goBackBtn {
-    display: none;
 }
