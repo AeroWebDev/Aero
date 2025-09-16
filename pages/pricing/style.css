@@ -39,7 +39,7 @@ main {
 
 .plan:hover {
     transform: scale(1.05);
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--shadow-thick);
 }
 
 .plan div {
