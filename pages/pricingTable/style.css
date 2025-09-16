@@ -1,5 +1,5 @@
 * {
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 body {
@@ -13,7 +13,6 @@ table {
   font-family: 'Segoe UI', sans-serif;
   font-size: 14px;
   margin: 20px auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   border: none;
 }
@@ -30,15 +29,15 @@ tbody td {
   border: 1px dashed #f2f2f223;
 }
 
-/* tbody tr:nth-child(even) {
+tbody tr:nth-child(even) {
     background-color: #f9f9f9;
     color: var(--text-2);
     box-shadow:  0 0 10px rgba(0,0,0,0.5);
-  } */
+  }
 
 tbody tr:hover {
-  background-color: #f1f1f1;
-  color: black;
+  background-color: var(--primary);
+  color: var(--text);
 }
 
 th:first-child,
