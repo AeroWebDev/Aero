@@ -44,7 +44,7 @@ body {
 }
 
 /* =================== GLOBAL TAGS =================== */
-a {
+a.link {
   position: relative;
   color: var(--text);
   text-decoration: none;
@@ -54,7 +54,7 @@ a {
   transition: color 0.3s ease;
 }
 
-a::after {
+a.link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -68,12 +68,12 @@ a::after {
   transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-a:hover {
+a.link:hover {
   color: #fff;
   text-shadow: 0 0 10px var(--secondary), 0 0 20px #0D6BB8;
 }
 
-a:hover::after {
+a.link:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
