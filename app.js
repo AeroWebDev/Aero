@@ -56,8 +56,19 @@ snapSections.forEach(section => observer.observe(section));
 const testimonialsData = [
   {name: "Omar", text: "Great team, fast delivery!"},
   {name: "Sara", text: "Beautiful design & clean code."},
-  {name: "Ali", text: "Very professional and responsive."}
+  {name: "Ali", text: "Very professional and responsive."},
+  {name: "Lina", text: "Loved the modern design approach!"},
+  {name: "Hassan", text: "Support was excellent even after project delivery."},
+  {name: "Nour", text: "Clean UI, smooth UX. Exactly what I needed."},
+  {name: "David", text: "They understood my vision perfectly."},
+  {name: "Mona", text: "Website speed and performance are top-notch."},
+  {name: "Khaled", text: "Creative team with amazing attention to detail."},
+  {name: "Sophia", text: "They delivered earlier than expected!"},
+  {name: "Ahmed", text: "My business sales increased after the redesign."},
+  {name: "Yara", text: "The communication was clear and easy throughout."},
+  {name: "John", text: "They combined design and functionality beautifully."}
 ];
+
 
 const container = document.querySelector(".testimonials");
 testimonialsData.forEach(t => {
