@@ -32,9 +32,8 @@ thead th span {
 
 /* tbody */
 
-tbody td {
-  padding: 15px;
-  /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+tbody tr:nth-child(even) {
+  background-color: #ffffff;
 }
 
 tbody tr:hover {
@@ -42,15 +41,20 @@ tbody tr:hover {
   transition: background 0.3s ease;
 }
 
-tbody td:first-child {
-  text-align: left;
-  font-weight: 500;
-  color: #333;
+tbody td {
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  font-weight: lighter;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #ffffff;
+tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text);
 }
+
+
 
 /* Responsive */
 @media (max-width: 900px) {
