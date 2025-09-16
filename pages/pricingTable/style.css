@@ -20,8 +20,8 @@ thead th {
   color: var(--text);
   text-transform: uppercase;
 
-  display: flex;
-  flex-direction: column;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 thead th span {
@@ -29,6 +29,8 @@ thead th span {
   width: auto;
   font-size: 12px;
   font-weight: 500;
+  display: block;
+  margin-top: 6px;
   color: rgb(var(--myColor));
   border-radius: var(--border-radius);
   background-color: rgba(var(--myColor),0.1)  ;
