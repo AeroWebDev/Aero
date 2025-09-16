@@ -22,9 +22,16 @@ const snapSections = document.querySelectorAll('.snap-section');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    console.log(entry);
-    console.log(entry.isIntersecting);
-    console.log(entry.target);
+
+    if (entry.target.classList.contains("servcies")) {
+      const cards = document.getElementsByClassName("servcies");
+      for (let card of cards) {
+      card.style.animation = "slideIn 2s forwards";
+      }
+    }
+
+
+
     
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
