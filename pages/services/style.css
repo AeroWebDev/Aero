@@ -63,6 +63,7 @@ main {
     color: var(--text);
     margin-bottom: 15px;
     transition: var(--transition);
+    font-size: 2.3rem;
 }
 
 .servcies p {
