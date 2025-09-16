@@ -18,7 +18,7 @@ main {
 
     background: var(--background-box);
     padding: 10px;
-    box-shadow: var(--shadow-thin);
+    box-shadow: var(--thin-shadow);
     border-radius: var(--border-radius);
 
     display: flex;
@@ -34,7 +34,7 @@ main {
 
 .plan:hover {
     transform: scale(1.05);
-    box-shadow: var(--shadow-thick);
+    box-shadow: var(--thick-shadow);
 }
 
 .plan div {
