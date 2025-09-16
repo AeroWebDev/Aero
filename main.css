@@ -1,27 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    scrollbar-width: thin;
-    scroll-behavior: smooth;
-    scrollbar-color: var(--secondary) transparent;
-    box-sizing: border-box;
-    font-family: var(--font-text);
-    transition: all 0.3s ease-in-out;
-}
-
 :root {
+    /* 🎨 Main Colors */
     --primary: #1A1A1A;
+    --primary-li: linear-gradient(135deg, #1A1A1A, #1f1f1f, #373737);
+
     --secondary: #007EA4;
+    --secondary-li: linear-gradient(135deg, #007EA4, #077698, #09576e);
+
+
+
+    /* 🖤 Backgrounds */
     --background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    --text: #ffffff;
-    --text-2: #121212;
+    --background-box : rgba(0, 0, 0, 0.27);
+    --backdrop : blur(6px);
+    
+    
     --font-heading: 'Roboto', sans-serif;
     --font-text: 'Poppins', sans-serif;
-    --shadow: 0 0 10px 10px #00000080;
+    
+    /* ✨ Shadows */
+    --thick-shadow: 0 8px 30px #00000055;
+    --thin-shadow: 0 0 4px 20px #00000020;
+
     --shadow-hover: 0 0 15px 15px #00000080;
-    --muted: #ccc;
+
+    /* 🔠 Text */
+    --text: #ffffff;
+    --muted: #bdbdbd;
+
+    /* 🌀 Transitions */
+    --transition: all 0.3s ease-in-out;
+
+    /* ETC. */
+    --border-radius: 20px;
+    --border : 1px solid var(--primary); 
 }
 
 html[data-theme="dark"]{
@@ -35,6 +48,17 @@ html[data-theme="dark"]{
     --shadow: 0 0 8px 4px #00000020;
     --shadow-hover: 0 0 12px 6px #00000030;
     --muted: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--secondary) transparent;
+    box-sizing: border-box;
+    font-family: var(--font-text);
+    transition: all 0.3s ease-in-out;
 }
 
 body {

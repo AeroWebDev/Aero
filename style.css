@@ -14,8 +14,8 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 15px;
-    box-shadow: var(--shadow);
-    background-color: var(--secondary);
+    box-shadow: var(--thick-shadow);
+    background-color: var(--secondary-li);
     color: var(--text);
     margin: 10px;
     transition: all 0.3s ease;
@@ -30,11 +30,9 @@ button:hover {
 /* ========== HEADER ========== */
 header {
     /* background-color: var(--primary); */
-    background: rgba(0, 0, 0, 0.27);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-
-    /* border-radius: 16px; */
+    background: var(--background-box);
+    backdrop-filter: var(--backdrop);
+    -webkit-backdrop-filter: var(--backdrop );
 
     color: var(--text);
     text-align: center;
@@ -50,12 +48,12 @@ header {
 
     padding: 20px 60px;
     margin: 8px auto;
-    border-radius: 30px;
+    border-radius: var(--border-radius);
     width: calc(100% - 20px);
     height: 60px;
 
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    transition: top 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: var(--thick-shadow);
+    transition: var(--transition);
 }
 
   
