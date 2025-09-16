@@ -6,7 +6,7 @@ table {
   background: var(--background-box);
   backdrop-filter: var(--backdrop);
   border-radius: var(--border-radius);
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
