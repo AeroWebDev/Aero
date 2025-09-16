@@ -24,11 +24,11 @@ const resources = {
       "Call": "Call",
       "Send mail": "Send mail!",
       "UI/UX Design": "UI/UX Design",
-      "Designing innovative": "Designing innovative and engaging user interfaces",
+      "Designing innovative": "Designing innovative and engaging user interfaces that create memorable experiences and drive user engagement",
       "Web Development": "Web Development",
-      "Building responsive": "Building responsive and scalable web applications",
+      "Building responsive": "Building responsive and scalable web applications using modern technologies and best practices",
       "Desktop App Development": "Desktop App Development",
-      "Build fast, smart, and reliable": "Build fast, smart, and reliable desktop solutions tailored to your needs",
+      "Build fast, smart, and reliable": "Build fast, smart, and reliable desktop solutions tailored to your specific business needs",
       "Press here to see details": "Press here to see details",
       "Design Only": "Design Only",
       "Starter": "Starter",
@@ -39,6 +39,7 @@ const resources = {
       "Great team, fast Work!" : "Great team, fast Work!" ,
       "Beautiful design & clean code." : "Beautiful design & clean code.",
       "Very professional and responsive." : "Very professional and responsive.",
+      "We deliver cutting-edge" : "We deliver cutting-edge digital solutions tailored to your business needs",
     }
   },
   ar: {

@@ -12,10 +12,16 @@ main {
 .servcies {
     width: calc(100% / 3 - 50px);;
     height: 400px;
-
-    background-color: var(--primary);
     padding: 20px;
-    box-shadow: var(--shadow);
+
+    background: rgba(0, 0, 0, 0.27);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+    border: 1px solid #00000003;
     border-radius: 15px;
 
     display: flex;
@@ -28,14 +34,31 @@ main {
 }
 
 .servcies:hover {
-    transform: scale(1.05);
-    box-shadow: var(--shadow-hover);
+    border: var(--primary);
+    box-shadow: 0 4px 30px var(--secondary);
+
+    transform: translateY(1.3);
+}
+
+.servcies:hover~h2 {
+    color: var(--secondary);
+}
+
+.servcies:hover~i {
+    transform: scale(1.1,1.1);
 }
 
 .servcies i {
     font-size: 50px;
     color: var(--secondary);
     margin-bottom: 10px;
+
+    background: ;
+
+    border-radius: 10px;
+
+    width: 50px;
+    height: 50px;
 }
 
 .servcies h2 {
