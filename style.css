@@ -81,7 +81,7 @@ header #logoContainer img {
 }
 
 header #options {
-    width: 100px;
+    width: 125px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -109,8 +109,8 @@ header #options i:hover {
 
 
 header #options img {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50px;
     border: #fff 1px dashed;
     object-fit: cover;
@@ -120,10 +120,10 @@ header #options img {
 /* Animation: vibrate effect */
 @keyframes vibrate {
   0% { transform: scale(1.2) translate(0); }
-  20% { transform: scale(1.2) translate(-2px, 2px); }
-  40% { transform: scale(1.2) translate(-2px, -2px); }
-  60% { transform: scale(1.2) translate(2px, 2px); }
-  80% { transform: scale(1.2) translate(2px, -2px); }
+  20% { transform: scale(1.2) translate(-2px, 0); }
+  40% { transform: scale(1.2) translate(-2px, 0); }
+  60% { transform: scale(1.2) translate(2px, 0); }
+  80% { transform: scale(1.2) translate(2px, 0); }
   100% { transform: scale(1.2) translate(0); }
 }
 
