@@ -1,6 +1,6 @@
 body {
   background: var(--background) !important;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 table {
