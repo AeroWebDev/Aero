@@ -54,9 +54,9 @@ tbody tr:nth-child(odd) {
   background-color: rgba(18, 30, 60, 0.9);
 }
 
-tbody tr:hover {
+/* tbody tr:hover {
   transform: scale(1.07);
-}
+} */
 
 tbody td {
   padding: 15px;
