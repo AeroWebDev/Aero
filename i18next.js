@@ -138,10 +138,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const langSwitch = document.getElementById("langPic");
-  langSwitch.addEventListener("click", () => {
-    let currentLang = i18next.language;
-    changeLang(currentLang === "en" ? "ar" : "en");
-  });
+  if (langSwitch) {
+    langSwitch.addEventListener("click", () => {
+      let currentLang = i18next.language;
+      changeLang(currentLang === "en" ? "ar" : "en");
+    });
+  }
+
 
 });
 
