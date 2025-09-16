@@ -17,8 +17,17 @@ thead {
 thead th {
   padding: 20px;
   font-size: 1.1rem;
-  color: #38bdf8;
+  color: var(--text);
   text-transform: uppercase;
+
+  display: flex;
+  flex-direction: column;
+}
+
+thead th span {
+  border: 1px solid;
+  border-radius: var(--border-radius);
+  background-color: rgba(var(--myColor),0.1)  ;
 }
 
 tbody td {
