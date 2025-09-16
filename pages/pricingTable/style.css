@@ -98,6 +98,6 @@ td:nth-child(5) {
     top: 50%;
     transform: translateY(-50%);
     font-weight: 600;
-    color: #94a3b8;
+    color: #333;
   }
 }
