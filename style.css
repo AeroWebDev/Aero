@@ -85,8 +85,8 @@ header #options {
 header #options i {
     cursor: pointer;
     font-size: 22px;
-    color: white;
-    transition: transform 0.2s ease-in-out;
+    color: var(--text);
+    transition: var(--transition);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -107,9 +107,9 @@ header #options img {
     width: 45px;
     height: 45px;
     border-radius: 50px;
-    border: #fff 1px dashed;
     object-fit: cover;
     cursor: pointer;
+    box-shadow: var(--thin-shadow);
 }
 
 /* Animation: vibrate effect */

@@ -47,7 +47,7 @@ main {
 
 .servcies i {
     font-size: 35px;
-    color: white;
+    color: var(--text);
     margin-bottom: 20px;
     border-radius: 10px;
     width: 60px;
@@ -55,14 +55,14 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease-in-out;
-    background: linear-gradient(135deg, var(--secondary), #0D6BB8);
+    transition:  var(--transition);
+    background: var(--secondary-li);
 }
 
 .servcies h2 {
     color: var(--text);
     margin-bottom: 15px;
-    transition: 0.3s ease;
+    transition: var(--transition);
 }
 
 .servcies p {
