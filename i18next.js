@@ -5,7 +5,7 @@ const resources = {
       "Projects": "Projects",
       "Contact Us": "Contact Us",
       "Get Started": "Get Started",
-      "Servcies" : "Servcies",
+      "Servcies" : "Our Servcies",
       "Aero – We Build Clean & Powerful Websites": "Aero – We Build Clean & Powerful Websites",
       "“Dev team crafting clean digital work.”": "“Dev team crafting clean digital work.”",
       "Privacy Policy": "Privacy Policy",
@@ -38,7 +38,7 @@ const resources = {
       "What Our Clients Say" : "What Our Clients Say",
       "Great team, fast Work!" : "Great team, fast Work!" ,
       "Beautiful design & clean code." : "Beautiful design & clean code.",
-      "Very professional and responsive." :"Very professional and responsive.",
+      "Very professional and responsive." : "Very professional and responsive.",
     }
   },
   ar: {
@@ -47,7 +47,7 @@ const resources = {
       "Projects": "المشاريع",
       "Contact Us": "اتصل بنا",
       "Get Started": "ابدأ الآن",
-      "Servcies" : "الخدمات",
+      "Servcies" : "خدماتنا",
       "Aero – We Build Clean & Powerful Websites": "Aero – نبني مواقع نظيفة وقوية",
       "“Dev team crafting clean digital work.”": "فريق التطوير يصنع أعمال رقمية نظيفة.",
       "Privacy Policy": "سياسة الخصوصية",
