@@ -60,14 +60,14 @@ main {
 }
 
 .servcies h2 {
-    color: var(--secondary-color);
+    color: var();
     margin-bottom: 15px;
     transition: 0.3s ease;
 }
 
 .servcies p {
     font-size: 18px;
-    color: var(--secondary-color);
+    color: var();
     margin-bottom: 20px;
 }
 
