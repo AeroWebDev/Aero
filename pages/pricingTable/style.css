@@ -1,3 +1,7 @@
+body {
+  background: var(--background) !important;
+}
+
 table {
   width: 95%;
   border-collapse: collapse;
