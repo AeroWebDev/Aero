@@ -89,6 +89,11 @@ main {
   height: 3px;
   background: linear-gradient(90deg, var(--secondary), #0D6BB8, var(--secondary));
   border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.title h2:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
