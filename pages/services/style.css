@@ -55,7 +55,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s ease;
+    transition: all 0.3s ease-in-out;
     background: linear-gradient(135deg, var(--secondary), #0D6BB8);
 }
 
