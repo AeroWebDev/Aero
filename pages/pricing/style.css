@@ -90,10 +90,6 @@ main {
     margin-bottom: 5px;
 }
 
-.plan li{
-    list-style: none;
-}
-
 .plan button{
     height: 50px;
     color: var(--text);

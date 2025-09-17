@@ -32,13 +32,7 @@
             </div>
             <div>
                 <button>Get Started  <i class="fa-solid fa-right-long"></i></button>
-                <button>Learn More  <i class="fa-solid fa-right-long"></i></button>
-            </div>
-            <div>
-                <ul>
-                    <li>1 To 10 pages</li>
-                    <li>Simple Animations</li>
-                </ul>
+                <button class="learnMore">Learn More  <i class="fa-solid fa-right-long"></i></button>
             </div>
         </div>
         
@@ -51,18 +45,12 @@
             </div>
             <div>
                 <button>Get Started  <i class="fa-solid fa-right-long"></i></button>
-                <button>Learn More  <i class="fa-solid fa-right-long"></i></button>
-            </div>
-            <div>
-                <ul>
-                    <li>1 To 10 pages</li>
-                    <li>Simple Animations</li>
-                </ul>
+                <button class="learnMore">Learn More  <i class="fa-solid fa-right-long"></i></button>
             </div>
         </div>
 
         <div class="plan" style="--myColor: 59, 130, 246;">
-            <h1>🧑‍💼</h1>
+            <i class="fa-solid fa-business-time"></i>
             <div>
                 <span data-i18n="Business">🧑‍💼 business</span>
                 <h2>business</h2>
@@ -70,13 +58,7 @@
             </div>
             <div>
                 <button>Get Started  <i class="fa-solid fa-right-long"></i></button>
-                <button>Learn More  <i class="fa-solid fa-right-long"></i></button>
-            </div>
-            <div>
-                <ul>
-                    <li>1 To 10 pages</li>
-                    <li>Simple Animations</li>
-                </ul>
+                <button class="learnMore">Learn More  <i class="fa-solid fa-right-long"></i></button>
             </div>
         </div>
 
@@ -89,22 +71,16 @@
             </div>
             <div>
                 <button>Get Started  <i class="fa-solid fa-right-long"></i></button>
-                <button>Learn More  <i class="fa-solid fa-right-long"></i></button>
-            </div>
-            <div>
-                <ul>
-                    <li>1 To 10 pages</li>
-                    <li>Simple Animations</li>
-                </ul>
+                <button class="learnMore">Learn More  <i class="fa-solid fa-right-long"></i></button>
             </div>
         </div>
     </main>
 
     <div id="btn">
-        <button data-i18n="Commpare"></button>
+        <!-- <button data-i18n="Commpare"></button> -->
     </div>
     <script>
-        const plans = document.querySelectorAll('.plan');
+        const plans = document.querySelectorAll('.plan learnMore');
         plans.forEach(plan => {
             plan.addEventListener('click', () => {
                 window.open(`../pricingTable/index.html?plan=${plan.querySelector('p').textContent}`, '_blank');          
