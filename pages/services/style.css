@@ -36,7 +36,7 @@ main {
 }
 
 .servcies:hover {
-    border: 1px solid rgb(var(--myColor));
+    border: 1.5px solid rgb(var(--myColor));
     box-shadow: 0 8px 40px rgb(var(--myColor));
     transform: translateY(-8px) scale(1.03);
 }

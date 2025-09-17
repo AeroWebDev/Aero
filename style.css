@@ -224,6 +224,15 @@ main .btns a:hover {
     transform: scale(1.05);
 }
 
+main .icons {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 main .icons .scroll-down {
   position: absolute;
   bottom: 40px;
@@ -247,8 +256,8 @@ main .icons .scroll-down {
   color: var(--text);
 }
 @keyframes bounce {
-  0%, 100% {transform: translate(-50%, 0);}
-  50% {transform: translate(-50%, -10px);}
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
 }
 
 
@@ -331,19 +340,19 @@ footer {
     flex-wrap: wrap;
 }
 
-footer .link {
+footer .footerLink {
     font-size: 0.9rem;
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 400;
 }
 
-footer .link:hover {
+footer .footerLink:hover {
     font-weight: bold;
     color: #fff;
 }
 
-footer .link::before {
+footer .footerLink::before {
     content: "";
     display: inline-block;
     width: 3px;
@@ -354,7 +363,7 @@ footer .link::before {
     transition: all 0.3s ease;
 }
 
-footer .link:hover::before {
+footer .footerLink:hover::before {
     width: 10px;
     background-color: var(--secondary);
 }
