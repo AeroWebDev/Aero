@@ -256,8 +256,8 @@ main .icons .scroll-down {
   color: var(--text);
 }
 @keyframes bounceBtn {
-  0%, 100% {bottom: -40px;}
-  50% {bottom: -60px;}
+  0%, 100% {bottom: 40px;}
+  50% {bottom: 60px;}
 }
 
 
