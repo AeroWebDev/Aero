@@ -50,7 +50,7 @@
         </div>
 
         <div class="plan" style="--myColor: 59, 130, 246;">
-            <i class="fa-solid fa-business-time"></i>
+            <i class="fa-solid fa-business-time head"></i>
             <div>
                 <span data-i18n="Business">🧑‍💼 business</span>
                 <h2>business</h2>
@@ -80,7 +80,7 @@
         <!-- <button data-i18n="Commpare"></button> -->
     </div>
     <script>
-        const plans = document.querySelectorAll('.plan learnMore');
+        const plans = document.querySelectorAll('.plan .learnMore');
         plans.forEach(plan => {
             plan.addEventListener('click', () => {
                 window.open(`../pricingTable/index.html?plan=${plan.querySelector('p').textContent}`, '_blank');          

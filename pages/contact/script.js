@@ -33,13 +33,6 @@ function sendEmbedMessage(title, description, color = 0x00ff99) {
       ]
     })
   })
-  .then(res => {
-    if (res.ok) {
-      console.log('✅ Embed اتبعتت!');
-    } else {
-      console.error('❌ في مشكلة في إرسال الـ embed.');
-    }
-  });
 }
 
 // عند الضغط على الزر
@@ -52,11 +45,15 @@ SendBtn.addEventListener('click', () => {
   if (name && email && message) {
     sendEmbedMessage(
       `Message from ${name}`,
-      `📧 Email: ${email}\n📱 Phone: ${phone || "N/A"}\n💬 Msg:\n${message}`
+      `📧 Email: ${email}\n
+      📱 Phone: ${phone || "N/A"}\n
+      💬 Msg:\n${message}`
     );
-    console.log('تم إرسال الرسالة بنجاح!');
-    alert("message sent");
+
+      let name = document.getElementById('n').value = "";
+      let email = document.getElementById('e').value = "";
+      let phone = document.getElementById('p').value = "";
+      let message = document.getElementById('m').value = "";
   } else {
-    console.log('⚠️ الرجاء ملء جميع الحقول.');
   }
 });
