@@ -25,11 +25,18 @@ const observer = new IntersectionObserver((entries) => {
 
     if (entry.target.id == "services") {
       const cards = document.getElementsByClassName("servcies");
+      console.log("working 1");
+      
       for (let card of cards) {
-        console.log(123);
+        console.log("working");
+        card.style.animation = "none";
+        void card.offsetWidth; // forces reflow
         card.style.animation = "slideIn 0.8s forwards";
+
       }
     }
+
+    
     
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
