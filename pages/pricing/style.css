@@ -14,13 +14,14 @@ main {
 
 .plan {
     width: calc(100% / 4 - 50px);;
-    height: 300px;
+    height: 550px;
 
     background: var(--background-box);
     backdrop-filter: var(--backdrop);
     -webkit-backdrop-filter: var(--backdrop);
 
     padding: 10px;
+    margin-top: 10px;
 
     box-shadow: var(--thick-shadow);
     border-radius: var(--border-radius);
@@ -65,6 +66,7 @@ main {
     color: rgb(var(--myColor));
     border: 1px solid rgb(var(--myColor));
     background-color: rgba(var(--myColor),0.1);
+    border-radius: var(--border-radius);
     opacity: 0.8;
     text-align: center;
 }
@@ -78,6 +80,10 @@ main {
     font-size: 16px;
     color: var(--muted);
     margin-bottom: 5px;
+}
+
+.plan li{
+    list-style: none;
 }
 
 #btn {
