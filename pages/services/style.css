@@ -19,7 +19,7 @@ main {
     -webkit-backdrop-filter: var(--backdrop);
 
     box-shadow: var(--thick-shadow);
-    border: 1px solid #00000003;
+    border: 2px solid #00000003;
     border-radius: 15px;
 
     display: flex;
@@ -32,7 +32,7 @@ main {
     cursor: pointer;
 
     transform: translateX(-350%);
-    animation: slideIn 0.8s forwards;
+    /* animation: slideIn 0.8s forwards; */
 }
 
 .servcies:hover {
