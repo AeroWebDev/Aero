@@ -22,6 +22,8 @@ main {
     border: 1px solid #00000003;
     border-radius: 15px;
 
+
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,6 +68,7 @@ main {
     width: 50px;
     height: 50px;
     font-size: 30px;
+
 
     color: rgb(var(--myColor));
     background: linear-gradient(135deg, rgb(var(--myColor) / 55%), rgb(var(--myColor) / 65%));
