@@ -70,7 +70,8 @@ main {
 }
 
 .plan h2 {
-    
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 .plan p {
