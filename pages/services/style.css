@@ -91,6 +91,15 @@ main {
   margin: 0 auto;
 }
 
+.title {
+    text-align: center;
+}
+
+.title p {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--muted);
+}
 
 .servcies:nth-child(1) {
   animation-delay: 0s;

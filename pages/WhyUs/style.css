@@ -89,3 +89,13 @@ main {
     color: var(--muted);
     margin-bottom: 20px;
 }
+
+.title {
+    text-align: center;
+}
+
+.title p {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--muted);
+}
