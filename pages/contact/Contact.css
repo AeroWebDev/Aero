@@ -163,13 +163,17 @@ textarea.input {
   color: var(--text);
 }
 
+<<<<<<< HEAD
+p.text {
+=======
 .contact-info p.title {
+>>>>>>> 157382e80646f882717dde9a2f3ae94bcc0303fd
   color: var(--muted);
   margin: 1.5rem 0 2rem 0;
 }
 
 .information {
-  color: var(--text1);
+  color: var(--text);
   margin: 0.7rem 0;
   align-items: center;
   font-size: 0.95rem;
@@ -190,7 +194,7 @@ textarea.input {
 }
 
 .information a:hover {
-  background: var(--text2);
+  background: var(--text);
   color: var(--secondary);
 }
 
