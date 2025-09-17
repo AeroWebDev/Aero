@@ -22,10 +22,8 @@ const snapSections = document.querySelectorAll('.snap-section');
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    console.log(1);
-    
     if (entry.target.id === "services" && entry.isIntersecting) {
-      console.log(2);
+      console.log("Found cards:", cards.length);
       const cards = entry.target.getElementsByClassName("servcies");
       for (let card of cards) {
         console.log(3);
