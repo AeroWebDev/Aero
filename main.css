@@ -79,7 +79,7 @@ html[data-theme="dark"]{
     scrollbar-color: var(--secondary) transparent;
     box-sizing: border-box;
     font-family: var(--font-text);
-    transition: all 0.3s ease-in-out;
+    transition: var(--transition);
 }
 
 body {
