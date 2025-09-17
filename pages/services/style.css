@@ -32,7 +32,7 @@ main {
     cursor: pointer;
 
     transform: translateX(-350%);
-    /* animation: slideIn 0.8s forwards; */
+    animation: slideIn 0.8s forwards;
 }
 
 .servcies:hover {
