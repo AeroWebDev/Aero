@@ -9,7 +9,7 @@ main {
     gap: 20px;
 }
 
-.servcies {
+.cards {
     width: calc(100% / 3 - 40px);
     height: 400px;
     padding: 20px;
@@ -35,20 +35,20 @@ main {
     animation: slideIn 0.8s forwards;
 }
 
-.servcies:hover {
+.cards:hover {
     border: 1px solid rgb(var(--myColor));
     box-shadow: 0 8px 40px rgb(var(--myColor));
     transform: translateY(-8px) scale(1.03);
 }
 
-.servcies:hover h2 {
+.cards:hover h2 {
     color: rgb(var(--myColor));
 }
-.servcies:hover i {
+.cards:hover i {
     transform: scale(1.2);
 }
 
-.servcies i {
+.cards i {
     font-size: 35px;
     color: var(--text);
     margin-bottom: 20px;
@@ -62,7 +62,7 @@ main {
     background: rgb(var(--myColor));
 }
 
-.servcies i.head{
+.cards i.head{
     width: 50px;
     height: 50px;
     font-size: 30px;
@@ -75,7 +75,7 @@ main {
     margin: 5px;
 }
 
-.servcies h2 {
+.cards h2 {
   font-weight: 700;
   font-size: 2.3rem;
   margin-bottom: 15px;
@@ -84,44 +84,8 @@ main {
   transition: var(--transition);
 }
 
-.servcies p {
+.cards p {
     font-size: 12px;
     color: var(--muted);
     margin-bottom: 20px;
-}
-
-.title {
-    text-align: center;
-}
-
-.title p {
-    font-size: 1.125rem;
-    font-weight: 400;
-    color: var(--muted);
-}
-
-.line {
-  width: 90%;
-  height: 2px;
-
-  background-color: grey;
-  margin: 0 auto;
-}
-
-
-.servcies:nth-child(1) {
-  animation-delay: 0s;
-}
-.servcies:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.servcies:nth-child(3) {
-  animation-delay: 0.8s;
-}
-
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
