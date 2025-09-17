@@ -23,16 +23,10 @@ const snapSections = document.querySelectorAll('.snap-section');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
 
-    if (entry.target.id == "services") {
-      const cards = document.getElementsByClassName("servcies");
-      console.log("working 1");
-      
+    if (entry.target.id === "services" && entry.isIntersecting) {
+      const cards = entry.target.getElementsByClassName("servcies");
       for (let card of cards) {
-        console.log("working");
-        card.style.animation = "none";
-        void card.offsetWidth; // forces reflow
         card.style.animation = "slideIn 0.8s forwards";
-
       }
     }
 
