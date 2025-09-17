@@ -28,7 +28,7 @@ main {
     text-align: center;
     justify-content: center;
 
-    transition: all 0.3s ease-in-out;
+    transition: var(--transition);
     cursor: pointer;
 
     transform: translateX(-350%);
@@ -36,13 +36,13 @@ main {
 }
 
 .servcies:hover {
-    border: 1px solid var(--secondary);
-    box-shadow: 0 8px 40px var(--secondary);
-    transform: translateY(-8px) scale(1.03)
+    border: 1px solid rgb(var(--myColor));
+    box-shadow: 0 8px 40px rgb(var(--myColor));
+    transform: translateY(-8px) scale(1.03);
 }
 
 .servcies:hover h2 {
-    color: var(--secondary);
+    color: rgb(var(--myColor));
 }
 .servcies:hover i {
     transform: scale(1.2);
@@ -59,18 +59,33 @@ main {
     align-items: center;
     justify-content: center;
     transition:  var(--transition);
-    background: var(--secondary-li);
+    background: rgb(var(--myColor));
+}
+
+.servcies span {
+    width: auto;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgb(var(--myColor));
+    border: 1px solid rgb(var(--myColor));
+    background-color: rgba(var(--myColor),0.1);
+    border-radius: var(--border-radius);
+    opacity: 0.8;
+    text-align: center;
 }
 
 .servcies h2 {
-    color: var(--text);
-    margin-bottom: 15px;
-    transition: var(--transition);
-    font-size: 2.3rem;
+  font-weight: 700;
+  font-size: 2.3rem;
+  margin-bottom: 15px;
+
+  color: var(--text);
+  transition: var(--transition);
 }
 
 .servcies p {
-    font-size: 18px;
+    font-size: 12px;
     color: var(--muted);
     margin-bottom: 20px;
 }
@@ -83,6 +98,14 @@ main {
     font-size: 1.125rem;
     font-weight: 400;
     color: var(--muted);
+}
+
+.line {
+  width: 90%;
+  height: 2px;
+
+  background-color: grey;
+  margin: 0 auto;
 }
 
 

@@ -96,7 +96,7 @@ main {
     background: var(--primary-li);
 }
 
-.plan div.most::before {
+.plan.most::before {
     content: "Most Popular";
     background: var(--secondry-li);
     transform: scale(1.03);
