@@ -14,7 +14,7 @@ main {
 
 .plan {
     width: calc(100% / 4 - 50px);;
-    height: 210px;
+    height: 300px;
 
     background: var(--background-box);
     backdrop-filter: var(--backdrop);
@@ -38,7 +38,7 @@ main {
 
 .plan:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 40px var(--secondary);
+    box-shadow: 0 8px 40px rgb(var(--myColor));
 }
 
 /* .plan div {
@@ -52,6 +52,13 @@ main {
     justify-content: space-between;
 } */
 
+.plan i{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: rgb(var(--myColor));
+}
+
 .plan p {
     font-size: 16px;
     color: var(--muted);
@@ -59,8 +66,11 @@ main {
 }
 
 .plan span {
+    width: auto;
     font-size: 12px;
-    color: var(--muted);
+    color: rgb(var(--myColor));
+    border: 1px solid rgb(var(--myColor));
+    background-color: rgba(var(--myColor),0.1);
     opacity: 0.8;
     text-align: center;
 }
