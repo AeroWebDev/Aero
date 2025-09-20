@@ -34,7 +34,6 @@ const observer = new IntersectionObserver((entries) => {
 
 snapSections.forEach(section => observer.observe(section));
 
-  // استعادة الثيم عند تحميل الصفحة
   if(localStorage.theme === "dark"){
     root.setAttribute("data-theme","dark");
     modeSwitch.classList.replace("fa-moon","fa-sun");
@@ -65,7 +64,6 @@ const testimonialsData = [
   {name: "Sophia", text: "They delivered earlier than expected!"},
   {name: "Ahmed", text: "My business sales increased after the redesign."},
   {name: "Yara", text: "The communication was clear and easy throughout."},
-  {name: "John", text: "They combined design and functionality beautifully."}
 ];
 
 

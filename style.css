@@ -307,8 +307,15 @@ main .icons .scroll-down {
 
 /* ========== TESTIMONIALS  ========== */
 #testimonials {
-  padding: 50px;
-  text-align: center;
+    margin: 100px 0;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+
+    width: 100%;
 }
 .testimonials-wrapper {
   overflow: hidden;

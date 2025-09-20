@@ -138,10 +138,10 @@ function setFlag(lang) {
 
   switch (lang) {
     case "ar":
-      langBtn.innerHTML = "🇪🇬 العربية <span class='arrow'>▼</span>";
+      langBtn.innerHTML = "🇪🇬 <span class='arrow'>▼</span>";
       break;
     case "en":
-      langBtn.innerHTML = "🇬🇧 English <span class='arrow'>▼</span>";
+      langBtn.innerHTML = "🇬🇧 <span class='arrow'>▼</span>";
       break;
   }
 }
