@@ -77,3 +77,7 @@ testimonialsData.forEach(t => {
   div.innerHTML = `<p data-i18n="${t.text}"></p><h4>- ${t.name}</h4>`;
   container.appendChild(div);
 });
+
+document.querySelector('.lang-btn').addEventListener('click',()=>{
+  document.querySelector('.language-switcher').classList.toggle('active');
+});
