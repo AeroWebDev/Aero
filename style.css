@@ -95,11 +95,11 @@ header #options i {
     border-radius: 50%;
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
+    transition: var(--transition);
 }
 
 header #options i:hover {
   transform: scale(1.2);
-  animation: vibrate 0.3s linear infinite;
 }
 
 
@@ -112,14 +112,58 @@ header #options img {
     /* box-shadow: var(--thin-shadow); */
 }
 
-/* Animation: vibrate effect */
-@keyframes vibrate {
-  0% { transform: scale(1.1)}
-  20% { transform: scale(1.15)}
-  40% { transform: scale(1.2)}
-  60% { transform: scale(1.3)}
-  80% { transform: scale(1.2)}
-  100% { transform: scale(1.1)}
+header #options .language-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+header #options .lang-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+header #options .lang-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+header #options .lang-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  padding: 8px 0;
+  list-style: none;
+  display: none;
+  animation: dropdown 0.3s ease;
+}
+
+header #options .lang-menu li {
+  padding: 8px 14px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+header #options .lang-menu li:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+header #options .language-switcher.active .lang-menu {
+  display: block;
+}
+
+@keyframes dropdown {
+  from {opacity:0; transform: translateY(-10px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
 
@@ -138,7 +182,7 @@ header #options img {
 }
 
 /* ========== GET STARTED BUTTON ========== */
-#GetStartedBtn {
+/* #GetStartedBtn {
     border: 2px dashed var(--text);
     border-radius: 15px;
     background-color: transparent;
@@ -149,16 +193,16 @@ header #options img {
 #GetStartedBtn:hover {
     transform: rotate(-10deg);
     font-size: larger;
-}
+} */
 
-@keyframes glow {
+/* @keyframes glow {
     from {
         text-shadow: 0 0 10px #fff, 0 0 20px #26bdeb, 0 0 30px #26bdeb;
     }
     to {
         text-shadow: 0 0 20px #fff, 0 0 30px #26bdeb, 0 0 40px #26bdeb;
     }
-}
+} */
 
 /* ========== MAIN / HERO SECTION ========== */
 main {

@@ -96,7 +96,7 @@ a.link {
   font-size: 1.3rem;
   margin: 0 15px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 a.link::after {
@@ -110,7 +110,7 @@ a.link::after {
   border-radius: 2px;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 a.link:hover {
