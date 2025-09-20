@@ -105,7 +105,6 @@ function changeLang(lang) {
   });
   setFlag(lang);
   localStorage.setItem("lang", lang);
-
 }
 
 // Update content in page + iframes
@@ -116,7 +115,7 @@ function updateContent() {
     el.innerHTML = i18next.t(key);
   });
 
-  // Inside iframes
+  // Inside iframes (same-origin only)
   document.querySelectorAll("iframe").forEach(frame => {
     try {
       const doc = frame.contentDocument || frame.contentWindow.document;
@@ -134,15 +133,15 @@ function updateContent() {
 
 // Flag setter
 function setFlag(lang) {
-  const langFlag = document.getElementById("langPic");
-  if (!langFlag) return; // prevent crash if element not found
+  const langBtn = document.querySelector(".lang-btn");
+  if (!langBtn) return;
 
   switch (lang) {
     case "ar":
-      langFlag.src = "https://upload.wikimedia.org/wikipedia/commons/0/0e/Flag_of_the_Arabic_language.svg";
+      langBtn.innerHTML = "🇪🇬 العربية <span class='arrow'>▼</span>";
       break;
     case "en":
-      langFlag.src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg";
+      langBtn.innerHTML = "🇬🇧 English <span class='arrow'>▼</span>";
       break;
   }
 }
@@ -158,14 +157,29 @@ document.addEventListener("DOMContentLoaded", () => {
     setFlag(i18next.language);
   });
 
-  const langSwitch = document.getElementById("langPic");
-  if (langSwitch) {
-    langSwitch.addEventListener("click", () => {
-      let currentLang = i18next.language;
-      changeLang(currentLang === "en" ? "ar" : "en");
+  // Dropdown toggle
+  const langSwitcher = document.querySelector('.language-switcher');
+  const langBtn = document.querySelector('.lang-btn');
+  const langMenu = document.querySelector('.lang-menu');
+
+  if (langBtn && langMenu) {
+    langBtn.addEventListener('click', () => {
+      langSwitcher.classList.toggle('active');
+    });
+
+    langMenu.querySelectorAll("li").forEach(li => {
+      li.addEventListener("click", () => {
+        const newLang = li.getAttribute("data-lang");
+        changeLang(newLang);
+        langSwitcher.classList.remove("active");
+      });
     });
   }
 
-
+  // Make sure iframes update when they load
+  document.querySelectorAll("iframe").forEach(frame => {
+    frame.addEventListener("load", () => {
+      updateContent();
+    });
+  });
 });
-

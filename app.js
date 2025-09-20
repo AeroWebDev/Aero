@@ -78,6 +78,4 @@ testimonialsData.forEach(t => {
   container.appendChild(div);
 });
 
-document.querySelector('.lang-btn').addEventListener('click',()=>{
-  document.querySelector('.language-switcher').classList.toggle('active');
-});
+
