@@ -60,7 +60,6 @@ const testimonialsData = [
   {name: "Lina", text: "Loved the modern design approach!"},
   {name: "Hassan", text: "Support was excellent even after project delivery."},
   {name: "Nour", text: "Clean UI, smooth UX. Exactly what I needed."},
-  {name: "David", text: "They understood my vision perfectly."},
   {name: "Mona", text: "Website speed and performance are top-notch."},
   {name: "Khaled", text: "Creative team with amazing attention to detail."},
   {name: "Sophia", text: "They delivered earlier than expected!"},
