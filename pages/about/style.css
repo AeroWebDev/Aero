@@ -1,12 +1,5 @@
-main {
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px;
-    gap: 20px;
+body {
+    background: var(--bg) !important;
 }
 
 .title {
@@ -35,4 +28,18 @@ main {
 .swiper-slide img {
     display: block;
     width: 100%;
+}
+
+.card {
+    background: var(--background-box);
+   overflow: hidden;
+   backdrop-filter: var(--backdrop);
+
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    
+    object-fit: cover;
 }
