@@ -31,7 +31,7 @@ body {
 
 .card {
     background: var(--background-box);
-    overflow: hidden;
+    overflow: visible;
     backdrop-filter: var(--backdrop);
 
     width: 325px !important;
