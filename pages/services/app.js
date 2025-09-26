@@ -5,3 +5,6 @@ const observer = new IntersectionObserver((entries) => {
 }, {
   threshold: 0.4
 });
+
+
+servcies.forEach(section => observer.observe(section));

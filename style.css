@@ -76,7 +76,7 @@ header #logoContainer img {
 }
 
 header #options {
-    width: 125px;
+    width: 135px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -98,20 +98,6 @@ header #options i {
     transition: var(--transition);
 }
 
-header #options i:hover {
-  transform: scale(1.2);
-}
-
-
-header #options img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50px;
-    object-fit: cover;
-    cursor: pointer;
-    /* box-shadow: var(--thin-shadow); */
-}
-
 header #options .language-switcher {
   position: relative;
   display: inline-block;
@@ -129,21 +115,22 @@ header #options .lang-btn {
   transition: 0.3s;
 }
 
-header #options .lang-btn:hover {
+header #options .lang-btn:hover , header #options i:hover{
   background: rgba(255,255,255,0.2);
+  transform: scale(1.2);
 }
 
 header #options .lang-menu {
   position: absolute;
   top: 110%;
   left: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(15px);
+  background: var(--background-box);
+  backdrop-filter: var(--backdrop);
   border-radius: 12px;
   padding: 8px 0;
   list-style: none;
   display: none;
-  animation: dropdown 0.3s ease;
+  animation: dropdown var(--transition);
 }
 
 header #options .lang-menu li {
