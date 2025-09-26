@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    <link rel="stylesheet" href="../../main.css">
     <!-- Demo styles -->
     <style>
         html,
@@ -16,6 +16,10 @@
             height: 100%;
         }
 
+        body {
+            background: var(--bg) !important;
+        }
+        
         body {
             background: #000;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -41,6 +45,28 @@
         .swiper-slide img {
             display: block;
             width: 100%;
+        }
+
+        .card {
+            background: var(--background-box);
+            overflow: hidden;
+            backdrop-filter: var(--backdrop);
+
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+
+            object-fit: cover;
+        }
+
+        .card h2 {
+            color: var(--text);
+        }
+
+        .card p {
+            color: var(--muted);
         }
     </style>
 </head>
@@ -86,11 +112,9 @@
                     Turn Dark into light <br>
                 </p>
             </div>
-
-            
-            <div class="swiper-button-next"></div>
         </div>
-        
+
+        <div class="swiper-button-next"></div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
 
