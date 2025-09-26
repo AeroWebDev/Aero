@@ -51,7 +51,8 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide card">
                 <div class="profilePhoto">
-                    <img style="width: 100px; height: 100px;" src="https://avatars.githubusercontent.com/u/165628333" alt="">
+                    <img style="width: 100px; height: 100px;" src="https://avatars.githubusercontent.com/u/165628333"
+                        alt="">
                 </div>
                 <h2>Marwan</h2>
                 <p>
@@ -61,59 +62,67 @@
                     Always learning, always coding <br>
                 </p>
             </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            <div class="swiper-slide card">
+                <div class="profilePhoto">
+                    <img src="https://avatars.githubusercontent.com/u/231321899" alt="">
+                </div>
+                <h2>Adham</h2>
+                <p>
+                    Front End dev | UI/UX designer<br>
+                    creative Designs And Idea <br>
+                    Designs Leader @ Aero Dev Team 🚀 <br>
+                    Colorful mind <br>
+                </p>
             </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+            <div class="swiper-slide card">
+                <div class="profilePhoto">
+                    <img src="https://avatars.githubusercontent.com/u/231321899" alt="">
+                </div>
+                <h2>Mahmoud</h2>
+                <p>
+                    Fullstack dev <br>
+                    Senior Web developer <br>
+                    Development manger @ Aero Dev Team 🚀 <br>
+                    Turn Dark into light <br>
+                </p>
             </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-            </div>
-            <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-        
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-    </div>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-        });
-    </script>
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 2,
+                    slideShadows: true,
+                },
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
 </body>
 
 </html>
