@@ -44,6 +44,10 @@ body {
     object-fit: cover;
 }
 
-.card h2
+.card h2 {
+    color: var(--text);
+}
 
-.card p
+.card p {
+    color: var(--muted);
+}
