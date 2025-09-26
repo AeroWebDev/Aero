@@ -27,8 +27,6 @@ body {
 .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 300px !important;
-    height: 300px;
 }
 
 .card {
@@ -36,6 +34,14 @@ body {
     overflow: hidden;
     backdrop-filter: var(--backdrop);
 
+    width: 325px !important;
+    height: 350px !important;
+    border-radius: var(--border-radius);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .card img {
@@ -43,6 +49,11 @@ body {
     height: 100px;
 
     object-fit: cover;
+
+    border-radius: 50%;
+    position: relative;
+    top: -50px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
 }
 
 .card h2 {
@@ -51,4 +62,5 @@ body {
 
 .card p {
     color: var(--muted);
+    font-weight: 400;
 }
