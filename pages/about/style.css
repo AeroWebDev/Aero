@@ -32,15 +32,15 @@ body {
 
 .card {
     background: var(--background-box);
-   overflow: hidden;
-   backdrop-filter: var(--backdrop);
+    overflow: hidden;
+    backdrop-filter: var(--backdrop);
 
 }
 
 .card img {
     width: 100px;
     height: 100px;
-    
+
     object-fit: cover;
 }
 

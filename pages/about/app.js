@@ -1,11 +1,10 @@
-
-
 var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     // spaceBetween: 30,
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: "auto",
+    rewind: true,
     coverflowEffect: {
         rotate: 50,
         stretch: 0,

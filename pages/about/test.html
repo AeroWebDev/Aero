@@ -19,7 +19,7 @@
         body {
             background: var(--bg) !important;
         }
-        
+
         body {
             background: #000;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -27,46 +27,6 @@
             color: #fff;
             margin: 0;
             padding: 0;
-        }
-
-        .swiper {
-            width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 300px;
-            height: 300px;
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-        }
-
-        .card {
-            background: var(--background-box);
-            overflow: hidden;
-            backdrop-filter: var(--backdrop);
-
-        }
-
-        .card img {
-            width: 100px;
-            height: 100px;
-
-            object-fit: cover;
-        }
-
-        .card h2 {
-            color: var(--text);
-        }
-
-        .card p {
-            color: var(--muted);
         }
     </style>
 </head>
@@ -118,37 +78,7 @@
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
 
-        <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-        <!-- Initialize Swiper -->
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-                effect: "coverflow",
-                grabCursor: true,
-                centeredSlides: true,
-                slidesPerView: "auto",
-                coverflowEffect: {
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: true,
-                },
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    // clickable: true,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            });
-        </script>
+    </div>
 </body>
 
 </html>
