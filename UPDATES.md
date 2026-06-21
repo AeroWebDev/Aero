@@ -30,3 +30,7 @@ This document lists all updates and implementations completed for the Aero proje
 - Reinitialized standard React + Vite template in JavaScript.
 - Configured the main page title to "Aero" in `index.html`.
 - Retained the default boilerplate code without adding any custom aerodynamics dashboard functionality as instructed.
+
+## [Commit 6] Improved Project Structure Documentation
+- Enriched `STRUCTURE.md` with detailed config file breakdowns (Vite, ESLint, package.json).
+- Clarified file responsibilities inside the `/src` directory (bootstrap context, layout views).
