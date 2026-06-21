@@ -25,3 +25,8 @@ This document lists all updates and implementations completed for the Aero proje
 ## [Commit 4] Cleaned Directory & Initiated Git Integration
 - Removed React codebase files to prepare for linking with the remote Git repository (`https://github.com/AeroWebDev/Aero.git`).
 - Created documentation structure (`UPDATES.md`, `ROADMAP.md`, `STRUCTURE.md`).
+
+## [Commit 5] Reinitialized Standard Vite Boilerplate
+- Reinitialized standard React + Vite template in JavaScript.
+- Configured the main page title to "Aero" in `index.html`.
+- Retained the default boilerplate code without adding any custom aerodynamics dashboard functionality as instructed.

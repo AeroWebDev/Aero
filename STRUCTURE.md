@@ -1,35 +1,38 @@
 # Aero Project Structure
 
-This document outlines the directory structure and main files for the Aero Telemetry Hub application.
+This document outlines the directory structure and main files for the Aero application.
 
 ## Directory Tree
 
 ```text
 aero/
-├── .gitignore              # Git ignore files and directories
-├── eslint.config.js        # ESLint configuration rule settings
-├── index.html              # Core HTML entry template (with pre-imported Outfit and Plus Jakarta Sans fonts)
-├── package.json            # Scripts, dependency details, and package configuration
-├── vite.config.js          # Vite build and development server configurations
+├── .gitignore              # Git ignore configuration
+├── LICENSE                 # License file pulled from the remote repository
+├── eslint.config.js        # ESLint rule configuration
+├── index.html              # Main HTML page template (Title: "Aero")
+├── package.json            # Scripts, dependency declarations, and package options
+├── vite.config.js          # Vite developer and production bundler configuration
 ├── UPDATES.md              # Log of all updates and commits
 ├── ROADMAP.md              # Planned next updates and roadmap
 ├── STRUCTURE.md            # Project directory tree and file explanation (this file)
 └── src/
-    ├── main.jsx            # Entry scripting rendering mounting to root
-    ├── App.jsx             # Main React entrypoint detailing physics simulation, canvas loop, and layouts
-    ├── App.css             # Stylesheet for dashboard cards, controls, vectors, and layouts
-    └── index.css           # Global theme variables, animations, scrollbars, and grid background
+    ├── main.jsx            # React root DOM rendering and bootstrap mount
+    ├── App.jsx             # Root React component containing the standard template
+    ├── App.css             # Component-level styling for the default App view
+    ├── index.css           # Global core layout styles
+    └── assets/             # Vector images and media resources
+        └── react.svg       # React icon asset
 ```
 
 ## Main Files Reference
 
-### 1. Global Setup
-- **`index.html`**: Root viewport definitions, page SEO meta descriptions, and Google Font link loads.
-- **`src/main.jsx`**: Bootstraps the application inside React StrictMode and binds the `#root` element.
+### 1. Global Configuration
+- **`index.html`**: Entry page containing the viewport meta tag, mounting container `#root`, and the page title `<title>Aero</title>`.
+- **`src/main.jsx`**: Binds the application to the `#root` element using React DOM client tools.
 
-### 2. Stylesheets
-- **`src/index.css`**: Defines CSS color variables for dark-theme and light-theme modes, global reset styling, background grid overlays, custom scrollbars, and keyframes for animations (float, spin, scanline, fade-in).
-- **`src/App.css`**: Glassmorphic layout panels, interactive custom range input sliders, animated switch toggles, vector indicators, vector labels, log consoles, and chart wrappers.
+### 2. Assets and Styles
+- **`src/index.css`**: Holds global styles for typography and body layouts.
+- **`src/App.css`**: Stylesheet targeting standard template layout cards, logo rotation animations, and interactive buttons.
 
 ### 3. Application Components
-- **`src/App.jsx`**: Main logic component containing state hooks for sliders and options, mathematical models for lift ($C_L$) and drag ($C_D$) calculations, stall event thresholds, canvas render loop for particle streamline physics, canvas-based live line graph plotting, theme triggers, and live logging streams.
+- **`src/App.jsx`**: Holds the default Vite landing interface with the interactive click counter.
