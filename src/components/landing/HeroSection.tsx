@@ -1,4 +1,4 @@
-import { ArrowRight, Play, CheckCircle } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const techBadges = [
@@ -12,12 +12,6 @@ const techBadges = [
 
 export default function HeroSection() {
   const { t } = useTranslation();
-
-  const stats = [
-    { value: t("hero.stats.projects.value"), label: t("hero.stats.projects.label") },
-    { value: t("hero.stats.satisfaction.value"), label: t("hero.stats.satisfaction.label") },
-    { value: t("hero.stats.experience.value"), label: t("hero.stats.experience.label") },
-  ];
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16">
@@ -93,7 +87,7 @@ export default function HeroSection() {
       <div className="relative z-10 container mx-auto px-6 text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 text-sm font-medium text-aero-cyan border-aero-cyan/20 border">
-          <CheckCircle className="w-3.5 h-3.5" />
+          <span className="w-2 h-2 rounded-full bg-aero-cyan animate-pulse" />
           {t("hero.badge")}
         </div>
 
@@ -109,7 +103,7 @@ export default function HeroSection() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm bg-gradient-primary text-aero-dark hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-lg"
@@ -125,23 +119,6 @@ export default function HeroSection() {
             <Play className="w-4 h-4" />
             {t("hero.cta.secondary")}
           </a>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="glass rounded-2xl p-5 hover:border-aero-blue/30 hover:glow-subtle transition-all duration-300 group"
-            >
-              <div className="text-2xl sm:text-3xl font-bold gradient-primary-text mb-1 group-hover:scale-105 transition-transform duration-200">
-                {stat.value}
-              </div>
-              <div className="text-xs sm:text-sm text-muted-foreground font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

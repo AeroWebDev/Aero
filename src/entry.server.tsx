@@ -10,10 +10,13 @@
  */
 import { renderToString } from "react-dom/server";
 import { createElement } from "react";
+import { StaticRouter } from "react-router-dom";
 import App from "./App";
 // CSS imports are no-ops in the SSR context (Vite strips them server-side).
 import "./index.css";
 
-export function render(_url: string): string {
-  return renderToString(createElement(App));
+export function render(url: string): string {
+  return renderToString(
+    createElement(StaticRouter, { location: url }, createElement(App))
+  );
 }

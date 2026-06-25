@@ -32,13 +32,6 @@ const featuresMeta = [
   },
 ];
 
-const trustStatsMeta = [
-  { value: "150+", labelKey: "why.trust.projects" },
-  { value: "50+", labelKey: "why.trust.clients" },
-  { value: "8+", labelKey: "why.trust.years" },
-  { value: "15+", labelKey: "why.trust.team" },
-];
-
 export default function WhyChooseSection() {
   const { t } = useTranslation();
 
@@ -69,7 +62,7 @@ export default function WhyChooseSection() {
         </div>
 
         {/* Feature grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {featuresMeta.map((feature) => {
             const Icon = feature.icon;
             return (
@@ -107,19 +100,6 @@ export default function WhyChooseSection() {
               </div>
             );
           })}
-        </div>
-
-        {/* Trust stats strip */}
-        <div className="glass rounded-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {trustStatsMeta.map((stat, i) => (
-            <div key={stat.labelKey} className="relative">
-              {i !== 0 && (
-                <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-px h-10 bg-border" />
-              )}
-              <div className="text-3xl font-bold gradient-primary-text mb-1">{stat.value}</div>
-              <div className="text-sm text-muted-foreground font-medium">{t(stat.labelKey)}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

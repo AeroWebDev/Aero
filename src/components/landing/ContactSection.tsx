@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MessageCircle, Send, Code2, BriefcaseBusiness, Share2, ArrowRight } from "lucide-react";
+import { Mail, MessageCircle, Send, MapPin, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function ContactSection() {
@@ -112,7 +112,7 @@ export default function ContactSection() {
           <div className="lg:col-span-2 flex flex-col gap-4">
             {/* Email */}
             <a
-              href="mailto:hello@aerostudio.dev"
+              href="mailto:aero1code@gmail.com"
               className="glass rounded-2xl p-6 flex items-center gap-4 hover:border-aero-blue/30 transition-all duration-300 hover:-translate-y-0.5 group"
             >
               <div
@@ -124,14 +124,14 @@ export default function ContactSection() {
               <div>
                 <div className="text-xs text-muted-foreground mb-0.5 font-medium">{t("contact.email.label")}</div>
                 <div className="text-sm font-semibold text-foreground group-hover:text-aero-blue transition-colors">
-                  hello@aerostudio.dev
+                  aero1code@gmail.com
                 </div>
               </div>
             </a>
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/201105487365"
               target="_blank"
               rel="noopener noreferrer"
               className="glass rounded-2xl p-6 flex items-center gap-4 hover:border-aero-cyan/30 transition-all duration-300 hover:-translate-y-0.5 group"
@@ -145,10 +145,24 @@ export default function ContactSection() {
               <div>
                 <div className="text-xs text-muted-foreground mb-0.5 font-medium">{t("contact.whatsapp.label")}</div>
                 <div className="text-sm font-semibold text-foreground group-hover:text-aero-cyan transition-colors">
-                  +1 (234) 567-8900
+                  +20 110 548 7365
                 </div>
               </div>
             </a>
+
+            {/* Location */}
+            <div className="glass rounded-2xl p-6 flex items-center gap-4">
+              <div
+                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                style={{ background: "hsl(250 80% 65% / 0.15)", border: "1px solid hsl(250 80% 65% / 0.3)" }}
+              >
+                <MapPin className="w-5 h-5" style={{ color: "hsl(250 80% 65%)" }} />
+              </div>
+              <div>
+                <div className="text-xs text-muted-foreground mb-0.5 font-medium">{t("contact.location.label")}</div>
+                <div className="text-sm font-semibold text-foreground">Cairo, Egypt</div>
+              </div>
+            </div>
 
             {/* Response time */}
             <div className="glass rounded-2xl p-6">
@@ -163,23 +177,18 @@ export default function ContactSection() {
                 {t("contact.social.label")}
               </div>
               <div className="flex gap-3">
-                {[
-                  { icon: Code2, label: "GitHub", href: "#" },
-                  { icon: BriefcaseBusiness, label: "LinkedIn", href: "#" },
-                  { icon: Share2, label: "Twitter", href: "#" },
-                ].map(({ icon: Icon, label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="w-10 h-10 rounded-xl flex items-center justify-center text-muted-foreground hover:text-aero-blue hover:border-aero-blue/40 transition-all duration-200"
-                    style={{ background: "hsl(220 40% 100% / 0.05)", border: "1px solid hsl(210 40% 100% / 0.08)" }}
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                ))}
+                <a
+                  href="https://x.com/aeroteam_eg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X / Twitter"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center text-muted-foreground hover:text-aero-blue hover:border-aero-blue/40 transition-all duration-200"
+                  style={{ background: "hsl(220 40% 100% / 0.05)", border: "1px solid hsl(210 40% 100% / 0.08)" }}
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
