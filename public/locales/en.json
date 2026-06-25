@@ -1,5 +1,5 @@
-{
-  "common.appName": "Aero Studio",
+﻿{
+  "common.appName": "Aero Team",
 
   "nav.services": "Services",
   "nav.whyAero": "Why Aero",
@@ -27,7 +27,7 @@
   "services.webDev.title": "Web Development",
   "services.webDev.description": "High-performance web applications built with modern frameworks. Scalable, secure, and optimized for speed.",
   "services.saas.title": "SaaS Development",
-  "services.saas.description": "End-to-end SaaS platform development — from architecture to deployment, with multi-tenancy and billing.",
+  "services.saas.description": "End-to-end SaaS platform development â€” from architecture to deployment, with multi-tenancy and billing.",
   "services.design.title": "UI/UX Design",
   "services.design.description": "Intuitive, beautiful interfaces that users love. From wireframes to pixel-perfect designs and prototypes.",
   "services.ecommerce.title": "E-commerce Solutions",
@@ -47,7 +47,7 @@
   "why.fast.point2": "Daily progress updates",
   "why.fast.point3": "On-time delivery guarantee",
   "why.tech.title": "Modern Technologies",
-  "why.tech.description": "We use the best tools in the industry — React, Next.js, TypeScript, Node.js, AWS, and more.",
+  "why.tech.description": "We use the best tools in the industry â€” React, Next.js, TypeScript, Node.js, AWS, and more.",
   "why.tech.point1": "Latest frameworks",
   "why.tech.point2": "Cloud-native architecture",
   "why.tech.point3": "Performance-first approach",
@@ -104,7 +104,7 @@
   "contact.response.description": "We respond to all inquiries within one business day.",
   "contact.social.label": "Follow Us",
 
-  "footer.copyright": "© {{year}} Aero Studio. All rights reserved. Crafted with precision.",
+  "footer.copyright": "Â© {{year}} Aero Team. All rights reserved. Crafted with precision.",
 
   "notFound.title": "Oops! Page not found",
   "notFound.actions.backHome": "Return to Home"

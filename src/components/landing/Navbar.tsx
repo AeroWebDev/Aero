@@ -9,18 +9,39 @@ export default function Navbar() {
   const { theme, toggle } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   const navLinks = [
-    { label: t("nav.services"), href: "#services" },
-    { label: t("nav.whyAero"), href: "#why-aero" },
-    { label: t("nav.projects"), href: "#projects" },
-    { label: t("nav.contact"), href: "#contact" },
+    { label: t("nav.services"), href: "#services", id: "services" },
+    { label: t("nav.projects"), href: "#projects", id: "projects" },
+    { label: t("nav.whyAero"), href: "#why-aero", id: "why-aero" },
+    { label: t("nav.contact"), href: "#contact", id: "contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = ["services", "projects", "why-aero", "contact"];
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { threshold: 0.3 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   return (
@@ -36,7 +57,7 @@ export default function Navbar() {
             <Zap className="w-4 h-4 text-aero-dark" strokeWidth={2.5} />
           </div>
           <span className="text-lg font-bold text-foreground tracking-tight">
-            Aero <span className="gradient-primary-text">Studio</span>
+            Aero <span className="gradient-primary-text">Team</span>
           </span>
         </a>
 
@@ -46,7 +67,11 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className={`text-sm font-medium transition-colors duration-200 border-b-2 pb-0.5 ${
+                activeSection === link.id
+                  ? "text-foreground border-aero-blue"
+                  : "text-muted-foreground hover:text-foreground border-transparent"
+              }`}
             >
               {link.label}
             </a>
@@ -62,7 +87,7 @@ export default function Navbar() {
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
-          <LanguageSwitcher className="min-w-[120px] h-9 text-sm bg-secondary border-border text-foreground" />
+          <LanguageSwitcher className="h-9 text-sm bg-secondary border-border text-foreground" />
           <a
             href="#contact"
             className="px-5 py-2 rounded-lg text-sm font-semibold bg-gradient-primary text-aero-dark hover:opacity-90 transition-opacity duration-200 shadow-lg"
@@ -89,7 +114,11 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm font-medium transition-colors border-b pb-2 ${
+                activeSection === link.id
+                  ? "text-foreground border-aero-blue"
+                  : "text-muted-foreground hover:text-foreground border-transparent"
+              }`}
             >
               {link.label}
             </a>

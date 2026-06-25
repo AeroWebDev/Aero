@@ -69,7 +69,7 @@ export default function ServicesSection() {
                     border: `1px solid ${service.color}30`,
                   }}
                 >
-                  <Icon className="w-6 h-6" style={{ color: service.color }} strokeWidth={1.75} />
+                  <Icon style={{ width: '27px', height: '27px', color: service.color }} strokeWidth={1.75} />
                 </div>
 
                 {/* Text */}

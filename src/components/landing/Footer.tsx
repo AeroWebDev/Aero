@@ -21,7 +21,7 @@ export default function Footer() {
               <Zap className="w-3.5 h-3.5 text-aero-dark" strokeWidth={2.5} />
             </div>
             <span className="text-base font-bold text-foreground tracking-tight">
-              Aero <span className="gradient-primary-text">Studio</span>
+              Aero <span className="gradient-primary-text">Team</span>
             </span>
           </a>
 

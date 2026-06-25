@@ -1,5 +1,5 @@
-{
-  "common.appName": "أيرو ستوديو",
+﻿{
+  "common.appName": "أيرو تيم",
 
   "nav.services": "الخدمات",
   "nav.whyAero": "لماذا أيرو",
@@ -104,7 +104,7 @@
   "contact.response.description": "نرد على جميع الاستفسارات خلال يوم عمل واحد.",
   "contact.social.label": "تابعنا",
 
-  "footer.copyright": "© {{year}} أيرو ستوديو. جميع الحقوق محفوظة. مصنوع بدقة.",
+  "footer.copyright": "© {{year}} أيرو تيم. جميع الحقوق محفوظة. مصنوع بدقة.",
 
   "notFound.title": "عذراً! الصفحة غير موجودة",
   "notFound.actions.backHome": "العودة إلى الرئيسية"
