@@ -14,7 +14,7 @@ This document lists all updates and implementations completed for the Aero proje
 - Developed light-theme/dark-theme layout toggles.
 
 ## [Commit 3] Implemented Interactive Aerodynamics Dashboard
-- Developed `src/App.jsx` and `src/App.css` featuring glassmorphic telemetry control cards.
+- Developed `src/App.tsx` and `src/App.css` featuring glassmorphic telemetry control cards.
 - Integrated sliders for Angle of Attack (AoA), Wind Velocity, and Air Density.
 - Added switches for high-lift flap devices and active wind turbulence toggling.
 - Built real-time 2D Canvas vector physics simulation of wind particles passing a NACA-0012 aerofoil, including flow separation and wake turbulence on aerodynamic stall.

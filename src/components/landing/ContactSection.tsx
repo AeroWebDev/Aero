@@ -1,0 +1,190 @@
+import { useState } from "react";
+import { Mail, MessageCircle, Send, Code2, BriefcaseBusiness, Share2, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+export default function ContactSection() {
+  const { t } = useTranslation();
+  const [form, setForm] = useState({ name: "", email: "", project: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <section id="contact" className="py-24 relative overflow-hidden">
+      <div
+        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]"
+        style={{
+          background: "radial-gradient(ellipse, hsl(217 91% 60% / 0.1) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
+            {t("contact.badge")}
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+            {t("contact.title")}{" "}
+            <span className="gradient-primary-text">{t("contact.title.highlight")}</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            {t("contact.subtitle")}
+          </p>
+        </div>
+
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8">
+          {/* Form card */}
+          <div
+            className="lg:col-span-3 glass rounded-2xl p-8"
+            style={{ boxShadow: "0 0 60px hsl(217 91% 60% / 0.08), 0 0 0 1px hsl(217 91% 60% / 0.12)" }}
+          >
+            {submitted ? (
+              <div className="h-full flex flex-col items-center justify-center text-center py-12">
+                <div
+                  className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mb-5"
+                  style={{ boxShadow: "0 0 40px hsl(217 91% 60% / 0.4)" }}
+                >
+                  <Send className="w-7 h-7 text-aero-dark" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">{t("contact.success.title")}</h3>
+                <p className="text-muted-foreground text-sm max-w-xs">{t("contact.success.subtitle")}</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    {t("contact.form.name.label")}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder={t("contact.form.name.placeholder")}
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-aero-blue/40 focus:border-aero-blue/40 transition-all duration-200"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    {t("contact.form.email.label")}
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder={t("contact.form.email.placeholder")}
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-aero-blue/40 focus:border-aero-blue/40 transition-all duration-200"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    {t("contact.form.project.label")}
+                  </label>
+                  <textarea
+                    required
+                    rows={5}
+                    placeholder={t("contact.form.project.placeholder")}
+                    value={form.project}
+                    onChange={(e) => setForm({ ...form, project: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-aero-blue/40 focus:border-aero-blue/40 transition-all duration-200 resize-none"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full py-3.5 rounded-xl font-semibold text-sm bg-gradient-primary text-aero-dark hover:opacity-90 hover:scale-[1.01] transition-all duration-200 flex items-center justify-center gap-2"
+                  style={{ boxShadow: "0 0 30px hsl(217 91% 60% / 0.3)" }}
+                >
+                  {t("contact.form.submit")}
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </form>
+            )}
+          </div>
+
+          {/* Contact info sidebar */}
+          <div className="lg:col-span-2 flex flex-col gap-4">
+            {/* Email */}
+            <a
+              href="mailto:hello@aerostudio.dev"
+              className="glass rounded-2xl p-6 flex items-center gap-4 hover:border-aero-blue/30 transition-all duration-300 hover:-translate-y-0.5 group"
+            >
+              <div
+                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                style={{ background: "hsl(217 91% 60% / 0.15)", border: "1px solid hsl(217 91% 60% / 0.3)" }}
+              >
+                <Mail className="w-5 h-5 text-aero-blue" />
+              </div>
+              <div>
+                <div className="text-xs text-muted-foreground mb-0.5 font-medium">{t("contact.email.label")}</div>
+                <div className="text-sm font-semibold text-foreground group-hover:text-aero-blue transition-colors">
+                  hello@aerostudio.dev
+                </div>
+              </div>
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/1234567890"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass rounded-2xl p-6 flex items-center gap-4 hover:border-aero-cyan/30 transition-all duration-300 hover:-translate-y-0.5 group"
+            >
+              <div
+                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                style={{ background: "hsl(160 84% 45% / 0.15)", border: "1px solid hsl(160 84% 45% / 0.3)" }}
+              >
+                <MessageCircle className="w-5 h-5" style={{ color: "hsl(160 84% 45%)" }} />
+              </div>
+              <div>
+                <div className="text-xs text-muted-foreground mb-0.5 font-medium">{t("contact.whatsapp.label")}</div>
+                <div className="text-sm font-semibold text-foreground group-hover:text-aero-cyan transition-colors">
+                  +1 (234) 567-8900
+                </div>
+              </div>
+            </a>
+
+            {/* Response time */}
+            <div className="glass rounded-2xl p-6">
+              <div className="text-xs text-muted-foreground mb-2 font-medium">{t("contact.response.label")}</div>
+              <div className="text-2xl font-bold gradient-primary-text mb-1">{t("contact.response.value")}</div>
+              <div className="text-sm text-muted-foreground">{t("contact.response.description")}</div>
+            </div>
+
+            {/* Social links */}
+            <div className="glass rounded-2xl p-6">
+              <div className="text-xs text-muted-foreground mb-4 font-medium uppercase tracking-wider">
+                {t("contact.social.label")}
+              </div>
+              <div className="flex gap-3">
+                {[
+                  { icon: Code2, label: "GitHub", href: "#" },
+                  { icon: BriefcaseBusiness, label: "LinkedIn", href: "#" },
+                  { icon: Share2, label: "Twitter", href: "#" },
+                ].map(({ icon: Icon, label, href }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-10 h-10 rounded-xl flex items-center justify-center text-muted-foreground hover:text-aero-blue hover:border-aero-blue/40 transition-all duration-200"
+                    style={{ background: "hsl(220 40% 100% / 0.05)", border: "1px solid hsl(210 40% 100% / 0.08)" }}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

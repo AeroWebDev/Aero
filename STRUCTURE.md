@@ -17,8 +17,8 @@ aero/
 ├── ROADMAP.md              # Planned next updates and feature development list
 ├── STRUCTURE.md            # Detailed structural guide (this file)
 └── src/
-    ├── main.jsx            # Entry script rendering the React application root
-    ├── App.jsx             # Root React component defining the user interface structure
+    ├── main.tsx            # Entry script rendering the React application root
+    ├── App.tsx             # Root React component defining the user interface structure
     ├── App.css             # Component-specific styles for the App dashboard
     ├── index.css           # Global CSS rules, typography imports, and styling variables
     └── assets/             # Vector images and media assets used across components
@@ -46,9 +46,9 @@ aero/
 ## Source Directory (`/src`) Overview
 
 ### 1. Bootstrapping
-- **[`main.jsx`](file:///p:/projects/Aero/src/main.jsx)**: Binds the root React component ([`App`](file:///p:/projects/Aero/src/App.jsx)) to the HTML template container (`div#root`) inside a `StrictMode` context.
+- **[`main.tsx`](file:///p:/projects/Aero/src/main.tsx)**: Binds the root React component ([`App`](file:///p:/projects/Aero/src/App.tsx)) to the HTML template container (`div#root`) inside a `StrictMode` context.
 
 ### 2. Layouts and Views
-- **[`App.jsx`](file:///p:/projects/Aero/src/App.jsx)**: The central functional component containing the primary landing elements and counter states.
+- **[`App.tsx`](file:///p:/projects/Aero/src/App.tsx)**: The central functional component containing the primary landing elements and counter states.
 - **[`App.css`](file:///p:/projects/Aero/src/App.css)**: Styles specific UI widgets, interactive states, keyframes, transitions, and layout frames.
 - **[`index.css`](file:///p:/projects/Aero/src/index.css)**: Manages global HTML/body definitions, layout frameworks, fonts, and dark/light color variables.
