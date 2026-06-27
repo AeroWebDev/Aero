@@ -1,4 +1,4 @@
-﻿{
+{
   "common.appName": "Aero Team",
 
   "nav.services": "Services",
@@ -13,12 +13,6 @@
   "hero.subheadline": "Custom web applications, SaaS platforms, and modern digital solutions designed to help businesses scale.",
   "hero.cta.primary": "Start Your Project",
   "hero.cta.secondary": "View Our Work",
-  "hero.stats.projects.value": "150+",
-  "hero.stats.projects.label": "Projects Completed",
-  "hero.stats.satisfaction.value": "98%",
-  "hero.stats.satisfaction.label": "Client Satisfaction",
-  "hero.stats.experience.value": "8 Yrs",
-  "hero.stats.experience.label": "Of Experience",
 
   "services.badge": "What We Do",
   "services.title": "Services Built for",
@@ -27,7 +21,7 @@
   "services.webDev.title": "Web Development",
   "services.webDev.description": "High-performance web applications built with modern frameworks. Scalable, secure, and optimized for speed.",
   "services.saas.title": "SaaS Development",
-  "services.saas.description": "End-to-end SaaS platform development â€” from architecture to deployment, with multi-tenancy and billing.",
+  "services.saas.description": "End-to-end SaaS platform development — from architecture to deployment, with multi-tenancy and billing.",
   "services.design.title": "UI/UX Design",
   "services.design.description": "Intuitive, beautiful interfaces that users love. From wireframes to pixel-perfect designs and prototypes.",
   "services.ecommerce.title": "E-commerce Solutions",
@@ -47,7 +41,7 @@
   "why.fast.point2": "Daily progress updates",
   "why.fast.point3": "On-time delivery guarantee",
   "why.tech.title": "Modern Technologies",
-  "why.tech.description": "We use the best tools in the industry â€” React, Next.js, TypeScript, Node.js, AWS, and more.",
+  "why.tech.description": "We use the best tools in the industry — React, Next.js, TypeScript, Node.js, AWS, and more.",
   "why.tech.point1": "Latest frameworks",
   "why.tech.point2": "Cloud-native architecture",
   "why.tech.point3": "Performance-first approach",
@@ -95,8 +89,10 @@
   "contact.form.project.label": "Project Details",
   "contact.form.project.placeholder": "Tell us about your project, goals, timeline, and budget...",
   "contact.form.submit": "Send Message",
+  "contact.sending": "Sending...",
   "contact.success.title": "Message Sent!",
   "contact.success.subtitle": "Thank you for reaching out. We'll be in touch within 24 hours.",
+  "contact.error": "Something went wrong — please try again or reach out via WhatsApp.",
   "contact.email.label": "Email Us",
   "contact.whatsapp.label": "WhatsApp",
   "contact.location.label": "Our Location",
@@ -119,5 +115,6 @@
   "footer.byAero": "by Aero",
 
   "notFound.title": "Oops! Page not found",
+  "notFound.description": "The page you are looking for doesn't exist or has been moved.",
   "notFound.actions.backHome": "Return to Home"
 }

@@ -26,7 +26,7 @@ const NotFound = () => {
           {t("notFound.title")}
         </p>
         <p className="text-muted-foreground text-sm mb-8">
-          The page you are looking for doesn't exist or has been moved.
+          {t("notFound.description")}
         </p>
         <a
           href="/"

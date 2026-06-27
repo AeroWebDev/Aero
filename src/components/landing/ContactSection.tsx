@@ -155,9 +155,9 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {status === "error" && (
+                 {status === "error" && (
                   <p className="text-sm text-red-400 text-center">
-                    Something went wrong — please try again or reach out via WhatsApp.
+                    {t("contact.error")}
                   </p>
                 )}
 
@@ -170,7 +170,7 @@ export default function ContactSection() {
                   {status === "loading" ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      Sending…
+                      {t("contact.sending")}
                     </>
                   ) : (
                     <>

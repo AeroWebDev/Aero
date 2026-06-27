@@ -160,9 +160,9 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground">
             {t("footer.copyright", { year: new Date().getFullYear() })}
           </p>
-          <p className="text-xs text-muted-foreground flex items-center gap-1">
+          <p className="text-xs text-muted-foreground flex items-center gap-1.5">
             {t("footer.madeWith")}
-            <Heart className="w-3 h-3 fill-red-500 text-red-500" />
+            <Heart className="w-3.5 h-3.5 fill-red-500 text-red-500 shrink-0 mx-0.5" />
             {t("footer.byAero")}
           </p>
         </div>

@@ -1,4 +1,4 @@
-﻿{
+{
   "common.appName": "أيرو تيم",
 
   "nav.services": "الخدمات",
@@ -13,12 +13,6 @@
   "hero.subheadline": "تطبيقات ويب مخصصة، منصات SaaS، وحلول رقمية حديثة مصممة لمساعدة الشركات على التوسع.",
   "hero.cta.primary": "ابدأ مشروعك",
   "hero.cta.secondary": "استعرض أعمالنا",
-  "hero.stats.projects.value": "+150",
-  "hero.stats.projects.label": "مشروع مكتمل",
-  "hero.stats.satisfaction.value": "98%",
-  "hero.stats.satisfaction.label": "رضا العملاء",
-  "hero.stats.experience.value": "8 سنوات",
-  "hero.stats.experience.label": "من الخبرة",
 
   "services.badge": "ما نقدمه",
   "services.title": "خدمات مصممة",
@@ -38,8 +32,8 @@
   "services.consulting.description": "إرشادات متخصصة في الهندسة المعمارية، اختيار التقنيات، مراجعة الكود، وأفضل ممارسات الهندسة.",
 
   "why.badge": "ميزتنا",
-  "why.title": "لماذا تختار",
-  "why.title.highlight": "أيرو الشركات",
+  "why.title": "لماذا تختار الشركات",
+  "why.title.highlight": "أيرو",
   "why.subtitle": "نجمع بين التميز التقني والاستراتيجية التجارية لبناء منتجات تُحدث فارقاً حقيقياً.",
   "why.fast.title": "تسليم سريع",
   "why.fast.description": "نتحرك بسرعة دون تنازلات. سبرينتات رشيقة، مراحل واضحة، وإطلاق في الموعد في كل مرة.",
@@ -95,8 +89,10 @@
   "contact.form.project.label": "تفاصيل المشروع",
   "contact.form.project.placeholder": "أخبرنا عن مشروعك وأهدافك والجدول الزمني والميزانية...",
   "contact.form.submit": "إرسال الرسالة",
+  "contact.sending": "جاري الإرسال...",
   "contact.success.title": "تم إرسال الرسالة!",
   "contact.success.subtitle": "شكراً لتواصلك. سنرد عليك خلال 24 ساعة.",
+  "contact.error": "حدث خطأ ما - يرجى المحاولة مرة أخرى أو التواصل معنا عبر واتساب.",
   "contact.email.label": "راسلنا عبر البريد",
   "contact.whatsapp.label": "واتساب",
   "contact.location.label": "موقعنا",
@@ -119,5 +115,6 @@
   "footer.byAero": "من أيرو",
 
   "notFound.title": "عذراً! الصفحة غير موجودة",
+  "notFound.description": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
   "notFound.actions.backHome": "العودة إلى الرئيسية"
 }

@@ -1,0 +1,69 @@
+================================================================================
+                       AERO TEAM - NEEDED SITE INFORMATION
+================================================================================
+
+Please fill in the information below so we can replace the placeholder data
+and finalize the website. You can just copy and paste this into your next reply
+with your answers.
+
+--------------------------------------------------------------------------------
+1. REAL CLIENT PROJECTS (Tell us about projects you have shipped)
+--------------------------------------------------------------------------------
+For each project you want to display on the website, please provide:
+* Project 1:
+  - Name:
+  - Category (e.g., Mobile App, E-commerce, SaaS Dashboard):
+  - Short Description:
+  - Tech Stack used (e.g., React, Node.js, AWS):
+  - Website link (optional):
+
+* Project 2:
+  - Name:
+  - Category:
+  - Short Description:
+  - Tech Stack:
+  - Website link (optional):
+
+* Project 3:
+  - Name:
+  - Category:
+  - Short Description:
+  - Tech Stack:
+  - Website link (optional):
+
+(Add more if you have more!)
+
+--------------------------------------------------------------------------------
+2. CONTACT INFO & LINKS
+--------------------------------------------------------------------------------
+Please confirm if these details are correct or write the new ones:
+* Official Email (Current: aero1code@gmail.com): correct
+* WhatsApp / Phone Number (Current: +20 110 548 7365): correct
+* Location / Address (Current: Cairo, Egypt): correct
+* Twitter / X Link (Current: https://x.com/aeroteam_eg): correct
+* LinkedIn Link (Current: https://www.linkedin.com/in/aero-team-4b5712377): correct
+* GitHub Link (Current: https://github.com/Aero-official-acc): correct 
+
+--------------------------------------------------------------------------------
+3. CONTACT FORM RECEIVER (Where should the messages go?)
+--------------------------------------------------------------------------------
+* We are currently sending messages to a Discord Webhook. Is the current Discord
+  channel okay, or do you have a different Discord webhook / email service?
+  Answer: 
+
+--------------------------------------------------------------------------------
+4. STATS BLOCK (If you want to display numbers on the site)
+--------------------------------------------------------------------------------
+Do you want to show metrics about the company? If yes, please fill them in:
+* Completed Projects (e.g., 50+): 
+* Years of Experience (e.g., 3 Years): 
+* Happy Clients (e.g., 30+): 
+* Team Members (e.g., 10): 
+
+--------------------------------------------------------------------------------
+5. ASSETS & GRAPHICS (Pics, Videos, Logos)
+--------------------------------------------------------------------------------
+* Do you have any custom images, team pictures, or logo files you want us to place
+  on the site? If yes, let us know and we will guide you on how to upload them.
+  Answer: 
+================================================================================

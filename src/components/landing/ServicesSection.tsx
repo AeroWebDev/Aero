@@ -53,13 +53,10 @@ export default function ServicesSection() {
             return (
               <div
                 key={service.titleKey}
-                className="group glass rounded-2xl p-7 hover:border-aero-blue/30 transition-all duration-300 hover:-translate-y-1 cursor-default"
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = `0 0 30px ${service.color}22`;
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.boxShadow = "";
-                }}
+                className="group glass rounded-2xl p-7 hover:border-aero-blue/30 hover:-translate-y-1 cursor-default service-card-hover"
+                style={{
+                  "--hover-color": `${service.color}22`
+                } as React.CSSProperties}
               >
                 {/* Icon */}
                 <div

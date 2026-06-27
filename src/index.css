@@ -347,3 +347,11 @@ body,
     transform: rotate(360deg);
   }
 }
+
+.service-card-hover {
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card-hover:hover {
+  box-shadow: 0 0 30px var(--hover-color);
+}
