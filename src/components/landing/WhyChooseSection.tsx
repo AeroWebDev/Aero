@@ -37,15 +37,6 @@ export default function WhyChooseSection() {
 
   return (
     <section id="why-aero" className="py-24 relative overflow-hidden">
-      <div
-        className="pointer-events-none absolute -top-40 left-0 w-[500px] h-[500px]"
-        style={{
-          background: "radial-gradient(circle, hsl(189 94% 43% / 0.06) 0%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-        aria-hidden="true"
-      />
-
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">

@@ -1,35 +1,82 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import {
-  fallbackLng,
-  getLanguageDirection,
-  normalizeLanguage,
-  supportedLngs,
-} from "./util";
+// ─── Static translation imports ────────────────────────────────────────────────
+// Locale JSON is bundled directly into the JS bundle at build time instead of
+// being fetched over HTTP at runtime (i18next-http-backend). This removes a
+// network round-trip + async plugin-loading chain that previously delayed
+// every t() call, causing raw translation keys to flash (or stick) on first
+// paint. Resources are available synchronously the instant init() runs, in
+// both the SSR/prerender context and the browser.
+import en from "./locales/en.json";
+import ar from "./locales/ar.json";
 
-export * from "./util";
+// ─── Language metadata ─────────────────────────────────────────────────────────
+export const fallbackLng = "en";
+
+// English is always the default language. We intentionally do NOT auto-detect
+// the browser/OS/cookie language on load, per product decision — every first
+// visit starts in English regardless of locale. Returning users who manually
+// switched language still get their choice restored (see getInitialLanguage).
+export const defaultLng = "en";
+
+export const supportedLngs = ["en", "ar"] as const;
+
+export type SupportedLanguage = (typeof supportedLngs)[number];
+
+export const languageOptions = [
+  { value: "en", label: "English" },
+  { value: "ar", label: "Arabic" },
+] as const;
+
+export const normalizeLanguage = (language?: string): SupportedLanguage | undefined => {
+  const normalized = language?.split("-")[0];
+  return supportedLngs.includes(normalized as SupportedLanguage)
+    ? (normalized as SupportedLanguage)
+    : undefined;
+};
+
+export const getLanguageDirection = (language: string) => {
+  return normalizeLanguage(language) === "ar" ? "rtl" : "ltr";
+};
+
+// ─── Resource bundle (shared by SSR and browser) ───────────────────────────────
+const resources = {
+  en: { translation: en },
+  ar: { translation: ar },
+} as const;
 
 // ─── Environment guard ────────────────────────────────────────────────────────
-// All browser-specific plugins and DOM manipulation are behind this flag so
-// that the i18n module is safe to import in a Node / SSR context (prerender).
+// Browser-only persistence (localStorage) is behind this flag so the module
+// stays safe to import in a Node / SSR context (prerender).
 const isBrowser = typeof window !== "undefined" && typeof document !== "undefined";
 
-const baseUrl =
-  typeof import.meta !== "undefined" && import.meta.env?.BASE_URL
-    ? import.meta.env.BASE_URL.endsWith("/")
-      ? import.meta.env.BASE_URL
-      : `${import.meta.env.BASE_URL}/`
-    : "/";
+const STORAGE_KEY = "aero-lang";
 
-// ─── Plugin registration ──────────────────────────────────────────────────────
+// Synchronous — no cookie library, no async detector. A returning visitor's
+// manually-chosen language (if any) is read once, before the first render,
+// so the language is known up front and there is no hydration mismatch
+// between server-rendered HTML and the client's first render.
+function getInitialLanguage(): SupportedLanguage {
+  if (!isBrowser) return defaultLng;
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    return normalizeLanguage(stored ?? undefined) ?? defaultLng;
+  } catch {
+    // localStorage can throw in some privacy modes — fall back silently.
+    return defaultLng;
+  }
+}
+
+// ─── Single unified init (SSR + browser) ───────────────────────────────────────
+// Resources are static imports, so the same init() works identically on the
+// server (prerender) and in the browser — no more split SSR/browser init,
+// no more disk reads in entry.server.tsx, no more async plugin imports here.
 void i18n.use(initReactI18next).init({
-  // In SSR there is no browser language detector, so we pin the instance to
-  // fallbackLng (English). The client bundle re-detects the user's preferred
-  // language on hydration via i18next-browser-languagedetector.
-  lng: isBrowser ? undefined : fallbackLng,
+  lng: getInitialLanguage(),
   fallbackLng,
   supportedLngs,
+  resources,
   // Flat dotted keys are used throughout (e.g. "hero.badge", "nav.services").
   // Both separators must be disabled so the entire string is treated as a
   // literal key rather than being split into namespace / nested path segments.
@@ -39,46 +86,22 @@ void i18n.use(initReactI18next).init({
   react: { useSuspense: false },
 });
 
-// ─── Browser-only extensions ──────────────────────────────────────────────────
+// ─── Browser-only side effects ─────────────────────────────────────────────────
 if (isBrowser) {
-  // Register browser plugins after the base init so SSR never sees them.
-  // We use the synchronous CommonJS-compatible imports via Vite's handling.
-  import("i18next-http-backend")
-    .then(({ default: HttpBackend }) => {
-      import("i18next-browser-languagedetector").then(({ default: LanguageDetector }) => {
-        void i18n
-          .use(HttpBackend)
-          .use(LanguageDetector)
-          .init({
-            fallbackLng,
-            supportedLngs,
-            backend: { loadPath: `${baseUrl}locales/{{lng}}.json` },
-            detection: {
-              order: ["cookie", "navigator", "htmlTag"],
-              lookupCookie: "i18next",
-              caches: ["cookie"],
-              // 不支持的语言归一到 fallbackLng，避免 cookie 持久化无效语言串
-              // （detector 缓存的是 i18n.language，而非 resolvedLanguage）。
-              convertDetectedLanguage: (l: string) => normalizeLanguage(l) ?? fallbackLng,
-            },
-            keySeparator: false,
-            nsSeparator: false,
-            interpolation: { escapeValue: false },
-            react: { useSuspense: false },
-          });
-      });
-    })
-    .catch(() => { /* plugins failed to load, fallback to basic i18n */ });
-
   const syncDocumentLanguage = (lng: string) => {
-    const code = normalizeLanguage(lng) ?? fallbackLng;
+    const code = normalizeLanguage(lng) ?? defaultLng;
     document.documentElement.lang = code;
     document.documentElement.dir = getLanguageDirection(code);
+    try {
+      window.localStorage.setItem(STORAGE_KEY, code);
+    } catch {
+      // Ignore storage write failures (e.g. private browsing).
+    }
   };
 
-  i18n.on("initialized", () =>
-    syncDocumentLanguage(i18n.resolvedLanguage ?? i18n.language),
-  );
+  // Apply immediately for the current language (covers first load) and on
+  // every subsequent manual switch via the language switcher.
+  syncDocumentLanguage(i18n.resolvedLanguage ?? i18n.language);
   i18n.on("languageChanged", syncDocumentLanguage);
 }
 

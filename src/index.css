@@ -5,124 +5,183 @@
 /* ── DARK THEME (default) ──────────────────────────────────── */
 :root,
 [data-theme="dark"] {
-  /* Core palette — purple / midnight */
-  --background: 270 100% 12%;        /* #1B003F */
-  --foreground: 240 67% 94%;         /* #E6E6FA */
 
-  --card: 270 100% 17%;              /* slightly lighter purple */
-  --card-foreground: 240 67% 94%;
+  /* Base */
 
-  --popover: 270 100% 17%;
-  --popover-foreground: 240 67% 94%;
+  --background: 230 35% 7%;
+  --foreground: 220 25% 95%;
 
-  --primary: 219 79% 66%;            /* #6495ED cornflower blue */
-  --primary-foreground: 270 100% 12%;
+  /* Surface */
 
-  --secondary: 240 64% 27%;          /* #191970 midnight blue */
-  --secondary-foreground: 240 67% 94%;
+  --card: 230 28% 10%;
+  --card-foreground: 220 25% 95%;
 
-  --muted: 250 50% 20%;
-  --muted-foreground: 240 33% 70%;   /* #9999CC */
+  --popover: 230 28% 10%;
+  --popover-foreground: 220 25% 95%;
 
-  --accent: 277 100% 25%;            /* #4B0082 indigo */
-  --accent-foreground: 240 67% 94%;
+  /* Brand */
 
-  --destructive: 0 63% 50%;
-  --destructive-foreground: 240 67% 94%;
+  --primary: 213 92% 60%;
+  --primary-foreground: 220 40% 98%;
 
-  --border: 240 40% 30%;
-  --input: 240 40% 30%;
-  --ring: 219 79% 66%;
+  --secondary: 230 20% 16%;
+  --secondary-foreground: 220 25% 95%;
 
-  --radius: 0.75rem;
+  --accent: 199 89% 55%;
+  --accent-foreground: 220 40% 98%;
 
-  /* Aero custom tokens — remapped to purple palette */
-  --aero-blue: 219 79% 66%;          /* cornflower blue */
-  --aero-cyan: 270 80% 55%;          /* violet */
-  --aero-dark: 270 100% 12%;
-  --aero-card: 270 100% 17%;
+  /* Utility */
 
-  --glow-blue: 0 0 40px hsl(219 79% 66% / 0.4);
-  --glow-cyan: 0 0 40px hsl(270 80% 55% / 0.35);
-  --glow-subtle: 0 0 60px hsl(219 79% 66% / 0.18);
+  --muted: 230 18% 14%;
+  --muted-foreground: 220 10% 68%;
 
-  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, hsl(219 79% 66% / 0.28) 0%, transparent 70%);
-  --gradient-primary: linear-gradient(135deg, hsl(219 79% 66%), hsl(270 80% 55%));
-  --gradient-card: linear-gradient(135deg, hsl(270 100% 15%), hsl(240 64% 20%));
-  --gradient-text: linear-gradient(135deg, hsl(240 67% 96%), hsl(270 80% 78%));
-
-  --glass-bg: hsl(270 60% 60% / 0.05);
-  --glass-border: hsl(240 67% 94% / 0.09);
-
-  --sidebar-background: 270 100% 17%;
-  --sidebar-foreground: 240 67% 94%;
-  --sidebar-primary: 219 79% 66%;
-  --sidebar-primary-foreground: 270 100% 12%;
-  --sidebar-accent: 240 64% 27%;
-  --sidebar-accent-foreground: 240 67% 94%;
-  --sidebar-border: 240 40% 30%;
-  --sidebar-ring: 219 79% 66%;
-}
-
-/* ── LIGHT THEME ───────────────────────────────────────────── */
-[data-theme="light"] {
-  /* Core palette — sky blue */
-  --background: 203 50% 83%;         /* #BDD8E9 */
-  --foreground: 211 84% 25%;         /* #0A4174 */
-
-  --card: 203 60% 90%;               /* lighter blue card */
-  --card-foreground: 211 84% 25%;
-
-  --popover: 203 60% 90%;
-  --popover-foreground: 211 84% 25%;
-
-  --primary: 208 37% 45%;            /* #49769F steel blue */
-  --primary-foreground: 0 0% 100%;
-
-  --secondary: 207 70% 70%;          /* #7BBDE8 sky blue */
-  --secondary-foreground: 211 100% 11%;
-
-  --muted: 203 40% 75%;
-  --muted-foreground: 194 35% 47%;   /* #4E8EA2 teal */
-
-  --accent: 194 35% 47%;             /* #4E8EA2 teal */
-  --accent-foreground: 211 100% 11%;
-
-  --destructive: 0 63% 45%;
+  --destructive: 0 72% 55%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 211 60% 60%;
-  --input: 211 60% 60%;
-  --ring: 208 37% 45%;
+  --border: 230 16% 18%;
+  --input: 230 16% 18%;
+  --ring: 213 92% 60%;
 
-  --radius: 0.75rem;
+  --radius: 1rem;
 
-  /* Aero custom tokens — remapped to blue palette */
-  --aero-blue: 208 37% 45%;          /* steel blue */
-  --aero-cyan: 194 35% 47%;          /* teal */
-  --aero-dark: 211 100% 11%;         /* #001D39 navy */
-  --aero-card: 203 60% 90%;
+  /* Aero */
 
-  --glow-blue: 0 0 40px hsl(208 37% 45% / 0.35);
-  --glow-cyan: 0 0 40px hsl(194 35% 47% / 0.3);
-  --glow-subtle: 0 0 60px hsl(208 37% 45% / 0.15);
+  --aero-blue: 213 92% 60%;
+  --aero-cyan: 199 89% 55%;
 
-  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, hsl(208 37% 45% / 0.2) 0%, transparent 70%);
-  --gradient-primary: linear-gradient(135deg, hsl(208 37% 45%), hsl(194 35% 47%));
-  --gradient-card: linear-gradient(135deg, hsl(203 50% 88%), hsl(207 70% 82%));
-  --gradient-text: linear-gradient(135deg, hsl(211 100% 11%), hsl(194 35% 40%));
+  --aero-dark: 230 35% 7%;
 
-  --glass-bg: hsl(211 84% 25% / 0.06);
-  --glass-border: hsl(211 84% 25% / 0.15);
+  --aero-card: 230 28% 10%;
 
-  --sidebar-background: 203 60% 90%;
-  --sidebar-foreground: 211 84% 25%;
-  --sidebar-primary: 208 37% 45%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 207 70% 70%;
-  --sidebar-accent-foreground: 211 100% 11%;
-  --sidebar-border: 211 60% 60%;
-  --sidebar-ring: 208 37% 45%;
+  /* Effects */
+
+  --glow-blue:
+    0 0 50px hsl(213 92% 60% /.20);
+
+  --glow-cyan:
+    0 0 40px hsl(199 89% 55% /.15);
+
+  --glow-subtle:
+    0 0 80px hsl(213 92% 60% /.08);
+
+  --gradient-hero:
+    radial-gradient(ellipse 80% 70% at 50% -10%,
+      hsl(213 92% 60% /.18),
+      transparent 75%);
+
+  --gradient-primary:
+    linear-gradient(135deg,
+      hsl(213 92% 60%),
+      hsl(199 89% 55%));
+
+  --gradient-card:
+    linear-gradient(145deg,
+      hsl(230 28% 10%),
+      hsl(230 22% 13%));
+
+  --gradient-text:
+    linear-gradient(135deg,
+      white,
+      hsl(199 89% 70%));
+
+  --glass-bg:
+    hsl(230 25% 100% /.04);
+
+  --glass-border:
+    hsl(220 30% 100% /.08);
+
+}
+
+
+/* LIGHT */
+
+[data-theme="light"] {
+
+  /* Base */
+
+  --background: 210 40% 98%;
+  --foreground: 222 50% 12%;
+
+  /* Surface */
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 50% 12%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 50% 12%;
+
+  /* Brand */
+
+  --primary: 213 78% 50%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 25% 92%;
+  --secondary-foreground: 222 50% 12%;
+
+  --accent: 196 70% 45%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Utility */
+
+  --muted: 210 25% 94%;
+  --muted-foreground: 220 12% 45%;
+
+  --destructive: 0 70% 50%;
+  --destructive-foreground: white;
+
+  --border: 220 20% 88%;
+  --input: 220 20% 88%;
+  --ring: 213 78% 50%;
+
+  --radius: 1rem;
+
+  /* Aero */
+
+  --aero-blue: 213 78% 50%;
+
+  --aero-cyan: 196 70% 45%;
+
+  --aero-dark: 222 50% 12%;
+
+  --aero-card: 0 0% 100%;
+
+  /* Effects */
+
+  --glow-blue:
+    0 0 40px hsl(213 78% 50% /.10);
+
+  --glow-cyan:
+    0 0 30px hsl(196 70% 45% /.08);
+
+  --glow-subtle:
+    0 0 50px hsl(213 78% 50% /.06);
+
+  --gradient-hero:
+    radial-gradient(ellipse 70% 60% at 50% -10%,
+      hsl(213 78% 50% /.10),
+      transparent 75%);
+
+  --gradient-primary:
+    linear-gradient(135deg,
+      hsl(213 78% 50%),
+      hsl(196 70% 45%));
+
+  --gradient-card:
+    linear-gradient(145deg,
+      white,
+      hsl(210 25% 96%));
+
+  --gradient-text:
+    linear-gradient(135deg,
+      hsl(222 50% 12%),
+      hsl(213 78% 45%));
+
+  --glass-bg:
+    rgba(255, 255, 255, .55);
+
+  --glass-border:
+    rgba(255, 255, 255, .70);
+
 }
 
 @layer base {
@@ -210,36 +269,81 @@ body,
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-18px) rotate(3deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(3deg);
+  }
 }
 
 @keyframes glow-pulse {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
 }
 
 @keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

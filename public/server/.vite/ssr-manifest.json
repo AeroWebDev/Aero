@@ -1,0 +1,22 @@
+{
+  "src/App.tsx": [],
+  "src/components/LegalLayout.tsx": [],
+  "src/components/landing/ContactSection.tsx": [],
+  "src/components/landing/Footer.tsx": [],
+  "src/components/landing/HeroSection.tsx": [],
+  "src/components/landing/Navbar.tsx": [],
+  "src/components/landing/ProjectsSection.tsx": [],
+  "src/components/landing/ServicesSection.tsx": [],
+  "src/components/landing/WhyChooseSection.tsx": [],
+  "src/components/language-switcher.tsx": [],
+  "src/entry.server.tsx": [],
+  "src/hooks/use-theme.ts": [],
+  "src/i18n/config.ts": [],
+  "src/i18n/util.ts": [],
+  "src/index.css": [],
+  "src/pages/Cookies.tsx": [],
+  "src/pages/Index.tsx": [],
+  "src/pages/NotFound.tsx": [],
+  "src/pages/Privacy.tsx": [],
+  "src/pages/Terms.tsx": []
+}

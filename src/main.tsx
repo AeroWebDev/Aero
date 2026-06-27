@@ -1,4 +1,4 @@
-import { createRoot } from "react-dom/client";
+import { hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./i18n/config";
 import App from "./App";
@@ -11,6 +11,7 @@ if (!container) {
   throw new Error("Root container #root was not found.");
 }
 
-createRoot(container).render(
+hydrateRoot(
+  container,
   createElement(BrowserRouter, null, createElement(App))
 );

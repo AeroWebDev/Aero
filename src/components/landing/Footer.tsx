@@ -49,9 +49,9 @@ export default function Footer() {
   ];
 
   const legalLinks = [
-    { label: t("footer.legal.privacy"), href: "/public/terms/privacy" },
-    { label: t("footer.legal.terms"), href: "/public/terms/terms" },
-    { label: t("footer.legal.cookies"), href: "/public/terms/cookies" },
+    { label: t("footer.legal.privacy"), href: "/privacy" },
+    { label: t("footer.legal.terms"), href: "/terms" },
+    { label: t("footer.legal.cookies"), href: "/cookies" },
   ];
 
   return (
@@ -115,7 +115,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3 — Services */}
-          <div>
+          {/* <div>
             <h4 className="text-sm font-semibold text-foreground mb-5 tracking-wide">
               {t("footer.services")}
             </h4>
@@ -131,7 +131,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Col 4 — Legal */}
           <div>

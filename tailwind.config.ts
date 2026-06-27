@@ -115,6 +115,16 @@ export default {
 					from: { transform: 'rotate(0deg)' },
 					to: { transform: 'rotate(360deg)' },
 				},
+				halo: {
+					"0%,100%": {
+						opacity: ".8",
+						transform: "translate(-50%,-50%) scale(1)",
+					},
+					"50%": {
+						opacity: "1",
+						transform: "translate(-50%,-50%) scale(1.02)",
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -125,7 +135,8 @@ export default {
 				'fade-up': 'fade-up 0.6s ease-out forwards',
 				'fade-in': 'fade-in 0.5s ease-out forwards',
 				'spin-slow': 'spin-slow 20s linear infinite',
-			}
+				halo : "halo 8s ease-in-out infinite",
+			},
 		}
 	},
 	plugins: [tailwindcssAnimate],

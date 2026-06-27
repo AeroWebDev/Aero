@@ -16,43 +16,11 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16">
       {/* Background blobs */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div
-          className="absolute inset-0"
-          style={{ background: "var(--gradient-hero)" }}
-        />
-        <div
-          className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full animate-glow-pulse"
-          style={{
-            background: "radial-gradient(circle, hsl(217 91% 60% / 0.15) 0%, transparent 70%)",
-            filter: "blur(40px)",
-          }}
-        />
-        <div
-          className="absolute top-1/4 -right-24 w-[500px] h-[500px] rounded-full animate-glow-pulse"
-          style={{
-            background: "radial-gradient(circle, hsl(189 94% 43% / 0.12) 0%, transparent 70%)",
-            filter: "blur(50px)",
-            animationDelay: "1.5s",
-          }}
-        />
-        <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px]"
-          style={{
-            background: "radial-gradient(ellipse, hsl(217 91% 60% / 0.08) 0%, transparent 70%)",
-            filter: "blur(30px)",
-          }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `
-              linear-gradient(hsl(210 40% 96%) 1px, transparent 1px),
-              linear-gradient(90deg, hsl(210 40% 96%) 1px, transparent 1px)
-            `,
-            backgroundSize: "60px 60px",
-          }}
-        />
+      <div
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+        aria-hidden="true"
+      >
+
       </div>
 
       {/* Floating tech badges */}
