@@ -1,15 +1,68 @@
 import { useState } from "react";
-import { Mail, MessageCircle, Send, MapPin, ArrowRight } from "lucide-react";
+import { Mail, MessageCircle, Send, MapPin, ArrowRight, Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+
+const WEBHOOK_URL =
+  "https://discord.com/api/webhooks/1400067519213076500/-k9AZ7q_ZaP28NXgVeP8GniyuE0tta1SMupvBWNmfw6XFA-bLO0MJvd56YSxmIrD8S4t";
+
+type Status = "idle" | "loading" | "success" | "error";
+
+async function sendToDiscord(name: string, email: string, project: string): Promise<void> {
+  const payload = {
+    embeds: [
+      {
+        title: "📬 New Project Inquiry",
+        color: 0x6495ed, // cornflower blue — matches --aero-blue
+        fields: [
+          {
+            name: "👤 Name",
+            value: name,
+            inline: true,
+          },
+          {
+            name: "📧 Email",
+            value: email,
+            inline: true,
+          },
+          {
+            name: "📋 Project Details",
+            value: project.length > 1024 ? project.slice(0, 1021) + "..." : project,
+            inline: false,
+          },
+        ],
+        footer: {
+          text: "Aero Team — aeroteam.vercel.app",
+        },
+        timestamp: new Date().toISOString(),
+      },
+    ],
+  };
+
+  const res = await fetch(WEBHOOK_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Discord webhook returned ${res.status}`);
+  }
+}
 
 export default function ContactSection() {
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", project: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+    try {
+      await sendToDiscord(form.name, form.email, form.project);
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -44,7 +97,7 @@ export default function ContactSection() {
             className="lg:col-span-3 glass rounded-2xl p-8"
             style={{ boxShadow: "0 0 60px hsl(217 91% 60% / 0.08), 0 0 0 1px hsl(217 91% 60% / 0.12)" }}
           >
-            {submitted ? (
+            {status === "success" ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-12">
                 <div
                   className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mb-5"
@@ -64,12 +117,14 @@ export default function ContactSection() {
                   <input
                     type="text"
                     required
+                    disabled={status === "loading"}
                     placeholder={t("contact.form.name.placeholder")}
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-aero-blue/40 focus:border-aero-blue/40 transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-aero-blue/40 focus:border-aero-blue/40 transition-all duration-200 disabled:opacity-50"
                   />
                 </div>
+
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     {t("contact.form.email.label")}
@@ -77,12 +132,14 @@ export default function ContactSection() {
                   <input
                     type="email"
                     required
+                    disabled={status === "loading"}
                     placeholder={t("contact.form.email.placeholder")}
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-aero-blue/40 focus:border-aero-blue/40 transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-aero-blue/40 focus:border-aero-blue/40 transition-all duration-200 disabled:opacity-50"
                   />
                 </div>
+
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     {t("contact.form.project.label")}
@@ -90,19 +147,37 @@ export default function ContactSection() {
                   <textarea
                     required
                     rows={5}
+                    disabled={status === "loading"}
                     placeholder={t("contact.form.project.placeholder")}
                     value={form.project}
                     onChange={(e) => setForm({ ...form, project: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-aero-blue/40 focus:border-aero-blue/40 transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-aero-blue/40 focus:border-aero-blue/40 transition-all duration-200 resize-none disabled:opacity-50"
                   />
                 </div>
+
+                {status === "error" && (
+                  <p className="text-sm text-red-400 text-center">
+                    Something went wrong — please try again or reach out via WhatsApp.
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl font-semibold text-sm bg-gradient-primary text-aero-dark hover:opacity-90 hover:scale-[1.01] transition-all duration-200 flex items-center justify-center gap-2"
+                  disabled={status === "loading"}
+                  className="w-full py-3.5 rounded-xl font-semibold text-sm bg-gradient-primary text-aero-dark hover:opacity-90 hover:scale-[1.01] transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:scale-100"
                   style={{ boxShadow: "0 0 30px hsl(217 91% 60% / 0.3)" }}
                 >
-                  {t("contact.form.submit")}
-                  <ArrowRight className="w-4 h-4" />
+                  {status === "loading" ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      {t("contact.form.submit")}
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </form>
             )}

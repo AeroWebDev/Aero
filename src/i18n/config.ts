@@ -24,10 +24,15 @@ const baseUrl =
 
 // ─── Plugin registration ──────────────────────────────────────────────────────
 void i18n.use(initReactI18next).init({
+  // In SSR there is no browser language detector, so we pin the instance to
+  // fallbackLng (English). The client bundle re-detects the user's preferred
+  // language on hydration via i18next-browser-languagedetector.
+  lng: isBrowser ? undefined : fallbackLng,
   fallbackLng,
   supportedLngs,
-  // 当前模板用 flat dotted key + 单 namespace。两个 separator 都关掉，
-  // 让整个字符串作字面 key，不被切成 ns/key/subkey。
+  // Flat dotted keys are used throughout (e.g. "hero.badge", "nav.services").
+  // Both separators must be disabled so the entire string is treated as a
+  // literal key rather than being split into namespace / nested path segments.
   keySeparator: false,
   nsSeparator: false,
   interpolation: { escapeValue: false },
@@ -78,5 +83,3 @@ if (isBrowser) {
 }
 
 export default i18n;
-
-
