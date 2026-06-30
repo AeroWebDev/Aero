@@ -2,63 +2,40 @@ import { useState } from "react";
 import { Mail, MessageCircle, Send, MapPin, ArrowRight, Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const WEBHOOK_URL =
-  "https://discord.com/api/webhooks/1400067519213076500/-k9AZ7q_ZaP28NXgVeP8GniyuE0tta1SMupvBWNmfw6XFA-bLO0MJvd56YSxmIrD8S4t";
-
-type Status = "idle" | "loading" | "success" | "error";
-
-async function sendToDiscord(name: string, email: string, project: string): Promise<void> {
-  const payload = {
-    embeds: [
-      {
-        title: "📬 New Project Inquiry",
-        color: 0x6495ed, // cornflower blue — matches --aero-blue
-        fields: [
-          {
-            name: "👤 Name",
-            value: name,
-            inline: true,
-          },
-          {
-            name: "📧 Email",
-            value: email,
-            inline: true,
-          },
-          {
-            name: "📋 Project Details",
-            value: project.length > 1024 ? project.slice(0, 1021) + "..." : project,
-            inline: false,
-          },
-        ],
-        footer: {
-          text: "Aero Team — aeroteam.vercel.app",
-        },
-        timestamp: new Date().toISOString(),
-      },
-    ],
-  };
-
-  const res = await fetch(WEBHOOK_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-
-  if (!res.ok) {
-    throw new Error(`Discord webhook returned ${res.status}`);
-  }
-}
+type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
 
 export default function ContactSection() {
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", project: "" });
+  // Honeypot field — stays empty for real users, filled by bots
+  const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+
     try {
-      await sendToDiscord(form.name, form.email, form.project);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          project: form.project,
+          website, // honeypot — server silently drops if non-empty
+        }),
+      });
+
+      if (res.status === 429) {
+        setStatus("rate_limited");
+        return;
+      }
+
+      if (!res.ok) {
+        throw new Error(`Server responded with ${res.status}`);
+      }
+
       setStatus("success");
     } catch {
       setStatus("error");
@@ -110,6 +87,20 @@ export default function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Honeypot — hidden from real users via CSS, bots fill it */}
+                <div style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }} aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    id="website"
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                </div>
+
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     {t("contact.form.name.label")}
@@ -155,9 +146,15 @@ export default function ContactSection() {
                   />
                 </div>
 
-                 {status === "error" && (
+                {status === "error" && (
                   <p className="text-sm text-red-400 text-center">
                     {t("contact.error")}
+                  </p>
+                )}
+
+                {status === "rate_limited" && (
+                  <p className="text-sm text-amber-400 text-center">
+                    {t("contact.rateLimited")}
                   </p>
                 )}
 

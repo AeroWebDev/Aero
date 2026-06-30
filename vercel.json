@@ -1,5 +1,10 @@
 {
   "buildCommand": "npm run build:ssg",
   "outputDirectory": "dist",
-  "framework": null
+  "framework": null,
+  "functions": {
+    "api/*.ts": {
+      "runtime": "@vercel/node@5"
+    }
+  }
 }

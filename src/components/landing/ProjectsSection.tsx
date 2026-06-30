@@ -123,18 +123,19 @@ export default function ProjectsSection() {
                   </div>
                 </div>
 
-                {/* Hover overlay */}
+                {/* Hover overlay — CTA links to #contact */}
                 <div
                   className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ background: `${project.accentColor}15`, backdropFilter: "blur(4px)" }}
                 >
-                  <div
+                  <a
+                    href="#contact"
                     className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-foreground"
                     style={{ background: project.accentColor }}
                   >
                     {t("projects.cta")}
                     <ArrowUpRight className="w-4 h-4" />
-                  </div>
+                  </a>
                 </div>
               </div>
 
