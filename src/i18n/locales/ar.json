@@ -88,6 +88,7 @@
   "contact.form.email.placeholder": "mohammed@company.com",
   "contact.form.project.label": "تفاصيل المشروع",
   "contact.form.project.placeholder": "أخبرنا عن مشروعك وأهدافك والجدول الزمني والميزانية...",
+  "contact.form.project.prefill": "أنا مهتم بخدمة {{service}}. إليك تفاصيل مشروعي: ",
   "contact.form.submit": "إرسال الرسالة",
   "contact.sending": "جاري الإرسال...",
   "contact.success.title": "تم إرسال الرسالة!",

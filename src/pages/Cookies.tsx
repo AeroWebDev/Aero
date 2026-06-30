@@ -91,6 +91,7 @@ export default function Cookies() {
       <LegalSection title="7. Contact Us">
         <p>
           If you have questions about our use of cookies, please contact us at:{" "}
+          {/* TODO: Change email to custom domain email when domain is ready */}
           <a
             href="mailto:aero1code@gmail.com"
             className="text-aero-blue hover:underline"

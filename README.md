@@ -1,63 +1,150 @@
-# Aero
+# Aero Team — Landing Page
 
-A clean, standard React + Vite template called **Aero**.
-
-## Project Documentation
-To learn more about the project, check the following documents:
-- [**Project Structure**](file:///p:/projects/Aero/STRUCTURE.md): Detailed directory trees and layout specifications.
-- [**Completed Updates**](file:///p:/projects/Aero/UPDATES.md): Commit history and scaffolding history.
-- [**Future Roadmap**](file:///p:/projects/Aero/ROADMAP.md): Future updates and planning tasks.
-
-## Technical Stack
-- React (Single Page Application)
-- Vite (Fast development build server)
-- JavaScript
-
-## Installation & Setup
-
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-2. **Run in development mode**:
-   ```bash
-   npm run dev
-   ```
-3. **Compile for production (SPA)**:
-   ```bash
-   npm run build
-   ```
-4. **Compile with SSG pre-rendering (recommended for production)**:
-   ```bash
-   npm run build:ssg
-   ```
-   This pre-renders every route to a static HTML file so Google can index content without executing JavaScript.
+**Aero Team** is a professional web development & SaaS agency. This repository contains the production landing page built with React, TypeScript, Vite, and TailwindCSS.
 
 ---
 
-## 🌐 SEO & Deployment Notes
+## Tech Stack
 
-### Custom Domain (Action Required)
-After the site is live on Vercel, connect a custom domain:
-1. Go to **Vercel Dashboard → Project → Settings → Domains**.
-2. Add your custom domain and follow the DNS instructions.
-3. Once the domain is confirmed, **update every reference** to `aeroteam.vercel.app` in the following files:
-   - `index.html` — `og:image`, `twitter:image`, `og:url`, canonical `<link>`, and JSON-LD `url` fields
-   - `public/sitemap.xml` — all `<loc>` values
-   - `public/robots.txt` — the `Sitemap:` directive
-   - `vite.config.ts` — `ssgOptions.includedRoutes` if base URL is used
+| Layer | Technology |
+|---|---|
+| Framework | React 19 (SPA + optional SSG) |
+| Language | TypeScript |
+| Build Tool | Vite 7 |
+| Styling | TailwindCSS v3 + custom CSS variables |
+| i18n | i18next + react-i18next (English & Arabic, RTL supported) |
+| Routing | React Router DOM v7 |
+| Icons | Lucide React |
+| Serverless API | Vercel Node.js functions (`/api/`) |
+| Deployment | Vercel (auto-deploy from `main` branch) |
 
-### Social Previews (og:image / twitter:image)
-- The OG image is expected at `https://aeroteam.vercel.app/og-image.jpg`.
-- Place the actual image file at `public/og-image.jpg` (recommended: 1200×630 px).
-- Validate previews at https://opengraph.xyz and https://cards-dev.twitter.com/validator.
+---
 
-### Sitemap & Robots
-- `public/sitemap.xml` — add a new `<url>` entry for every new page/route added.
-- `public/robots.txt` — no changes needed unless you want to block specific paths.
+## Project Structure
 
-### JSON-LD Structured Data
-The `<head>` in `index.html` contains Organization and WebSite schemas.
-- Populate the `sameAs` array with real social profile URLs when they exist.
-- Validate with https://search.google.com/test/rich-results.
+```
+Aero/
+├── api/
+│   └── contact.ts         # Serverless function: proxies form → Discord webhook
+├── public/                # Static assets (favicons, og-image, manifest, etc.)
+├── scripts/
+│   └── prerender.mjs      # SSG script: pre-renders routes to static HTML
+├── src/
+│   ├── components/
+│   │   ├── landing/       # Section components (Hero, Services, Projects, …)
+│   │   ├── LegalLayout.tsx
+│   │   └── language-switcher.tsx
+│   ├── hooks/
+│   │   └── use-theme.ts   # Dark/light theme toggle via data-theme attribute
+│   ├── i18n/
+│   │   └── locales/
+│   │       ├── en.json    # English translations
+│   │       └── ar.json    # Arabic translations
+│   ├── pages/
+│   │   ├── Index.tsx      # Home page
+│   │   ├── Privacy.tsx
+│   │   ├── Terms.tsx
+│   │   └── Cookies.tsx
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css          # Global styles + CSS design tokens
+├── index.html             # Vite entry HTML template
+├── tailwind.config.ts
+├── vite.config.ts
+└── vercel.json
+```
 
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm
+
+### Install dependencies
+```bash
+npm install
+```
+
+### Run in development mode
+```bash
+npm run dev
+```
+
+### Lint
+```bash
+npm run lint
+```
+
+### Type-check
+```bash
+npm run check
+```
+
+---
+
+## Build & Deployment
+
+### Standard SPA build (Vercel uses this by default via `vercel-build`)
+```bash
+npm run build
+```
+
+### Static pre-rendering (SSG) — recommended for SEO
+Generates pre-rendered HTML for all routes (`/`, `/privacy`, `/terms`, `/cookies`):
+```bash
+npm run build:ssg
+```
+
+> **Note**: Vercel automatically runs `npm run vercel-build` on deploy, which maps to `build:ssg`.
+
+---
+
+## Environment Variables
+
+The contact form uses a Discord webhook routed through the serverless function at `/api/contact`.
+
+| Variable | Description |
+|---|---|
+| `MESSAGE_WEBHOOK_URL` | Discord webhook URL for contact form submissions |
+
+Set this in Vercel: **Project → Settings → Environment Variables**.
+
+See [`.env.example`](.env.example) for the full list.
+
+---
+
+## i18n (Internationalization)
+
+The site supports full English and Arabic with RTL layout. Translations live in:
+- `src/i18n/locales/en.json` — English strings
+- `src/i18n/locales/ar.json` — Arabic strings
+
+Language is toggled via the navbar switcher and persisted in `localStorage`.
+
+---
+
+## Custom Domain (Action Required)
+
+Once a custom domain is connected in Vercel, update all references to `aeroteam.vercel.app` in:
+- `index.html` — `og:image`, `og:url`, canonical `<link>`, and JSON-LD `url`
+- `public/sitemap.xml` — all `<loc>` values
+- `public/robots.txt` — the `Sitemap:` directive
+
+Also replace the `aero1code@gmail.com` placeholder with the professional domain email in:
+- `src/components/landing/ContactSection.tsx`
+- `src/pages/Privacy.tsx`, `Terms.tsx`, `Cookies.tsx`
+
+All these locations are marked with `// TODO` comments in the source.
+
+---
+
+## Features
+
+- ⚡ Fast, modern, dark/light themed landing page
+- 🌍 Arabic / English bilingual with RTL support
+- 📬 Contact form with server-side Discord webhook, rate limiting, and bot honeypot
+- 🔒 No secrets in client-side code
+- 📋 Legal pages: Privacy Policy, Terms of Service, Cookie Policy
+- 🗂 Static pre-rendering via `scripts/prerender.mjs` for optimal SEO

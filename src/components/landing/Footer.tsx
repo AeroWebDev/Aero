@@ -115,7 +115,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3 — Services */}
-          {/* <div>
+          <div>
             <h4 className="text-sm font-semibold text-foreground mb-5 tracking-wide">
               {t("footer.services")}
             </h4>
@@ -131,7 +131,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div> */}
+          </div>
 
           {/* Col 4 — Legal */}
           <div>

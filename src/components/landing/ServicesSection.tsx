@@ -17,7 +17,11 @@ const servicesMeta = [
   { icon: MessageSquare, titleKey: "services.consulting.title", descKey: "services.consulting.description", color: "hsl(340 80% 60%)" },
 ];
 
-export default function ServicesSection() {
+interface ServicesSectionProps {
+  onSelectService?: (serviceName: string) => void;
+}
+
+export default function ServicesSection({ onSelectService }: ServicesSectionProps) {
   const { t } = useTranslation();
 
   return (
@@ -51,9 +55,11 @@ export default function ServicesSection() {
           {servicesMeta.map((service) => {
             const Icon = service.icon;
             return (
-              <div
+              <a
+                href="#contact"
                 key={service.titleKey}
-                className="group glass rounded-2xl p-7 hover:border-aero-blue/30 hover:-translate-y-1 cursor-default service-card-hover"
+                onClick={() => onSelectService?.(t(service.titleKey))}
+                className="group glass rounded-2xl p-7 hover:border-aero-blue/30 hover:-translate-y-1 transition-all duration-300 service-card-hover block no-underline"
                 style={{
                   "--hover-color": `${service.color}22`
                 } as React.CSSProperties}
@@ -82,7 +88,7 @@ export default function ServicesSection() {
                   className="mt-5 h-px w-0 group-hover:w-full transition-all duration-500 rounded-full"
                   style={{ background: `linear-gradient(90deg, ${service.color}, transparent)` }}
                 />
-              </div>
+              </a>
             );
           })}
         </div>

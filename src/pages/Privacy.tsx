@@ -92,6 +92,7 @@ export default function Privacy() {
         <p>
           If you have any questions about this Privacy Policy, please contact us
           at:{" "}
+          {/* TODO: Change email to custom domain email when domain is ready */}
           <a
             href="mailto:aero1code@gmail.com"
             className="text-aero-blue hover:underline"

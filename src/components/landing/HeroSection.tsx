@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const techBadges = [
@@ -84,7 +84,7 @@ export default function HeroSection() {
             href="#projects"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm glass border border-border text-foreground hover:border-aero-blue/40 hover:text-aero-blue transition-all duration-200"
           >
-            <Play className="w-4 h-4" />
+            <ArrowDown className="w-4 h-4" />
             {t("hero.cta.secondary")}
           </a>
         </div>

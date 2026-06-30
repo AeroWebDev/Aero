@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, MessageCircle, Send, MapPin, ArrowRight, Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
 
-export default function ContactSection() {
+interface ContactSectionProps {
+  prefilledService?: string;
+}
+
+export default function ContactSection({ prefilledService }: ContactSectionProps) {
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", project: "" });
   // Honeypot field — stays empty for real users, filled by bots
   const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+
+  useEffect(() => {
+    if (prefilledService) {
+      setForm((prev) => ({
+        ...prev,
+        project: t("contact.form.project.prefill", { service: prefilledService }),
+      }));
+    }
+  }, [prefilledService, t]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -182,8 +195,9 @@ export default function ContactSection() {
 
           {/* Contact info sidebar */}
           <div className="lg:col-span-2 flex flex-col gap-4">
-            {/* Email */}
-            <a
+             {/* Email */}
+             {/* TODO: Change email to custom domain email when domain is ready */}
+             <a
               href="mailto:aero1code@gmail.com"
               className="glass rounded-2xl p-6 flex items-center gap-4 hover:border-aero-blue/30 transition-all duration-300 hover:-translate-y-0.5 group"
             >

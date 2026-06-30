@@ -92,9 +92,10 @@ export default function ProjectsSection() {
         {/* Projects grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {projectsMeta.map((project) => (
-            <div
+            <a
               key={project.nameKey}
-              className="group glass rounded-2xl overflow-hidden hover:border-aero-blue/25 transition-all duration-300 hover:-translate-y-1 cursor-default"
+              href="#contact"
+              className="group glass rounded-2xl overflow-hidden hover:border-aero-blue/25 transition-all duration-300 hover:-translate-y-1 block no-underline"
             >
               {/* Mockup visual area */}
               <div
@@ -123,19 +124,18 @@ export default function ProjectsSection() {
                   </div>
                 </div>
 
-                {/* Hover overlay — CTA links to #contact */}
+                {/* Hover overlay — CTA visually indicates action; card itself is the link */}
                 <div
                   className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ background: `${project.accentColor}15`, backdropFilter: "blur(4px)" }}
                 >
-                  <a
-                    href="#contact"
+                  <div
                     className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-foreground"
                     style={{ background: project.accentColor }}
                   >
                     {t("projects.cta")}
                     <ArrowUpRight className="w-4 h-4" />
-                  </a>
+                  </div>
                 </div>
               </div>
 
@@ -169,7 +169,7 @@ export default function ProjectsSection() {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

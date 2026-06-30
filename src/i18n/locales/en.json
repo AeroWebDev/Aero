@@ -88,6 +88,7 @@
   "contact.form.email.placeholder": "john@company.com",
   "contact.form.project.label": "Project Details",
   "contact.form.project.placeholder": "Tell us about your project, goals, timeline, and budget...",
+  "contact.form.project.prefill": "I am interested in the {{service}} service. Here are my project details: ",
   "contact.form.submit": "Send Message",
   "contact.sending": "Sending...",
   "contact.success.title": "Message Sent!",
