@@ -53,9 +53,9 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+  const webhookUrl = process.env.MESSAGE_WEBHOOK_URL;
   if (!webhookUrl) {
-    console.error("DISCORD_WEBHOOK_URL environment variable is not set.");
+    console.error("MESSAGE_WEBHOOK_URL environment variable is not set.");
     return res.status(500).json({ error: "Server misconfiguration" });
   }
 
