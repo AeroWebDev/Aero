@@ -63,8 +63,8 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div className="flex flex-col gap-5">
             <a href="#" className="flex items-center gap-2 group w-fit">
-              <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center shadow-lg group-hover:opacity-90 transition-opacity">
-                <Zap className="w-4 h-4 text-aero-dark" strokeWidth={2.5} />
+              <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 drop-shadow-lg">
+                <img src="/logo.png" alt="Aero Logo" className="w-full h-full object-contain scale-[1.15]" />
               </div>
               <span className="text-base font-bold text-foreground tracking-tight">
                 Aero <span className="gradient-primary-text">Team</span>

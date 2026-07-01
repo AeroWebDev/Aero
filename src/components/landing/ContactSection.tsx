@@ -174,7 +174,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full py-3.5 rounded-xl font-semibold text-sm bg-gradient-primary text-aero-dark hover:opacity-90 hover:scale-[1.01] transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:scale-100"
+                  className="w-full py-3.5 rounded-xl font-semibold text-sm bg-gradient-primary text-white hover:opacity-90 hover:scale-[1.01] transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:scale-100"
                   style={{ boxShadow: "0 0 30px hsl(217 91% 60% / 0.3)" }}
                 >
                   {status === "loading" ? (

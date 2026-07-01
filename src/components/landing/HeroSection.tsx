@@ -74,7 +74,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm bg-gradient-primary text-aero-dark hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-lg"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm bg-gradient-primary text-white hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-lg"
             style={{ boxShadow: "0 0 30px hsl(217 91% 60% / 0.3)" }}
           >
             {t("hero.cta.primary")}

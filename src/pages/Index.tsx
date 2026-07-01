@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
-import StatsSection from "@/components/landing/StatsSection";
+
 import ServicesSection from "@/components/landing/ServicesSection";
 import WhyChooseSection from "@/components/landing/WhyChooseSection";
 import ProjectsSection from "@/components/landing/ProjectsSection";
@@ -16,7 +16,7 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <StatsSection />
+
         <ServicesSection onSelectService={setPrefilledService} />
         <ProjectsSection />
         <WhyChooseSection />

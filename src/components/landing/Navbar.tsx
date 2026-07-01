@@ -53,8 +53,8 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-6">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center shadow-lg group-hover:glow-blue transition-all duration-300">
-            <Zap className="w-4 h-4 text-aero-dark" strokeWidth={2.5} />
+          <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 drop-shadow-lg">
+            <img src="/logo.png" alt="Aero Logo" className="w-full h-full object-contain scale-[1.15]" />
           </div>
           <span className="text-lg font-bold text-foreground tracking-tight">
             Aero <span className="gradient-primary-text">Team</span>
@@ -90,7 +90,7 @@ export default function Navbar() {
           <LanguageSwitcher className="h-9 text-sm bg-secondary border-border text-foreground" />
           <a
             href="#contact"
-            className="px-5 py-2 rounded-lg text-sm font-semibold bg-gradient-primary text-aero-dark hover:opacity-90 transition-opacity duration-200 shadow-lg"
+            className="px-5 py-2 rounded-lg text-sm font-semibold bg-gradient-primary text-white hover:opacity-90 transition-opacity duration-200 shadow-lg"
           >
             {t("nav.cta")}
           </a>
@@ -135,7 +135,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-1 px-5 py-2.5 rounded-lg text-sm font-semibold bg-gradient-primary text-aero-dark text-center"
+            className="mt-1 px-5 py-2.5 rounded-lg text-sm font-semibold bg-gradient-primary text-white text-center"
           >
             {t("nav.cta")}
           </a>
