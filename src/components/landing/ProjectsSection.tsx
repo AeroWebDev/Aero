@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
 
 type ProjectMeta = {
   nameKey: string;
@@ -10,19 +11,19 @@ type ProjectMeta = {
   link?: string;
   isInteractive?: boolean;
 } & (
-  | {
+    | {
       image: string;
       mockupStyle?: never;
       mockupLines?: never;
       bars?: never;
     }
-  | {
+    | {
       image?: never;
       mockupStyle: React.CSSProperties;
       mockupLines: { w: string; c: string }[];
       bars: number[];
     }
-);
+  );
 
 const projectsMeta: ProjectMeta[] = [
   {
@@ -32,7 +33,6 @@ const projectsMeta: ProjectMeta[] = [
     tags: ["React", "TypeScript", "Tailwind CSS"],
     accentColor: "hsl(85 90% 55%)",
     image: "/projects/saas-landing-page.jpg",
-    isInteractive: false,
   },
   {
     nameKey: "projects.storex.name",
@@ -41,7 +41,6 @@ const projectsMeta: ProjectMeta[] = [
     tags: ["React", "Chart.js", "TypeScript"],
     accentColor: "hsl(262 70% 65%)",
     image: "/projects/storex-admin-dashboard.png",
-    isInteractive: false,
   },
   {
     nameKey: "projects.aeroShop.name",
@@ -50,7 +49,6 @@ const projectsMeta: ProjectMeta[] = [
     tags: ["React", "TypeScript", "Tailwind CSS"],
     accentColor: "hsl(55 100% 55%)",
     image: "/projects/aero-shop.png",
-    isInteractive: false,
   },
   {
     nameKey: "projects.medcore.name",
@@ -65,13 +63,15 @@ const projectsMeta: ProjectMeta[] = [
       { w: "80%", c: "hsl(250 80% 65% / 0.4)" },
     ],
     bars: [70, 50, 85, 40, 65, 90, 55],
-    isInteractive: true,
   },
 ];
+
 
 export default function ProjectsSection() {
   const { t } = useTranslation();
 
+
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   return (
     <section id="projects" className="py-24 relative overflow-hidden">
       <div
@@ -101,105 +101,115 @@ export default function ProjectsSection() {
         {/* Projects grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {projectsMeta.map((project) => {
-            const CardTag = project.isInteractive ? "a" : "div";
+            const CardTag = "a";
             return (
               <CardTag
                 key={project.nameKey}
-                {...(project.isInteractive
-                  ? {
-                      href: "#contact",
-                      className:
-                        "group glass rounded-2xl overflow-hidden hover:border-aero-blue/25 transition-all duration-300 hover:-translate-y-1 block no-underline cursor-pointer",
-                    }
-                  : {
-                      className:
-                        "glass rounded-2xl overflow-hidden block",
-                    })}
+                href={project.link ?? "#"}
+                onMouseEnter={() => setHoveredProject(project.nameKey)}
+                onMouseLeave={() => setHoveredProject(null)}
+                className="group glass rounded-2xl overflow-hidden border transition-all duration-300 block no-underline cursor-pointer"
+                style={{
+                  borderColor:
+                    hoveredProject === project.nameKey
+                      ? `color-mix(in srgb, ${project.accentColor} 35%, transparent)`
+                      : "transparent",
+
+                  boxShadow:
+                    hoveredProject === project.nameKey
+                      ? `0 8px 30px color-mix(in srgb, ${project.accentColor} 18%, transparent)`
+                      : "0 0 0 transparent",
+                }}
               >
-                {/* Visual area — real screenshot or generated mockup */}
-                <div className="relative h-52 sm:h-60 w-full overflow-hidden">
+                {/* Visual area */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0f1117]">
+
                   {project.image ? (
                     <>
                       <img
                         src={project.image}
                         alt={t(project.nameKey)}
-                        className="w-full h-full object-cover object-top"
                         loading="lazy"
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                       />
+
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-70 group-hover:opacity-20 transition-opacity duration-500" />
                     </>
                   ) : (
                     <div
                       className="w-full h-full flex items-center justify-center"
                       style={project.mockupStyle}
                     >
-                      <div className="w-4/5 max-w-xs space-y-3 px-4">
-                        <div className="flex items-center gap-2 mb-4">
-                          <div className="w-2.5 h-2.5 rounded-full" style={{ background: project.accentColor, opacity: 0.8 }} />
-                          <div className="h-2 rounded-full flex-1" style={{ background: `${project.accentColor}30` }} />
-                        </div>
-                        {project.mockupLines.map((line, i) => (
-                          <div key={i} className="h-2.5 rounded-full" style={{ width: line.w, background: line.c }} />
-                        ))}
-                        <div
-                          className="mt-5 h-16 rounded-xl flex items-end gap-1 px-3 pb-2"
-                          style={{ background: `${project.accentColor}10`, border: `1px solid ${project.accentColor}20` }}
-                        >
-                          {project.bars.map((h, i) => (
-                            <div
-                              key={i}
-                              className="flex-1 rounded-sm"
-                              style={{ height: `${h}%`, background: `${project.accentColor}60` }}
-                            />
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Hover overlay — CTA visually indicates action; card itself is the link */}
-                      {project.isInteractive && (
-                        <div
-                          className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                          style={{ background: `${project.accentColor}15`, backdropFilter: "blur(4px)" }}
-                        >
-                          <div
-                            className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-foreground"
-                            style={{ background: project.accentColor }}
-                          >
-                            {t("projects.cta")}
-                            <ArrowUpRight className="w-4 h-4" />
-                          </div>
-                        </div>
-                      )}
+                      {/* الـ Mockup بتاعك */}
                     </div>
                   )}
+
+                  {/* خلي الجزء ده هنا */}
+                  <div
+                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    style={{
+                      background: "rgba(0,0,0,0.25)",
+                      backdropFilter: "blur(4px)",
+                    }}
+                  >
+                    <div
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-transform duration-300 group-hover:scale-105"
+                      style={{
+                        background: project.accentColor,
+                        color: "#fff",
+                        boxShadow: `0 10px 30px ${project.accentColor}40`,
+                      }}
+                    >
+                      See More
+                      <ArrowUpRight className="w-4 h-4" />
+                    </div>
+                  </div>
+
                 </div>
 
                 {/* Info */}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <span className="text-xs font-semibold uppercase tracking-widest mb-1 block" style={{ color: project.accentColor }}>
+                      <span
+                        className="text-xs font-semibold uppercase tracking-widest mb-1 block"
+                        style={{ color: project.accentColor }}
+                      >
                         {t(project.categoryKey)}
                       </span>
-                      <h3 className="text-xl font-bold text-foreground">{t(project.nameKey)}</h3>
+
+                      <h3 className="text-xl font-bold text-foreground">
+                        {t(project.nameKey)}
+                      </h3>
                     </div>
+
                     {project.isInteractive && (
                       <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-200 shrink-0 mt-1" />
                     )}
                   </div>
+
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     {t(project.descKey)}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+
+                  <div className="flex flex-wrap gap-3">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs font-medium px-2.5 py-1 rounded-md"
+                        className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-all duration-300 hover:scale-105"
                         style={{
-                          background: `${project.accentColor}15`,
                           color: project.accentColor,
-                          border: `1px solid ${project.accentColor}25`,
+                          backgroundColor: `color-mix(in srgb, ${project.accentColor} 12%, transparent)`,
+                          border: `1px solid color-mix(in srgb, ${project.accentColor} 30%, transparent)`,
+                          boxShadow: `0 0 20px color-mix(in srgb, ${project.accentColor} 15%, transparent)`,
                         }}
                       >
+                        <span
+                          className="w-2.5 h-2.5 rounded-full"
+                          style={{
+                            backgroundColor: project.accentColor,
+                          }}
+                        />
                         {tag}
                       </span>
                     ))}
@@ -209,7 +219,7 @@ export default function ProjectsSection() {
             );
           })}
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }
