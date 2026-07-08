@@ -13,6 +13,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <title>Aero — Modern Web Development & SaaS Solutions</title>
+      <meta name="description" content="Aero builds fast, modern web apps, SaaS platforms, and digital products that help businesses grow and scale online." />
+      <meta name="keywords" content="Aero, Aero Team, Aero web, Aero development, web development, SaaS, React, Vite, frontend, backend, custom websites, web apps" />
+      <link rel="canonical" href="https://aeroteam.vercel.app/" />
       <Navbar />
       <main>
         <HeroSection />

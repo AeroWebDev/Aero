@@ -55,9 +55,65 @@ async function main() {
   for (const route of ROUTES_TO_PRERENDER) {
     try {
       const appHtml = render(route);
-      const html = template.replace(
+      
+      let cleanAppHtml = appHtml;
+      const extractedHeadTags = [];
+      
+      // Loop to match and remove leading <title>, <meta>, <link> tags that React 19 hoisted
+      while (true) {
+        const match = cleanAppHtml.match(/^\s*(<(title)\b[^>]*>[\s\S]*?<\/title>|<(meta|link)\b[^>]*\/?>)/i);
+        if (!match) break;
+        
+        const tag = match[1];
+        extractedHeadTags.push(tag);
+        cleanAppHtml = cleanAppHtml.slice(match[0].length);
+      }
+      
+      // Categorize tags for precise template injection
+      let titleTag = "";
+      let descriptionTag = "";
+      let canonicalTag = "";
+      const otherTags = [];
+      
+      for (const tag of extractedHeadTags) {
+        if (/<title\b/i.test(tag)) {
+          titleTag = tag;
+        } else if (/<meta\s+name=["']description["']/i.test(tag) || /<meta\s+content=["'][^"']*["']\s+name=["']description["']/i.test(tag)) {
+          descriptionTag = tag;
+        } else if (/<link\s+rel=["']canonical["']/i.test(tag)) {
+          canonicalTag = tag;
+        } else {
+          otherTags.push(tag);
+        }
+      }
+      
+      let html = template;
+      
+      // Replace default title
+      if (titleTag) {
+        html = html.replace(/<title>.*?<\/title>/i, titleTag);
+      }
+      
+      // Replace default description
+      if (descriptionTag) {
+        html = html.replace(/<meta\s+name=["']description["']\s+content=["'].*?["']\s*\/?>/i, descriptionTag);
+      }
+      
+      // Replace default canonical URL
+      if (canonicalTag) {
+        html = html.replace(/<link\s+rel=["']canonical["']\s+href=["'].*?["']\s*\/?>/i, canonicalTag);
+      }
+      
+      // Inject other hoisted elements (preloads, etc.) into head
+      if (otherTags.length > 0) {
+        const otherTagsHtml = "\n  " + otherTags.join("\n  ");
+        html = html.replace("</head>", `${otherTagsHtml}\n</head>`);
+      }
+      
+      // Inject final body HTML
+      html = html.replace(
         '<div id="root"></div>',
-        `<div id="root">${appHtml}</div>`
+        `<div id="root">${cleanAppHtml}</div>`
       );
 
       // / → dist/index.html,  /about → dist/about/index.html

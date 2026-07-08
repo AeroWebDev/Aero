@@ -56,9 +56,6 @@ export default function Navbar() {
           <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 drop-shadow-lg">
             <img src="/logo.png" alt="Aero Logo" className="w-full h-full object-contain scale-[1.15]" />
           </div>
-          <span className="text-lg font-bold text-foreground tracking-tight">
-            Aero <span className="gradient-primary-text">Team</span>
-          </span>
         </a>
 
         {/* Desktop Nav */}

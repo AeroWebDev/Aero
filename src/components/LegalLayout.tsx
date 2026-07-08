@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 
@@ -5,6 +6,7 @@ interface LegalLayoutProps {
   title: string;
   subtitle: string;
   lastUpdated: string;
+  canonicalPath: string;
   children: React.ReactNode;
 }
 
@@ -31,10 +33,17 @@ export default function LegalLayout({
   title,
   subtitle,
   lastUpdated,
+  canonicalPath,
   children,
 }: LegalLayoutProps) {
+  const { t } = useTranslation();
+  const canonicalUrl = `https://aeroteam.vercel.app${canonicalPath}`;
+  const appName = t("common.appName");
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <title>{`${title} | ${appName}`}</title>
+      <meta name="description" content={subtitle} />
+      <link rel="canonical" href={canonicalUrl} />
       <Navbar />
 
       {/* Hero header */}
