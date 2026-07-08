@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 type ProjectMeta = {
   nameKey: string;
@@ -69,11 +70,11 @@ const projectsMeta: ProjectMeta[] = [
 
 export default function ProjectsSection() {
   const { t } = useTranslation();
-
-
+  const ref = useScrollAnimation();
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} id="projects" className="py-24 relative overflow-hidden">
       <div
         className="pointer-events-none absolute top-1/2 right-0 w-[500px] h-[500px] -translate-y-1/2"
         style={{
@@ -86,29 +87,30 @@ export default function ProjectsSection() {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
+          <div className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
             {t("projects.badge")}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+          <h2 className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             {t("projects.title")}{" "}
             <span className="gradient-primary-text">{t("projects.title.highlight")}</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="animate-on-scroll anim-delay-2 text-muted-foreground text-lg max-w-xl mx-auto">
             {t("projects.subtitle")}
           </p>
         </div>
 
         {/* Projects grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {projectsMeta.map((project) => {
+          {projectsMeta.map((project, index) => {
             const CardTag = "a";
+            const delayClass = `anim-delay-${Math.min(index + 1, 6)}`;
             return (
               <CardTag
                 key={project.nameKey}
                 href={project.link ?? "#"}
                 onMouseEnter={() => setHoveredProject(project.nameKey)}
                 onMouseLeave={() => setHoveredProject(null)}
-                className="group glass rounded-2xl overflow-hidden border transition-all duration-300 block no-underline cursor-pointer"
+                className={`animate-scale-in ${delayClass} group glass rounded-2xl overflow-hidden border transition-all duration-300 block no-underline cursor-pointer`}
                 style={{
                   borderColor:
                     hoveredProject === project.nameKey

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Mail, MessageCircle, Send, MapPin, ArrowRight, Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 type Status = "idle" | "loading" | "success" | "error" | "rate_limited";
 
@@ -10,6 +11,7 @@ interface ContactSectionProps {
 
 export default function ContactSection({ prefilledService }: ContactSectionProps) {
   const { t } = useTranslation();
+  const ref = useScrollAnimation();
   const [form, setForm] = useState({ name: "", email: "", project: "" });
   // Honeypot field — stays empty for real users, filled by bots
   const [website, setWebsite] = useState("");
@@ -56,7 +58,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} id="contact" className="py-24 relative overflow-hidden">
       <div
         className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]"
         style={{
@@ -69,14 +71,14 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
+          <div className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
             {t("contact.badge")}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+          <h2 className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             {t("contact.title")}{" "}
             <span className="gradient-primary-text">{t("contact.title.highlight")}</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="animate-on-scroll anim-delay-2 text-muted-foreground text-lg max-w-xl mx-auto">
             {t("contact.subtitle")}
           </p>
         </div>
@@ -84,7 +86,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Form card */}
           <div
-            className="lg:col-span-3 glass rounded-2xl p-8"
+            className="animate-on-scroll-left anim-delay-3 lg:col-span-3 glass rounded-2xl p-8"
             style={{ boxShadow: "0 0 60px hsl(217 91% 60% / 0.08), 0 0 0 1px hsl(217 91% 60% / 0.12)" }}
           >
             {status === "success" ? (
@@ -194,7 +196,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
           </div>
 
           {/* Contact info sidebar */}
-          <div className="lg:col-span-2 flex flex-col gap-4">
+          <div className="animate-on-scroll-right anim-delay-4 lg:col-span-2 flex flex-col gap-4">
              {/* Email */}
              {/* TODO: Change email to custom domain email when domain is ready */}
              <a

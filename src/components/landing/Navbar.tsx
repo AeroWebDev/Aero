@@ -52,7 +52,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between px-6">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group">
           <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 drop-shadow-lg">
             <img src="/logo.png" alt="Aero Logo" className="w-full h-full object-contain scale-[1.15]" />
           </div>

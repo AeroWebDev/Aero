@@ -247,3 +247,63 @@ body,
 .service-card-hover:hover {
   box-shadow: 0 0 30px var(--hover-color);
 }
+
+/* ── Scroll-triggered entrance animations ────────────────────── */
+
+/* Base state — hidden, shifted down */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-scale-in {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Visible state — added by IntersectionObserver via useScrollAnimation */
+.in-view .animate-on-scroll,
+.in-view .animate-on-scroll-left,
+.in-view .animate-on-scroll-right,
+.in-view .animate-scale-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Staggered children delays */
+.in-view .anim-delay-1 { transition-delay: 0.1s; }
+.in-view .anim-delay-2 { transition-delay: 0.2s; }
+.in-view .anim-delay-3 { transition-delay: 0.3s; }
+.in-view .anim-delay-4 { transition-delay: 0.4s; }
+.in-view .anim-delay-5 { transition-delay: 0.5s; }
+.in-view .anim-delay-6 { transition-delay: 0.6s; }
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  .animate-on-scroll-left,
+  .animate-on-scroll-right,
+  .animate-scale-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

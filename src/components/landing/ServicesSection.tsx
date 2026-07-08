@@ -7,6 +7,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const servicesMeta = [
   { icon: Globe, titleKey: "services.webDev.title", descKey: "services.webDev.description", color: "hsl(217 91% 60%)" },
@@ -23,9 +24,10 @@ interface ServicesSectionProps {
 
 export default function ServicesSection({ onSelectService }: ServicesSectionProps) {
   const { t } = useTranslation();
+  const ref = useScrollAnimation();
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} id="services" className="py-24 relative overflow-hidden">
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] opacity-30"
         style={{
@@ -38,28 +40,29 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
+          <div className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
             {t("services.badge")}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+          <h2 className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             {t("services.title")}{" "}
             <span className="gradient-primary-text">{t("services.title.highlight")}</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="animate-on-scroll anim-delay-2 text-muted-foreground text-lg max-w-xl mx-auto">
             {t("services.subtitle")}
           </p>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {servicesMeta.map((service) => {
+          {servicesMeta.map((service, index) => {
             const Icon = service.icon;
+            const delayClass = `anim-delay-${Math.min(index + 1, 6)}` as string;
             return (
               <a
                 href="#contact"
                 key={service.titleKey}
                 onClick={() => onSelectService?.(t(service.titleKey))}
-                className="group glass rounded-2xl p-7 hover:border-aero-blue/30 hover:-translate-y-1 transition-all duration-300 service-card-hover block no-underline"
+                className={`animate-on-scroll ${delayClass} group glass rounded-2xl p-7 hover:border-aero-blue/30 hover:-translate-y-1 transition-all duration-300 service-card-hover block no-underline`}
                 style={{
                   "--hover-color": `${service.color}22`
                 } as React.CSSProperties}
@@ -96,3 +99,4 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
     </section>
   );
 }
+

@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const techBadges = [
   { label: "React", delay: "0s" },
@@ -12,9 +13,13 @@ const techBadges = [
 
 export default function HeroSection() {
   const { t } = useTranslation();
+  const ref = useScrollAnimation(0.05);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16">
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16"
+    >
       {/* Background blobs */}
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -54,24 +59,24 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 text-sm font-medium text-aero-cyan border-aero-cyan/20 border">
+        <div className="animate-on-scroll anim-delay-1 inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 text-sm font-medium text-aero-cyan border-aero-cyan/20 border">
           <span className="w-2 h-2 rounded-full bg-aero-cyan animate-pulse" />
           {t("hero.badge")}
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6 max-w-5xl mx-auto">
+        <h1 className="animate-on-scroll anim-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6 max-w-5xl mx-auto">
           {t("hero.headline")}{" "}
           <span className="gradient-primary-text">{t("hero.headline.highlight")}</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="animate-on-scroll anim-delay-3 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
           {t("hero.subheadline")}
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="animate-on-scroll anim-delay-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm bg-gradient-primary text-white hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-lg"
@@ -92,3 +97,4 @@ export default function HeroSection() {
     </section>
   );
 }
+

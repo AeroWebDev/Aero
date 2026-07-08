@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 // TODO: Replace these placeholders with real client metrics from the team before launch.
 const statsMeta = [
@@ -10,13 +11,14 @@ const statsMeta = [
 
 export default function StatsSection() {
   const { t } = useTranslation();
+  const ref = useScrollAnimation();
 
   return (
-    <section className="py-12 border-y border-border/40 bg-secondary/20 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} className="py-12 border-y border-border/40 bg-secondary/20 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {statsMeta.map((stat, i) => (
-            <div key={stat.labelKey} className="text-center relative">
+            <div key={stat.labelKey} className={`animate-on-scroll anim-delay-${i + 1} text-center relative`}>
               {i > 0 && (
                 <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-px h-12 bg-border/50" />
               )}

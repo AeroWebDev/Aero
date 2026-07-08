@@ -1,5 +1,6 @@
 import { Zap, Heart } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const socials = [
   {
@@ -33,6 +34,7 @@ const socials = [
 
 export default function Footer() {
   const { t } = useTranslation();
+  const ref = useScrollAnimation();
 
   const quickLinks = [
     { label: t("footer.links.home"), href: "#" },
@@ -55,13 +57,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border bg-background">
+    <footer ref={ref as React.RefObject<HTMLElement>} className="border-t border-border bg-background">
       {/* Main grid */}
       <div className="container mx-auto px-6 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Col 1 — Brand */}
-          <div className="flex flex-col gap-5">
+          <div className="animate-on-scroll flex flex-col gap-5">
             <a href="#" className="flex items-center gap-2 group w-fit">
               <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 drop-shadow-lg">
                 <img src="/logo.png" alt="Aero Logo" className="w-full h-full object-contain scale-[1.15]" />
@@ -115,7 +117,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3 — Services */}
-          <div>
+          <div className="animate-on-scroll anim-delay-2">
             <h4 className="text-sm font-semibold text-foreground mb-5 tracking-wide">
               {t("footer.services")}
             </h4>
@@ -134,7 +136,7 @@ export default function Footer() {
           </div>
 
           {/* Col 4 — Legal */}
-          <div>
+          <div className="animate-on-scroll anim-delay-3">
             <h4 className="text-sm font-semibold text-foreground mb-5 tracking-wide">
               {t("footer.legal.title")}
             </h4>

@@ -1,5 +1,6 @@
 import { Zap, Cpu, Layers, HeartHandshake, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const featuresMeta = [
   {
@@ -34,32 +35,36 @@ const featuresMeta = [
 
 export default function WhyChooseSection() {
   const { t } = useTranslation();
+  const ref = useScrollAnimation();
 
   return (
-    <section id="why-aero" className="py-24 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} id="why-aero" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
+          <div className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
             {t("why.badge")}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+          <h2 className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             {t("why.title")}{" "}
             <span className="gradient-primary-text">{t("why.title.highlight")}</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="animate-on-scroll anim-delay-2 text-muted-foreground text-lg max-w-xl mx-auto">
             {t("why.subtitle")}
           </p>
         </div>
 
         {/* Feature grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {featuresMeta.map((feature) => {
+          {featuresMeta.map((feature, index) => {
             const Icon = feature.icon;
+            // Alternate left/right slide for visual variety
+            const slideClass = index % 2 === 0 ? "animate-on-scroll-left" : "animate-on-scroll-right";
+            const delayClass = `anim-delay-${Math.min(index + 1, 6)}`;
             return (
               <div
                 key={feature.titleKey}
-                className="group glass rounded-2xl p-7 hover:border-aero-blue/25 transition-all duration-300 hover:-translate-y-0.5"
+                className={`${slideClass} ${delayClass} group glass rounded-2xl p-7 hover:border-aero-blue/25 transition-all duration-300 hover:-translate-y-0.5`}
               >
                 <div className="flex items-start gap-5">
                   <div
@@ -96,3 +101,4 @@ export default function WhyChooseSection() {
     </section>
   );
 }
+
