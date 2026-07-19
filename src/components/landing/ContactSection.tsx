@@ -219,7 +219,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/201105487365"
+              href="https://wa.me/201108710742"
               target="_blank"
               rel="noopener noreferrer"
               className="glass rounded-2xl p-6 flex items-center gap-4 hover:border-aero-cyan/30 transition-all duration-300 hover:-translate-y-0.5 group"
@@ -233,7 +233,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
               <div>
                 <div className="text-xs text-muted-foreground mb-0.5 font-medium">{t("contact.whatsapp.label")}</div>
                 <div className="text-sm font-semibold text-foreground group-hover:text-aero-cyan transition-colors">
-                  +20 110 548 7365
+                  +20 110 871 0742
                 </div>
               </div>
             </a>
