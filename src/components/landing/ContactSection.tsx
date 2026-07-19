@@ -58,7 +58,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
   };
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="contact" className="py-24 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} id="contact" className="animate-section-entry py-24 relative overflow-hidden">
       <div
         className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]"
         style={{

@@ -4,7 +4,7 @@
 
 /* ── DARK THEME (default) ──────────────────────────────────── * */
 :root, [data-theme="dark"] {
-  --background: 223 49% 8%;            /* 0B1120 */
+  --background: 0 0% 0%;              /* Black */
   --foreground: 210 40% 96%;           /* F1F5F9 */
   --card: 221 41% 14%;                 /* 151E32 */
   --card-foreground: 210 40% 96%;      /* F1F5F9 */
@@ -99,9 +99,56 @@ body,
 #root {
   width: 100%;
   min-height: 100%;
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--aero-blue)) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--aero-blue)) 0%, hsl(var(--aero-cyan)) 100%);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--aero-cyan)) 0%, hsl(var(--aero-blue)) 100%);
 }
 
 @layer utilities {
+  .animate-section-entry {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  .animate-section-entry.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .glass {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -298,6 +345,12 @@ body,
 
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
+  .animate-section-entry {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .animate-on-scroll,
   .animate-on-scroll-left,
   .animate-on-scroll-right,
@@ -306,4 +359,4 @@ body,
     transform: none;
     transition: none;
   }
-}
+}

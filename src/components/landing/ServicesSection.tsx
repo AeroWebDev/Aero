@@ -27,7 +27,7 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
   const ref = useScrollAnimation();
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="services" className="py-24 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} id="services" className="animate-section-entry py-24 relative overflow-hidden">
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] opacity-30"
         style={{

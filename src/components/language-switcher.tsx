@@ -19,7 +19,7 @@ export const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
   return (
     <button
       onClick={handleToggle}
-      className={`rounded-lg border px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary ${className ?? ""}`}
+      className={`rounded-lg glass border px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary ${className ?? ""}`}
       aria-label={isArabic ? "Switch to English" : "التبديل إلى العربية"}
     >
       {isArabic ? "English" : "عربي"}

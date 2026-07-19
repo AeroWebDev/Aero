@@ -38,7 +38,7 @@ export default function WhyChooseSection() {
   const ref = useScrollAnimation();
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="why-aero" className="py-24 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} id="why-aero" className="animate-section-entry py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">

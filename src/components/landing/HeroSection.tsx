@@ -1,15 +1,8 @@
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
-const techBadges = [
-  { label: "React", delay: "0s" },
-  { label: "Node.js", delay: "0.5s" },
-  { label: "TypeScript", delay: "1s" },
-  { label: "AWS", delay: "1.5s" },
-  { label: "Next.js", delay: "0.8s" },
-  { label: "PostgreSQL", delay: "0.3s" },
-];
+import SideRays from "@/components/background/SideRays";
+import DotField from "@/components/background/DotField";
 
 export default function HeroSection() {
   const { t } = useTranslation();
@@ -18,65 +11,68 @@ export default function HeroSection() {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16"
+      className="animate-section-entry relative isolate min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16"
     >
-      {/* Background blobs */}
-      <div
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        aria-hidden="true"
-      >
+      {/* Background */}
 
+      <div className="absolute inset-0 -z-10">
+        <SideRays
+          speed={2.5}
+          rayColor1="#EAB308"
+          rayColor2="#96c8ff"
+          intensity={3}
+          spread={3}
+          origin="top-right"
+          tilt={0}
+          saturation={2}
+          blend={0.75}
+          falloff={0.5}
+          opacity={1}
+        />
       </div>
 
-      {/* Floating tech badges */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        {techBadges.map((badge, i) => {
-          const positions = [
-            { top: "18%", left: "8%" },
-            { top: "30%", right: "7%" },
-            { top: "60%", left: "5%" },
-            { top: "55%", right: "9%" },
-            { top: "75%", left: "14%" },
-            { top: "20%", right: "15%" },
-          ];
-          const pos = positions[i];
-          return (
-            <div
-              key={badge.label}
-              className="absolute glass rounded-full px-3 py-1.5 text-xs font-semibold text-muted-foreground animate-float hidden lg:flex items-center gap-1.5"
-              style={{ ...pos, animationDelay: badge.delay }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full bg-aero-blue inline-block"
-                style={{ boxShadow: "0 0 6px hsl(217 91% 60% / 0.8)" }}
-              />
-              {badge.label}
-            </div>
-          );
-        })}
+
+      <div className="absolute inset-0 -z-10 opacity-50">
+        <DotField
+          dotRadius={2}
+          dotSpacing={14}
+          bulgeStrength={86}
+          glowRadius={120}
+          sparkle
+          waveAmplitude={0}
+          cursorRadius={300}
+          cursorForce={1}
+          bulgeOnly
+          gradientFrom="#2563EB"
+          gradientTo="#06B6D4"
+          glowColor="#0B1220"
+        />
       </div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/10 via-background/35 to-background" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-20 container mx-auto px-6 text-center">
         {/* Badge */}
-        <div className="animate-on-scroll anim-delay-1 inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 text-sm font-medium text-aero-cyan border-aero-cyan/20 border">
+        <div className="animate-[fade-up_0.9s_ease-out_forwards] opacity-0 anim-delay-1 inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 text-sm font-medium text-aero-cyan border-aero-cyan/20 border">
           <span className="w-2 h-2 rounded-full bg-aero-cyan animate-pulse" />
           {t("hero.badge")}
         </div>
 
         {/* Headline */}
-        <h1 className="animate-on-scroll anim-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6 max-w-5xl mx-auto">
+        <h1 className="animate-[fade-up_1.1s_ease-out_forwards] opacity-0 anim-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6 max-w-5xl mx-auto">
           {t("hero.headline")}{" "}
           <span className="gradient-primary-text">{t("hero.headline.highlight")}</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="animate-on-scroll anim-delay-3 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="animate-[fade-up_1.3s_ease-out_forwards] opacity-0 anim-delay-3 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
           {t("hero.subheadline")}
         </p>
 
         {/* CTA Buttons */}
-        <div className="animate-on-scroll anim-delay-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="animate-[fade-up_1.5s_ease-out_forwards] opacity-0 anim-delay-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="#contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm bg-gradient-primary text-white hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-lg"

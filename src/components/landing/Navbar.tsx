@@ -121,6 +121,7 @@ export default function Navbar() {
             </a>
           ))}
           <LanguageSwitcher className="bg-secondary border-border text-foreground" />
+          
           <button
             onClick={toggle}
             aria-label="Toggle theme"

@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 type ProjectMeta = {
@@ -51,20 +52,6 @@ const projectsMeta: ProjectMeta[] = [
     accentColor: "hsl(55 100% 55%)",
     image: "/projects/aero-shop.png",
   },
-  {
-    nameKey: "projects.medcore.name",
-    categoryKey: "projects.medcore.category",
-    descKey: "projects.medcore.description",
-    tags: ["Vue.js", "FastAPI", "PostgreSQL", "Docker"],
-    accentColor: "hsl(250 80% 65%)",
-    mockupStyle: { background: "linear-gradient(135deg, hsl(250 80% 65% / 0.15), hsl(250 80% 65% / 0.05))" },
-    mockupLines: [
-      { w: "75%", c: "hsl(250 80% 65% / 0.5)" },
-      { w: "50%", c: "hsl(250 80% 65% / 0.3)" },
-      { w: "80%", c: "hsl(250 80% 65% / 0.4)" },
-    ],
-    bars: [70, 50, 85, 40, 65, 90, 55],
-  },
 ];
 
 
@@ -74,7 +61,7 @@ export default function ProjectsSection() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="projects" className="py-24 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} id="projects" className="animate-section-entry py-24 relative overflow-hidden">
       <div
         className="pointer-events-none absolute top-1/2 right-0 w-[500px] h-[500px] -translate-y-1/2"
         style={{
@@ -100,7 +87,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Projects grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {projectsMeta.map((project, index) => {
             const CardTag = "a";
             const delayClass = `anim-delay-${Math.min(index + 1, 6)}`;
@@ -220,6 +207,16 @@ export default function ProjectsSection() {
               </CardTag>
             );
           })}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            to="/projects"
+            className="animate-on-scroll inline-flex items-center gap-2 rounded-full border border-aero-cyan/30 bg-aero-cyan/10 px-5 py-3 text-sm font-semibold text-aero-cyan transition hover:-translate-y-0.5 hover:bg-aero-cyan/20"
+          >
+            {t("projects.cta")}
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
         </div>
       </div >
     </section >

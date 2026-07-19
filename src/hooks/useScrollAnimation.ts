@@ -20,11 +20,26 @@ export function useScrollAnimation(
     const el = ref.current;
     if (!el) return;
 
+    const addInView = () => {
+      el.classList.add("in-view");
+    };
+
+    const isAlreadyVisible = () => {
+      const rect = el.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      return rect.top < viewportHeight * (1 - threshold) + 1 && rect.bottom > 0;
+    };
+
+    if (isAlreadyVisible()) {
+      addInView();
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            el.classList.add("in-view");
+            addInView();
             // Stop observing once animated – keeps it a one-shot animation
             observer.unobserve(el);
           }
