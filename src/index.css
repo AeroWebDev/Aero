@@ -3,31 +3,53 @@
 @tailwind utilities;
 
 /* ── DARK THEME (default) ──────────────────────────────────── * */
-:root, [data-theme="dark"] {
-  --background: 0 0% 0%;              /* Black */
-  --foreground: 210 40% 96%;           /* F1F5F9 */
-  --card: 221 41% 14%;                 /* 151E32 */
-  --card-foreground: 210 40% 96%;      /* F1F5F9 */
-  --popover: 221 41% 14%;              /* 151E32 */
-  --popover-foreground: 210 40% 96%;   /* F1F5F9 */
-  --primary: 217 91% 60%;              /* 3B82F6 */
+:root,
+[data-theme="dark"] {
+  --background: 0 0% 0%;
+  /* Black */
+  --foreground: 210 40% 96%;
+  /* F1F5F9 */
+  --card: 221 41% 14%;
+  /* 151E32 */
+  --card-foreground: 210 40% 96%;
+  /* F1F5F9 */
+  --popover: 221 41% 14%;
+  /* 151E32 */
+  --popover-foreground: 210 40% 96%;
+  /* F1F5F9 */
+  --primary: 217 91% 60%;
+  /* 3B82F6 */
   --primary-foreground: 210 40% 98%;
-  --secondary: 217 33% 17%;            /* 1E293B */
-  --secondary-foreground: 210 40% 96%; /* F1F5F9 */
-  --accent: 188 86% 53%;               /* 22D3EE */
-  --accent-foreground: 223 49% 8%;     /* 0B1120 */
-  --muted: 221 35% 12%;                /* بين الكارد والباكجراوند */
-  --muted-foreground: 215 20% 65%;     /* 94A3B8 */
-  --destructive: 0 72% 55%;            /* أحمر تحذير ثابت - مش جزء من الباليت */
+  --secondary: 217 33% 17%;
+  /* 1E293B */
+  --secondary-foreground: 210 40% 96%;
+  /* F1F5F9 */
+  --accent: 188 86% 53%;
+  /* 22D3EE */
+  --accent-foreground: 223 49% 8%;
+  /* 0B1120 */
+  --muted: 221 35% 12%;
+  /* بين الكارد والباكجراوند */
+  --muted-foreground: 215 20% 65%;
+  /* 94A3B8 */
+  --destructive: 0 72% 55%;
+  /* أحمر تحذير ثابت - مش جزء من الباليت */
   --destructive-foreground: 0 0% 100%;
-  --border: 217 33% 17%;               /* 1E293B */
-  --input: 217 33% 17%;                /* 1E293B */
-  --ring: 217 91% 60%;                 /* 3B82F6 */
+  --border: 217 33% 17%;
+  /* 1E293B */
+  --input: 217 33% 17%;
+  /* 1E293B */
+  --ring: 217 91% 60%;
+  /* 3B82F6 */
   --radius: 1rem;
-  --aero-blue: 217 91% 60%;            /* 3B82F6 */
-  --aero-cyan: 188 86% 53%;            /* 22D3EE */
-  --aero-dark: 223 49% 8%;             /* 0B1120 */
-  --aero-card: 221 41% 14%;            /* 151E32 */
+  --aero-blue: 217 91% 60%;
+  /* 3B82F6 */
+  --aero-cyan: 188 86% 53%;
+  /* 22D3EE */
+  --aero-dark: 223 49% 8%;
+  /* 0B1120 */
+  --aero-card: 221 41% 14%;
+  /* 151E32 */
   --glow-blue: 0 0 50px hsl(217 91% 60% / .2);
   --glow-cyan: 0 0 40px hsl(188 86% 53% / .15);
   --glow-subtle: 0 0 80px hsl(217 91% 60% / .08);
@@ -38,33 +60,55 @@
   --glass-bg: hsl(223 40% 100% / .04);
   --glass-border: hsl(217 50% 100% / .08);
 }
+
 /* LIGHT */
 
 [data-theme="light"] {
-  --background: 210 40% 98%;           /* F8FAFC */
-  --foreground: 222 47% 11%;           /* 0F172A */
-  --card: 0 0% 100%;                   /* FFFFFF */
-  --card-foreground: 222 47% 11%;      /* 0F172A */
-  --popover: 0 0% 100%;                /* FFFFFF */
-  --popover-foreground: 222 47% 11%;   /* 0F172A */
-  --primary: 221 83% 53%;              /* 2563EB */
+  --background: 210 40% 98%;
+  /* F8FAFC */
+  --foreground: 222 47% 11%;
+  /* 0F172A */
+  --card: 0 0% 100%;
+  /* FFFFFF */
+  --card-foreground: 222 47% 11%;
+  /* 0F172A */
+  --popover: 0 0% 100%;
+  /* FFFFFF */
+  --popover-foreground: 222 47% 11%;
+  /* 0F172A */
+  --primary: 221 83% 53%;
+  /* 2563EB */
   --primary-foreground: 210 40% 98%;
-  --secondary: 214 32% 91%;            /* E2E8F0 */
-  --secondary-foreground: 222 47% 11%; /* 0F172A */
-  --accent: 192 91% 36%;               /* 0891B2 */
-  --accent-foreground: 0 0% 100%;      /* FFFFFF */
-  --muted: 210 40% 94%;                /* بين الكارد والباكجراوند */
-  --muted-foreground: 215 16% 47%;     /* 64748B */
-  --destructive: 0 72% 51%;            /* أحمر تحذير ثابت - مش جزء من الباليت */
+  --secondary: 214 32% 91%;
+  /* E2E8F0 */
+  --secondary-foreground: 222 47% 11%;
+  /* 0F172A */
+  --accent: 192 91% 36%;
+  /* 0891B2 */
+  --accent-foreground: 0 0% 100%;
+  /* FFFFFF */
+  --muted: 210 40% 94%;
+  /* بين الكارد والباكجراوند */
+  --muted-foreground: 215 16% 47%;
+  /* 64748B */
+  --destructive: 0 72% 51%;
+  /* أحمر تحذير ثابت - مش جزء من الباليت */
   --destructive-foreground: 0 0% 100%;
-  --border: 214 32% 91%;               /* E2E8F0 */
-  --input: 214 32% 91%;                /* E2E8F0 */
-  --ring: 221 83% 53%;                 /* 2563EB */
+  --border: 214 32% 91%;
+  /* E2E8F0 */
+  --input: 214 32% 91%;
+  /* E2E8F0 */
+  --ring: 221 83% 53%;
+  /* 2563EB */
   --radius: 1rem;
-  --aero-blue: 221 83% 53%;            /* 2563EB */
-  --aero-cyan: 192 91% 36%;            /* 0891B2 */
-  --aero-dark: 222 47% 11%;            /* 0F172A */
-  --aero-card: 0 0% 100%;              /* FFFFFF */
+  --aero-blue: 221 83% 53%;
+  /* 2563EB */
+  --aero-cyan: 192 91% 36%;
+  /* 0891B2 */
+  --aero-dark: 222 47% 11%;
+  /* 0F172A */
+  --aero-card: 0 0% 100%;
+  /* FFFFFF */
   --glow-blue: 0 0 50px hsl(221 83% 53% / .12);
   --glow-cyan: 0 0 40px hsl(192 91% 36% / .1);
   --glow-subtle: 0 0 80px hsl(221 83% 53% / .06);
@@ -151,10 +195,17 @@ html {
   }
 
   .glass {
-    background: var(--glass-bg);
+    background: rgba(20, 20, 25, 0.75);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(12px);
+
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass {
+      background: rgba(20, 20, 25, .95);
+    }
   }
 
   .glass-strong {
@@ -314,28 +365,28 @@ html {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animate-on-scroll-left {
   opacity: 0;
   transform: translateX(-40px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animate-on-scroll-right {
   opacity: 0;
   transform: translateX(40px);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animate-scale-in {
   opacity: 0;
   transform: scale(0.93);
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Visible state — added by IntersectionObserver via useScrollAnimation */
@@ -348,12 +399,29 @@ html {
 }
 
 /* Staggered children delays */
-.in-view .anim-delay-1 { transition-delay: 0.1s; }
-.in-view .anim-delay-2 { transition-delay: 0.2s; }
-.in-view .anim-delay-3 { transition-delay: 0.3s; }
-.in-view .anim-delay-4 { transition-delay: 0.4s; }
-.in-view .anim-delay-5 { transition-delay: 0.5s; }
-.in-view .anim-delay-6 { transition-delay: 0.6s; }
+.in-view .anim-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.in-view .anim-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.in-view .anim-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.in-view .anim-delay-4 {
+  transition-delay: 0.4s;
+}
+
+.in-view .anim-delay-5 {
+  transition-delay: 0.5s;
+}
+
+.in-view .anim-delay-6 {
+  transition-delay: 0.6s;
+}
 
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {

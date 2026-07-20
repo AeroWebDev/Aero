@@ -26,6 +26,13 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
     }
   }, [prefilledService, t]);
 
+  useEffect(() => {
+    if (status !== "success") return;
+
+    const timeout = window.setTimeout(() => setStatus("idle"), 2000);
+    return () => window.clearTimeout(timeout);
+  }, [status]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
@@ -233,7 +240,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
               <div>
                 <div className="text-xs text-muted-foreground mb-0.5 font-medium">{t("contact.whatsapp.label")}</div>
                 <div className="text-sm font-semibold text-foreground group-hover:text-aero-cyan transition-colors">
-                  +20 110 871 0742
+                  <span dir="ltr" className="inline-block">+20 110 871 0742</span>
                 </div>
               </div>
             </a>

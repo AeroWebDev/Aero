@@ -87,7 +87,7 @@ export default function Navbar() {
           </button>
           <LanguageSwitcher className="h-9 text-sm bg-secondary border-border text-foreground" />
           <a
-            href="#contact"
+            href="/#contact"
             className="px-5 py-2 rounded-lg text-sm font-semibold bg-gradient-primary text-white hover:opacity-90 transition-opacity duration-200 shadow-lg"
           >
             {t("nav.cta")}
@@ -134,7 +134,7 @@ export default function Navbar() {
             {theme === "dark" ? "Light mode" : "Dark mode"}
           </button>
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setMenuOpen(false)}
             className="mt-1 px-5 py-2.5 rounded-lg text-sm font-semibold bg-gradient-primary text-white text-center"
           >

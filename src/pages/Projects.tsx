@@ -82,6 +82,9 @@ export default function ProjectsPage() {
                   <img
                     src={project.imageUrl}
                     alt={t(project.nameKey)}
+                    loading="lazy"
+                    decoding="async"
+                    draggable={false}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-500" />
