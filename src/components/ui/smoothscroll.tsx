@@ -13,14 +13,17 @@ export default function SmoothScroll() {
             anchors: true,
         });
 
+        let animationFrameId = 0;
+
         function raf(time: number) {
             lenis.raf(time);
-            requestAnimationFrame(raf);
+            animationFrameId = requestAnimationFrame(raf);
         }
 
-        requestAnimationFrame(raf);
+        animationFrameId = requestAnimationFrame(raf);
 
         return () => {
+            cancelAnimationFrame(animationFrameId);
             lenis.destroy();
         };
     }, []);
