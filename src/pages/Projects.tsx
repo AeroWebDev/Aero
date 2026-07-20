@@ -42,7 +42,7 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Seo
-        title={`${t("projectsPage.title")} | ${t("common.appName")}`}
+        title={`${t("projectsPage.title")}`}
         description={t("projectsPage.subtitle")}
         canonical="https://aeroteam.vercel.app/projects"
         jsonLd={projectsSchema}
