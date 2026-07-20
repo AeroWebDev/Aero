@@ -47,8 +47,9 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass-strong border-b border-border py-3" : "bg-transparent py-5"
+        scrolled ? "glass-strong py-3" : "bg-transparent py-5"
       }`}
+      style={{ border: "none !important", boxShadow: "none !important" }}
     >
       <div className="container mx-auto flex items-center justify-between px-6">
         {/* Logo */}
@@ -107,7 +108,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div id="mobile-nav-menu" className="md:hidden glass-strong border-t border-border px-6 py-4 flex flex-col gap-4">
+        <div id="mobile-nav-menu" className="md:hidden glass-strong px-6 py-4 flex flex-col gap-4" style={{ border: "none !important" }}>
           {navLinks.map((link) => (
             <a
               key={link.href}

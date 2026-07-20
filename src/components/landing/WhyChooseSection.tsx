@@ -64,7 +64,11 @@ export default function WhyChooseSection() {
             return (
               <div
                 key={feature.titleKey}
-                className={`${slideClass} ${delayClass} group glass rounded-2xl p-7 hover:border-aero-blue/25 transition-all duration-300 hover:-translate-y-0.5`}
+                className={`${slideClass} ${delayClass} group glass rounded-2xl p-7 border border-transparent transition-all duration-300 hover:-translate-y-0.5 service-card-hover`}
+                style={{
+                  borderColor: "transparent",
+                  "--hover-border-color": feature.color,
+                } as React.CSSProperties}
               >
                 <div className="flex items-start gap-5">
                   <div

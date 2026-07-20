@@ -76,7 +76,7 @@ export default function LegalLayout({
               "radial-gradient(ellipse at top, hsl(217 91% 60% / 0.08) 0%, transparent 60%)",
           }}
         />
-        <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="container mx-auto px-6 text-center relative z-10 animate-section-entry">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-3 tracking-tight">
             {title}
           </h1>

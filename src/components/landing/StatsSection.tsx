@@ -14,7 +14,7 @@ export default function StatsSection() {
   const ref = useScrollAnimation();
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className="py-12 border-y border-border/40 bg-secondary/20 relative overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} className="animate-section-entry py-12 border-y border-border/40 bg-secondary/20 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {statsMeta.map((stat, i) => (

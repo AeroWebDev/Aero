@@ -79,6 +79,7 @@
 @layer base {
   * {
     @apply border-border;
+    /* color: hsl(47, 100%, 64%); */
   }
 
   html {
@@ -288,14 +289,25 @@ html {
 }
 
 .service-card-hover {
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 1s ease, transform 0.3s ease, box-shadow 1s ease;
+  box-shadow: 0 0 0 transparent;
 }
 
 .service-card-hover:hover {
-  box-shadow: 0 0 30px var(--hover-color);
+  border-color: var(--hover-border-color) !important;
+  box-shadow: 0 0 25px var(--hover-border-color);
 }
 
-/* ── Scroll-triggered entrance animations ────────────────────── */
+.project-hover-border {
+  border-color: transparent;
+  transition: border-color 1s ease, transform 0.3s ease, box-shadow 1s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.project-hover-border:hover {
+  border-color: var(--hover-border-color) !important;
+  box-shadow: 0 0 25px var(--hover-border-color);
+}
 
 /* Base state — hidden, shifted down */
 .animate-on-scroll {

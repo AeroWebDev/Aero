@@ -3,56 +3,21 @@ import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import projectsData from "@/data/projects.json";
 
 type ProjectMeta = {
+  id: string;
   nameKey: string;
   categoryKey: string;
   descKey: string;
   tags: string[];
   accentColor: string;
+  imageUrl: string;
   link?: string;
   isInteractive?: boolean;
-} & (
-    | {
-      image: string;
-      mockupStyle?: never;
-      mockupLines?: never;
-      bars?: never;
-    }
-    | {
-      image?: never;
-      mockupStyle: React.CSSProperties;
-      mockupLines: { w: string; c: string }[];
-      bars: number[];
-    }
-  );
+};
 
-const projectsMeta: ProjectMeta[] = [
-  {
-    nameKey: "projects.saasLanding.name",
-    categoryKey: "projects.saasLanding.category",
-    descKey: "projects.saasLanding.description",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    accentColor: "hsl(85 90% 55%)",
-    image: "/projects/saas-landing-page.jpg",
-  },
-  {
-    nameKey: "projects.storex.name",
-    categoryKey: "projects.storex.category",
-    descKey: "projects.storex.description",
-    tags: ["React", "Chart.js", "TypeScript"],
-    accentColor: "hsl(262 70% 65%)",
-    image: "/projects/storex-admin-dashboard.png",
-  },
-  {
-    nameKey: "projects.aeroShop.name",
-    categoryKey: "projects.aeroShop.category",
-    descKey: "projects.aeroShop.description",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    accentColor: "hsl(55 100% 55%)",
-    image: "/projects/aero-shop.png",
-  },
-];
+const projectsMeta: ProjectMeta[] = (projectsData as ProjectMeta[]).slice(0, 3);
 
 
 export default function ProjectsSection() {
@@ -89,12 +54,12 @@ export default function ProjectsSection() {
         {/* Projects grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {projectsMeta.map((project, index) => {
-            const CardTag = "a";
+            const CardTag = Link;
             const delayClass = `anim-delay-${Math.min(index + 1, 6)}`;
             return (
               <CardTag
                 key={project.nameKey}
-                href={project.link ?? "#"}
+                to="/projects"
                 onMouseEnter={() => setHoveredProject(project.nameKey)}
                 onMouseLeave={() => setHoveredProject(null)}
                 className={`animate-scale-in ${delayClass} group glass rounded-2xl overflow-hidden border transition-all duration-300 block no-underline cursor-pointer`}
@@ -113,10 +78,10 @@ export default function ProjectsSection() {
                 {/* Visual area */}
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0f1117]">
 
-                  {project.image ? (
+                  {project.imageUrl ? (
                     <>
                       <img
-                        src={project.image}
+                        src={project.imageUrl}
                         alt={t(project.nameKey)}
                         loading="lazy"
                         className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"

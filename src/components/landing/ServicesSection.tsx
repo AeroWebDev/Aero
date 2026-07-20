@@ -62,9 +62,10 @@ export default function ServicesSection({ onSelectService }: ServicesSectionProp
                 href="#contact"
                 key={service.titleKey}
                 onClick={() => onSelectService?.(t(service.titleKey))}
-                className={`animate-on-scroll ${delayClass} group glass rounded-2xl p-7 hover:border-aero-blue/30 hover:-translate-y-1 transition-all duration-300 service-card-hover block no-underline`}
+                className={`animate-on-scroll ${delayClass} group glass rounded-2xl p-7 border border-transparent hover:-translate-y-1 transition-all duration-300 service-card-hover block no-underline`}
                 style={{
-                  "--hover-color": `${service.color}22`
+                  borderColor: "transparent",
+                  "--hover-border-color": service.color,
                 } as React.CSSProperties}
               >
                 {/* Icon */}

@@ -1,10 +1,12 @@
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import SmoothScroll from "@/components/ui/smoothscroll";
 import Seo from "@/components/Seo";
+import projectsData from "@/data/projects.json";
 
 
 type MockProject = {
@@ -13,94 +15,19 @@ type MockProject = {
   categoryKey: string;
   descKey: string;
   tags: string[];
+  features: string[];
+  techUsed?: string[];
   accentColor: string;
+  imageUrl: string;
 };
 
-const mockProjects: MockProject[] = [
-  {
-    id: "finflow",
-    nameKey: "projectsPage.items.finflow.name",
-    categoryKey: "projectsPage.items.finflow.category",
-    descKey: "projectsPage.items.finflow.description",
-    tags: ["Fintech", "Dashboard", "SaaS"],
-    accentColor: "hsl(185 80% 55%)",
-  },
-  {
-    id: "urbanloop",
-    nameKey: "projectsPage.items.urbanloop.name",
-    categoryKey: "projectsPage.items.urbanloop.category",
-    descKey: "projectsPage.items.urbanloop.description",
-    tags: ["Mobility", "Booking", "UI/UX"],
-    accentColor: "hsl(262 70% 65%)",
-  },
-  {
-    id: "pulsecare",
-    nameKey: "projectsPage.items.pulsecare.name",
-    categoryKey: "projectsPage.items.pulsecare.category",
-    descKey: "projectsPage.items.pulsecare.description",
-    tags: ["Healthcare", "Portal", "Realtime"],
-    accentColor: "hsl(8 85% 62%)",
-  },
-  {
-    id: "voyager",
-    nameKey: "projectsPage.items.voyager.name",
-    categoryKey: "projectsPage.items.voyager.category",
-    descKey: "projectsPage.items.voyager.description",
-    tags: ["Travel", "Marketplace", "Animation"],
-    accentColor: "hsl(217 91% 60%)",
-  },
-  {
-    id: "neurofit",
-    nameKey: "projectsPage.items.neurofit.name",
-    categoryKey: "projectsPage.items.neurofit.category",
-    descKey: "projectsPage.items.neurofit.description",
-    tags: ["Wellness", "Mobile", "Gamified"],
-    accentColor: "hsl(145 60% 50%)",
-  },
-  {
-    id: "studioflow",
-    nameKey: "projectsPage.items.studioflow.name",
-    categoryKey: "projectsPage.items.studioflow.category",
-    descKey: "projectsPage.items.studioflow.description",
-    tags: ["Creative", "CMS", "Collaboration"],
-    accentColor: "hsl(35 95% 60%)",
-  },
-  {
-    id: "marketmint",
-    nameKey: "projectsPage.items.marketmint.name",
-    categoryKey: "projectsPage.items.marketmint.category",
-    descKey: "projectsPage.items.marketmint.description",
-    tags: ["Commerce", "B2B", "Analytics"],
-    accentColor: "hsl(315 75% 66%)",
-  },
-  {
-    id: "edunest",
-    nameKey: "projectsPage.items.edunest.name",
-    categoryKey: "projectsPage.items.edunest.category",
-    descKey: "projectsPage.items.edunest.description",
-    tags: ["Education", "Learning", "Community"],
-    accentColor: "hsl(120 70% 50%)",
-  },
-  {
-    id: "logiql",
-    nameKey: "projectsPage.items.logiql.name",
-    categoryKey: "projectsPage.items.logiql.category",
-    descKey: "projectsPage.items.logiql.description",
-    tags: ["Logistics", "Ops", "Automation"],
-    accentColor: "hsl(260 90% 70%)",
-  },
-  {
-    id: "aurora",
-    nameKey: "projectsPage.items.aurora.name",
-    categoryKey: "projectsPage.items.aurora.category",
-    descKey: "projectsPage.items.aurora.description",
-    tags: ["Branding", "Marketing", "Content"],
-    accentColor: "hsl(20 90% 60%)",
-  },
-];
+const mockProjects: MockProject[] = projectsData as MockProject[];
 
 export default function ProjectsPage() {
   const { t } = useTranslation();
+  const [activeProject, setActiveProject] = useState<MockProject | null>(null);
+
+  const defaultTechUsed = ["React", "TypeScript", "Tailwind CSS"];
 
   const projectsSchema = [
     {
@@ -123,7 +50,7 @@ export default function ProjectsPage() {
       <Navbar />
       <SmoothScroll />
       <main className="pt-24 pb-24">
-        <section className="container mx-auto px-6">
+        <section className="animate-section-entry container mx-auto px-6">
           <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <Link
@@ -136,13 +63,6 @@ export default function ProjectsPage() {
               <h1 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
                 {t("projectsPage.title")}
               </h1>
-              <p className="mt-3 text-lg text-muted-foreground">
-                {t("projectsPage.subtitle")}
-              </p>
-            </div>
-
-            <div className="glass rounded-2xl border border-aero-cyan/20 px-5 py-4 text-sm font-semibold uppercase tracking-[0.25em] text-aero-cyan">
-              {t("projectsPage.count")}
             </div>
           </div>
 
@@ -150,7 +70,8 @@ export default function ProjectsPage() {
             {mockProjects.map((project, index) => (
               <article
                 key={project.id}
-                className="glass rounded-2xl border border-border/60 p-5 transition duration-300 hover:-translate-y-1 hover:border-aero-cyan/30"
+                className="glass rounded-2xl border border-transparent p-5 transition duration-300 hover:-translate-y-1 group project-hover-border"
+                style={{ "--hover-border-color": project.accentColor } as React.CSSProperties}
               >
                 <div
                   className="relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10"
@@ -158,24 +79,30 @@ export default function ProjectsPage() {
                     background: `linear-gradient(135deg, ${project.accentColor}22 0%, rgba(15,17,23,0.95) 100%)`,
                   }}
                 >
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.18),transparent_45%)]" />
-                  <div className="absolute inset-0 flex items-center justify-center p-6">
-                    <div className="w-full max-w-[220px] space-y-3">
-                      <div className="h-3 rounded-full bg-white/70" />
-                      <div className="grid grid-cols-[1.4fr_0.6fr] gap-3">
-                        <div className="h-16 rounded-xl border border-white/20 bg-white/10" />
-                        <div className="h-16 rounded-xl border border-white/20 bg-white/10" />
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="h-2.5 flex-1 rounded-full bg-white/50" />
-                        <div className="h-2.5 w-10 rounded-full bg-white/30" />
-                      </div>
-                      <div className="h-2.5 w-2/3 rounded-full bg-white/40" />
-                    </div>
-                  </div>
-                  <div className="absolute right-4 top-4 rounded-full border border-white/20 bg-black/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-white/80">
-                    #{index + 1}
-                  </div>
+                  <img
+                    src={project.imageUrl}
+                    alt={t(project.nameKey)}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-500" />
+                  <button
+                    type="button"
+                    onClick={() => setActiveProject(project)}
+                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    style={{ background: "rgba(0,0,0,0.25)", backdropFilter: "blur(4px)" }}
+                  >
+                    <span
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-transform duration-300 group-hover:scale-105"
+                      style={{
+                        background: project.accentColor,
+                        color: "#fff",
+                        boxShadow: `0 10px 30px ${project.accentColor}40`,
+                      }}
+                    >
+                      See More
+                      <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                  </button>
                 </div>
 
                 <div className="mt-5">
@@ -207,6 +134,108 @@ export default function ProjectsPage() {
             ))}
           </div>
         </section>
+
+        {activeProject && (
+          <div className="animate-in fade-in duration-200 fixed inset-0 z-50 bg-black/60 backdrop-blur-sm px-4 py-6 sm:p-8">
+            <div
+              className="animate-in fade-in zoom-in-95 slide-in-from-bottom-4 duration-300 relative mx-auto flex h-[calc(100vh-4rem)] max-w-7xl overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl"
+              style={{
+                background: `linear-gradient(135deg, ${activeProject.accentColor}26 0%, hsl(var(--background)) 48%)`,
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => setActiveProject(null)}
+                className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-slate-950/90 text-white transition hover:bg-slate-900"
+                aria-label="Close project details"
+              >
+                ×
+              </button>
+
+              <div className="grid w-full grid-cols-1 overflow-hidden lg:grid-cols-[0.9fr_1.1fr]">
+                <div className="animate-in fade-in slide-in-from-left-12 duration-500 relative overflow-hidden bg-slate-950/90 p-8 text-white sm:p-10">
+                  <div className="relative z-10 flex h-full flex-col gap-8">
+                    <div className="space-y-4">
+                      <p className="text-xs uppercase tracking-[0.35em] text-slate-400">
+                        {t(activeProject.categoryKey)}
+                      </p>
+                      <h2 className="text-3xl font-bold tracking-tight text-white">
+                        {t(activeProject.nameKey)}
+                      </h2>
+                    </div>
+
+                    <div>
+                      <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
+                        Features
+                      </h3>
+                      <ul className="space-y-3 text-sm leading-relaxed text-slate-200">
+                        {activeProject.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-3">
+                            <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-white" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
+                        Tech used
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {(activeProject.techUsed ?? defaultTechUsed).map((tech) => (
+                          <span
+                            key={tech}
+                            className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-slate-200"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="animate-in fade-in slide-in-from-right-12 duration-500 flex flex-col overflow-hidden bg-slate-900/90 p-6 text-slate-100 sm:p-10">
+                  <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
+                    <img
+                      src={activeProject.imageUrl}
+                      alt={t(activeProject.nameKey)}
+                      className="h-[320px] w-full object-cover sm:h-[360px]"
+                    />
+                  </div>
+
+                  <div className="mt-6 space-y-4">
+                    <div>
+                      <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
+                        Overview
+                      </h3>
+                      <p className="text-sm leading-relaxed text-slate-300">
+                        {t(activeProject.descKey)}
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
+                        Tags
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {activeProject.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-slate-200"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <Footer />

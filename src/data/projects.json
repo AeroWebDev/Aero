@@ -1,0 +1,113 @@
+[
+  {
+    "id": "RestFlow",
+    "nameKey": "projectsPage.items.RestFlow.name",
+    "categoryKey": "projectsPage.items.RestFlow.category",
+    "descKey": "projectsPage.items.RestFlow.description",
+    "tags": ["POS", "Dashboard", "SaaS"],
+    "features": [
+      "Real-time finance dashboards",
+      "POS",
+      "Secure payment flows"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS"],
+    "accentColor": "hsl(47, 80%, 55%)",
+    "imageUrl": "/projects/RestFlow.png"
+  },
+  {
+    "id": "SaaS-Landing",
+    "nameKey": "projects.saasLanding.name",
+    "categoryKey": "projects.saasLanding.category",
+    "descKey": "projects.saasLanding.description",
+    "tags": ["React", "TypeScript", "Tailwind CSS"],
+    "features": [
+      "Fast onboarding flows",
+      "Responsive marketing sections",
+      "Customer conversion analytics"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS"],
+    "accentColor": "hsl(85 90% 55%)",
+    "imageUrl": "/projects/saas-landing-page.jpg",
+    "link": "#"
+  },
+  {
+    "id": "StoreX",
+    "nameKey": "projects.storex.name",
+    "categoryKey": "projects.storex.category",
+    "descKey": "projects.storex.description",
+    "tags": ["React", "Chart.js", "TypeScript"],
+    "features": [
+      "Admin analytics dashboard",
+      "Interactive charts",
+      "Real-time monitoring"
+    ],
+    "techUsed": ["React", "Chart.js", "TypeScript"],
+    "accentColor": "hsl(262 70% 65%)",
+    "imageUrl": "/projects/storex-admin-dashboard.png",
+    "link": "#"
+  },
+  {
+    "id": "AeroShop",
+    "nameKey": "projects.aeroShop.name",
+    "categoryKey": "projects.aeroShop.category",
+    "descKey": "projects.aeroShop.description",
+    "tags": ["React", "TypeScript", "Tailwind CSS"],
+    "features": [
+      "Modern e-commerce interface",
+      "Product discovery filters",
+      "Checkout optimization"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS"],
+    "accentColor": "hsl(55 100% 55%)",
+    "imageUrl": "/projects/aero-shop.png",
+    "link": "#"
+  },
+  {
+    "id": "Express",
+    "nameKey": "projects.Express.name",
+    "categoryKey": "projects.Express.category",
+    "descKey": "projects.Express.description",
+    "tags": ["React", "TypeScript", "Tailwind CSS"],
+    "features": [
+      "Modern interface",
+      "Trip Tracking",
+      "Geo"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS"],
+    "accentColor": "hsl(0, 65%, 25%)",
+    "imageUrl": "/projects/express.png",
+    "link": "#"
+  },
+  {
+    "id": "Shefaa",
+    "nameKey": "projects.Shefaa.name",
+    "categoryKey": "projects.Shefaa.category",
+    "descKey": "projects.Shefaa.description",
+    "tags": ["React", "TypeScript", "Tailwind CSS"],
+    "features": [
+      "Inventory management",
+      "Customer accounts",
+      "Sales analytics"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS"],
+    "accentColor": "hsl(135, 79%, 39%)",
+    "imageUrl": "/projects/shefaa.png",
+    "link": "#"
+  },
+  {
+    "id": "Luxe",
+    "nameKey": "projects.Luxe.name",
+    "categoryKey": "projects.Luxe.category",
+    "descKey": "projects.Luxe.description",
+    "tags": ["React", "TypeScript", "Tailwind CSS"],
+    "features": [
+      "Modern e-commerce interface",
+      "",
+      ""
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS"],
+    "accentColor": "hsl(47, 100%, 64%)",
+    "imageUrl": "/projects/luxe.png",
+    "link": "#"
+  }
+]
