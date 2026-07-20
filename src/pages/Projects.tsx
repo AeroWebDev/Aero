@@ -50,7 +50,7 @@ export default function ProjectsPage() {
       <Navbar />
       <SmoothScroll />
       <main className="pt-24 pb-24">
-        <section className="animate-section-entry container mx-auto px-6">
+        <section className="container mx-auto px-6">
           <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <Link
