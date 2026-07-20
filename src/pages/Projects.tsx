@@ -27,10 +27,6 @@ export default function ProjectsPage() {
   const { t } = useTranslation();
   const [activeProject, setActiveProject] = useState<MockProject | null>(null);
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, []);
-
   const defaultTechUsed = ["React", "TypeScript", "Tailwind CSS"];
 
   const projectsSchema = [
