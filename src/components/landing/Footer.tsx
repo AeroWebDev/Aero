@@ -37,17 +37,17 @@ export default function Footer() {
   const ref = useScrollAnimation();
 
   const quickLinks = [
-    { label: t("footer.links.home"), href: "#" },
-    { label: t("nav.services"), href: "#services" },
-    { label: t("nav.projects"), href: "#projects" },
-    { label: t("nav.whyAero"), href: "#why-aero" },
-    { label: t("nav.contact"), href: "#contact" },
+    { label: t("footer.links.home"), href: "/" },
+    { label: t("nav.services"), href: "/#services" },
+    { label: t("nav.projects"), href: "/#projects" },
+    { label: t("nav.whyAero"), href: "/#why-aero" },
+    { label: t("nav.contact"), href: "/#contact" },
   ];
 
   const serviceLinks = [
-    { label: t("services.design.title"), href: "#services" },
-    { label: t("services.webDev.title"), href: "#services" },
-    { label: t("footer.services.seo"), href: "#services" },
+    { label: t("services.design.title"), href: "/#services" },
+    { label: t("services.webDev.title"), href: "/#services" },
+    { label: t("footer.services.seo"), href: "/#services" },
   ];
 
   const legalLinks = [

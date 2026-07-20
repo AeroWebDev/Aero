@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import { Zap } from "lucide-react";
+import Seo from "@/components/Seo";
 
 const NotFound = () => {
   const location = useLocation();
@@ -16,6 +17,11 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-6">
+      <Seo
+        title="Page Not Found | Aero"
+        description="The page you were looking for does not exist or may have moved."
+        canonical={`https://aeroteam.vercel.app${location.pathname}`}
+      />
       <div className="text-center max-w-md">
         <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto mb-6 shadow-lg"
           style={{ boxShadow: "0 0 40px hsl(217 91% 60% / 0.35)" }}>

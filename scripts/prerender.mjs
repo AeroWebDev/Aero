@@ -24,7 +24,7 @@ const DIST = join(ROOT, "dist");
 const SERVER_DIST = join(DIST, "server");
 
 // Routes that will be pre-rendered to static HTML.
-const ROUTES_TO_PRERENDER = ["/", "/privacy", "/terms", "/cookies"];
+const ROUTES_TO_PRERENDER = ["/", "/privacy", "/terms", "/cookies", "/projects"];
 
 async function main() {
   console.log("📦 Step 1/3 — Building client bundle...");

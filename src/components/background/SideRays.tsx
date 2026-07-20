@@ -232,7 +232,9 @@ void main() {
             if (loseCtx) loseCtx.loseContext();
             const canvas = renderer.gl.canvas;
             if (canvas && canvas.parentNode) canvas.parentNode.removeChild(canvas);
-          } catch (e) {}
+          } catch {
+            // Ignore WebGL cleanup failures on unsupported devices.
+          }
         }
         rendererRef.current = null;
         uniformsRef.current = null;

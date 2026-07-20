@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import Seo from "@/components/Seo";
 
 interface LegalLayoutProps {
   title: string;
@@ -39,11 +40,30 @@ export default function LegalLayout({
   const { t } = useTranslation();
   const canonicalUrl = `https://aeroteam.vercel.app${canonicalPath}`;
   const appName = t("common.appName");
+  const legalSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: appName,
+      url: "https://aeroteam.vercel.app",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: `${title} | ${appName}`,
+      url: canonicalUrl,
+      description: subtitle,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <title>{`${title} | ${appName}`}</title>
-      <meta name="description" content={subtitle} />
-      <link rel="canonical" href={canonicalUrl} />
+      <Seo
+        title={`${title} | ${appName}`}
+        description={subtitle}
+        canonical={canonicalUrl}
+        jsonLd={legalSchema}
+      />
       <Navbar />
 
       {/* Hero header */}

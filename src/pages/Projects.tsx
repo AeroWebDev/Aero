@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import SmoothScroll from "@/components/ui/smoothscroll";
+import Seo from "@/components/Seo";
+
 
 type MockProject = {
   id: string;
@@ -99,12 +102,26 @@ const mockProjects: MockProject[] = [
 export default function ProjectsPage() {
   const { t } = useTranslation();
 
+  const projectsSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: t("projectsPage.title"),
+      url: "https://aeroteam.vercel.app/projects",
+      description: t("projectsPage.subtitle"),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <title>{`${t("projectsPage.title")} | ${t("common.appName")}`}</title>
-      <meta name="description" content={t("projectsPage.subtitle")} />
+      <Seo
+        title={`${t("projectsPage.title")} | ${t("common.appName")}`}
+        description={t("projectsPage.subtitle")}
+        canonical="https://aeroteam.vercel.app/projects"
+        jsonLd={projectsSchema}
+      />
       <Navbar />
-
+      <SmoothScroll />
       <main className="pt-24 pb-24">
         <section className="container mx-auto px-6">
           <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">

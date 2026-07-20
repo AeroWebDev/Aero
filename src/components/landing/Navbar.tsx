@@ -12,10 +12,10 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState<string>("");
 
   const navLinks = [
-    { label: t("nav.services"), href: "#services", id: "services" },
-    { label: t("nav.projects"), href: "#projects", id: "projects" },
-    { label: t("nav.whyAero"), href: "#why-aero", id: "why-aero" },
-    { label: t("nav.contact"), href: "#contact", id: "contact" },
+    { label: t("nav.services"), href: "/#services", id: "services" },
+    { label: t("nav.projects"), href: "/#projects", id: "projects" },
+    { label: t("nav.whyAero"), href: "/#why-aero", id: "why-aero" },
+    { label: t("nav.contact"), href: "/#contact", id: "contact" },
   ];
 
   useEffect(() => {
@@ -59,7 +59,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -97,6 +97,8 @@ export default function Navbar() {
         <button
           className="md:hidden text-muted-foreground hover:text-foreground transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav-menu"
           aria-label="Toggle menu"
         >
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -105,7 +107,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden glass-strong border-t border-border px-6 py-4 flex flex-col gap-4">
+        <div id="mobile-nav-menu" className="md:hidden glass-strong border-t border-border px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
