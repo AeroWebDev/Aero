@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/landing/Navbar";
@@ -26,6 +26,10 @@ const mockProjects: MockProject[] = projectsData as MockProject[];
 export default function ProjectsPage() {
   const { t } = useTranslation();
   const [activeProject, setActiveProject] = useState<MockProject | null>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
 
   const defaultTechUsed = ["React", "TypeScript", "Tailwind CSS"];
 
