@@ -60,6 +60,7 @@ export default function ProjectsSection() {
               <CardTag
                 key={project.nameKey}
                 to="/projects"
+                onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "auto" })}
                 onMouseEnter={() => setHoveredProject(project.nameKey)}
                 onMouseLeave={() => setHoveredProject(null)}
                 className={`animate-scale-in ${delayClass} group glass rounded-2xl overflow-hidden border transition-all duration-300 block no-underline cursor-pointer`}
@@ -177,6 +178,7 @@ export default function ProjectsSection() {
         <div className="mt-10 flex justify-center">
           <Link
             to="/projects"
+            onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "auto" })}
             className="animate-on-scroll inline-flex items-center gap-2 rounded-full border border-aero-cyan/30 bg-aero-cyan/10 px-5 py-3 text-sm font-semibold text-aero-cyan transition hover:-translate-y-0.5 hover:bg-aero-cyan/20"
           >
             {t("projects.cta")}
