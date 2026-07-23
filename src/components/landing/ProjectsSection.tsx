@@ -4,21 +4,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import projectsData from "@/data/projects.json";
+import { Project } from "@/types/project";
 
-type ProjectMeta = {
-  id: string;
-  nameKey: string;
-  categoryKey: string;
-  descKey: string;
-  tags: string[];
-  accentColor: string;
-  imageUrl: string;
-  link?: string;
-  isInteractive?: boolean;
-};
-
-const projectsMeta: ProjectMeta[] = (projectsData as ProjectMeta[]).slice(0, 3);
-
+const projectsMeta: Project[] = (projectsData as unknown as Project[]).slice(0, 3);
 
 export default function ProjectsSection() {
   const { t } = useTranslation();
@@ -78,28 +66,15 @@ export default function ProjectsSection() {
               >
                 {/* Visual area */}
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0f1117]">
+                  <img
+                    src={project.imageUrl}
+                    alt={t(project.nameKey)}
+                    loading="lazy"
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                  />
 
-                  {project.imageUrl ? (
-                    <>
-                      <img
-                        src={project.imageUrl}
-                        alt={t(project.nameKey)}
-                        loading="lazy"
-                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
-                      />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-70 group-hover:opacity-20 transition-opacity duration-500" />
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-70 group-hover:opacity-20 transition-opacity duration-500" />
-                    </>
-                  ) : (
-                    <div
-                      className="w-full h-full flex items-center justify-center"
-                      style={project.mockupStyle}
-                    >
-                      {/* الـ Mockup بتاعك */}
-                    </div>
-                  )}
-
-                  {/* خلي الجزء ده هنا */}
                   <div
                     className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
                     style={{
@@ -115,11 +90,10 @@ export default function ProjectsSection() {
                         boxShadow: `0 10px 30px ${project.accentColor}40`,
                       }}
                     >
-                      See More
+                      {t("projectsPage.modal.seeMore")}
                       <ArrowUpRight className="w-4 h-4" />
                     </div>
                   </div>
-
                 </div>
 
                 {/* Info */}
@@ -165,7 +139,7 @@ export default function ProjectsSection() {
                             backgroundColor: project.accentColor,
                           }}
                         />
-                        {tag}
+                        {t(tag)}
                       </span>
                     ))}
                   </div>
@@ -185,7 +159,7 @@ export default function ProjectsSection() {
             <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
-      </div >
-    </section >
+      </div>
+    </section>
   );
 }

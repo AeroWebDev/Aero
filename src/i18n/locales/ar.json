@@ -93,6 +93,60 @@
   "projects.Luxe.name": "لوكس",
   "projects.Luxe.category": "متجر إلكتروني فاخر",
   "projects.Luxe.description": "واجهة متجر إلكتروني راقية لعرض مجموعات مميزة بتجربة تسوق تحريرية وخطوات دفع سلسة.",
+
+  "projectsPage.modal.seeMore": "شاهد المزيد",
+  "projectsPage.modal.features": "المميزات",
+  "projectsPage.modal.techUsed": "التقنيات المستخدمة",
+  "projectsPage.modal.overview": "نظرة عامة",
+  "projectsPage.modal.tags": "الوسوم",
+
+  "projects.tags.pos": "نقاط البيع",
+  "projects.tags.restaurant": "مطاعم",
+  "projects.tags.saas": "SaaS",
+  "projects.tags.landingPage": "صفحة هبوط",
+  "projects.tags.uiux": "UI/UX",
+  "projects.tags.dashboard": "لوحة تحكم",
+  "projects.tags.analytics": "تحليلات",
+  "projects.tags.admin": "إدارة",
+  "projects.tags.ecommerce": "تجارة إلكترونية",
+  "projects.tags.onlineStore": "متجر إلكتروني",
+  "projects.tags.woocommerce": "ووكومرس",
+  "projects.tags.logistics": "خدمات لوجستية",
+  "projects.tags.tracking": "تتبع",
+  "projects.tags.delivery": "توصيل",
+  "projects.tags.pharmacy": "صيدلية",
+  "projects.tags.inventory": "مخزون",
+  "projects.tags.healthcare": "رعاية صحية",
+  "projects.tags.luxury": "منتجات فاخرة",
+  "projects.tags.fashion": "أزياء",
+
+  "projects.RestFlow.features.0": "نظام نقاط البيع للمطاعم",
+  "projects.RestFlow.features.1": "لوحة تحكم مالية لحظية",
+  "projects.RestFlow.features.2": "إدارة الطلبات والطاولات",
+
+  "projects.saasLanding.features.0": "أقسام رئيسية عالية التحويل",
+  "projects.saasLanding.features.1": "صفحات تسويق متجاوبة",
+  "projects.saasLanding.features.2": "أداء مُحسَّن لمحركات البحث",
+
+  "projects.storex.features.0": "لوحة تحكم إدارية متقدمة",
+  "projects.storex.features.1": "تحليلات مبيعات تفاعلية",
+  "projects.storex.features.2": "رؤى تجارية لحظية",
+
+  "projects.aeroShop.features.0": "تجربة تسوق حديثة",
+  "projects.aeroShop.features.1": "تصفية متقدمة للمنتجات",
+  "projects.aeroShop.features.2": "خطوات دفع مُحسَّنة",
+
+  "projects.Express.features.0": "تتبع الشحنات",
+  "projects.Express.features.1": "تتبع موقع السائق المباشر",
+  "projects.Express.features.2": "لوحة تحكم إدارة التوصيل",
+
+  "projects.Shefaa.features.0": "إدارة مخزون الأدوية",
+  "projects.Shefaa.features.1": "سجلات العملاء والروشتات الطبية",
+  "projects.Shefaa.features.2": "تقارير المبيعات والمخزون",
+
+  "projects.Luxe.features.0": "تجربة تسوق فاخرة",
+  "projects.Luxe.features.1": "قائمة الأمنيات ومجموعات المنتجات",
+  "projects.Luxe.features.2": "سرد قصصي للماركات الفاخرة",
   
   "contact.badge": "تواصل معنا",
   "contact.title": "لنبني شيئاً",
@@ -118,6 +172,7 @@
   "contact.response.value": "أقل من 24 ساعة",
   "contact.response.description": "نرد على جميع الاستفسارات خلال يوم عمل واحد.",
   "contact.social.label": "تابعنا",
+  "contact.location.text": "القاهره, مصر" ,
 
   "footer.copyright": "© {{year}} أيرو تيم. جميع الحقوق محفوظة.",
   "footer.tagline": "نصنع تجارب رقمية استثنائية للشركات ذات التفكير المستقبلي.",

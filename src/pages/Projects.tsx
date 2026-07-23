@@ -7,25 +7,13 @@ import Footer from "@/components/landing/Footer";
 import SmoothScroll from "@/components/ui/smoothscroll";
 import Seo from "@/components/Seo";
 import projectsData from "@/data/projects.json";
+import { Project } from "@/types/project";
 
-
-type MockProject = {
-  id: string;
-  nameKey: string;
-  categoryKey: string;
-  descKey: string;
-  tags: string[];
-  features: string[];
-  techUsed?: string[];
-  accentColor: string;
-  imageUrl: string;
-};
-
-const mockProjects: MockProject[] = projectsData as MockProject[];
+const mockProjects: Project[] = projectsData as unknown as Project[];
 
 export default function ProjectsPage() {
   const { t } = useTranslation();
-  const [activeProject, setActiveProject] = useState<MockProject | null>(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
@@ -75,7 +63,7 @@ export default function ProjectsPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {mockProjects.map((project, index) => (
+            {mockProjects.map((project) => (
               <article
                 key={project.id}
                 className="glass rounded-2xl border border-transparent p-5 transition duration-300 hover:-translate-y-1 group project-hover-border"
@@ -110,7 +98,7 @@ export default function ProjectsPage() {
                         boxShadow: `0 10px 30px ${project.accentColor}40`,
                       }}
                     >
-                      See More
+                      {t("projectsPage.modal.seeMore")}
                       <ArrowUpRight className="w-4 h-4" />
                     </span>
                   </button>
@@ -136,7 +124,7 @@ export default function ProjectsPage() {
                         key={tag}
                         className="rounded-full border border-border/60 px-3 py-1 text-xs font-medium text-foreground/80"
                       >
-                        {tag}
+                        {t(tag)}
                       </span>
                     ))}
                   </div>
@@ -177,13 +165,13 @@ export default function ProjectsPage() {
 
                     <div>
                       <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
-                        Features
+                        {t("projectsPage.modal.features")}
                       </h3>
                       <ul className="space-y-3 text-sm leading-relaxed text-slate-200">
                         {activeProject.features.map((feature) => (
                           <li key={feature} className="flex items-start gap-3">
                             <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-white" />
-                            <span>{feature}</span>
+                            <span>{t(feature)}</span>
                           </li>
                         ))}
                       </ul>
@@ -191,7 +179,7 @@ export default function ProjectsPage() {
 
                     <div>
                       <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
-                        Tech used
+                        {t("projectsPage.modal.techUsed")}
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {(activeProject.techUsed ?? defaultTechUsed).map((tech) => (
@@ -219,7 +207,7 @@ export default function ProjectsPage() {
                   <div className="mt-6 space-y-4">
                     <div>
                       <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
-                        Overview
+                        {t("projectsPage.modal.overview")}
                       </h3>
                       <p className="text-sm leading-relaxed text-slate-300">
                         {t(activeProject.descKey)}
@@ -228,7 +216,7 @@ export default function ProjectsPage() {
 
                     <div>
                       <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
-                        Tags
+                        {t("projectsPage.modal.tags")}
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {activeProject.tags.map((tag) => (
@@ -236,7 +224,7 @@ export default function ProjectsPage() {
                             key={tag}
                             className="rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-slate-200"
                           >
-                            {tag}
+                            {t(tag)}
                           </span>
                         ))}
                       </div>

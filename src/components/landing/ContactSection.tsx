@@ -124,11 +124,14 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="contact-name" className="block text-sm font-medium text-foreground mb-2">
                     {t("contact.form.name.label")}
                   </label>
                   <input
+                    id="contact-name"
+                    name="name"
                     type="text"
+                    autoComplete="name"
                     required
                     disabled={status === "loading"}
                     placeholder={t("contact.form.name.placeholder")}
@@ -139,11 +142,14 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="contact-email" className="block text-sm font-medium text-foreground mb-2">
                     {t("contact.form.email.label")}
                   </label>
                   <input
+                    id="contact-email"
+                    name="email"
                     type="email"
+                    autoComplete="email"
                     required
                     disabled={status === "loading"}
                     placeholder={t("contact.form.email.placeholder")}
@@ -154,10 +160,12 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="contact-project" className="block text-sm font-medium text-foreground mb-2">
                     {t("contact.form.project.label")}
                   </label>
                   <textarea
+                    id="contact-project"
+                    name="project"
                     required
                     rows={5}
                     disabled={status === "loading"}
@@ -255,7 +263,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
               </div>
               <div>
                 <div className="text-xs text-muted-foreground mb-0.5 font-medium">{t("contact.location.label")}</div>
-                <div className="text-sm font-semibold text-foreground">Cairo, Egypt</div>
+                <div className="text-sm font-semibold text-foreground">{t("contact.location.text")}</div>
               </div>
             </div>
 

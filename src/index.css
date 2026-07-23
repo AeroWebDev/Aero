@@ -340,13 +340,11 @@ html {
 }
 
 .service-card-hover {
-  transition: border-color 1s ease, transform 0.3s ease, box-shadow 1s ease;
-  box-shadow: 0 0 0 transparent;
+  transition: all 1s ease;
 }
 
 .service-card-hover:hover {
   border-color: var(--hover-border-color) !important;
-  box-shadow: 0 0 25px var(--hover-border-color);
 }
 
 .project-hover-border {

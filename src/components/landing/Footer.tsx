@@ -1,4 +1,4 @@
-import { Zap, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -65,7 +65,6 @@ export default function Footer() {
   const serviceLinks = [
     { label: t("services.design.title"), href: "/#services" },
     { label: t("services.webDev.title"), href: "/#services" },
-    { label: t("footer.services.seo"), href: "/#services" },
     { label: t("services.saas.title"), href: "/#services" },
     { label: t("services.consulting.title"), href: "/#services" },
     { label: t("services.api.title"), href: "/#services" },
@@ -120,9 +119,9 @@ export default function Footer() {
 
           {/* Col 2 — Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-5 tracking-wide">
+            <p className="text-sm font-semibold text-foreground mb-5 tracking-wide">
               {t("footer.quickLinks")}
-            </h4>
+            </p>
             <ul className="flex flex-col gap-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -139,9 +138,9 @@ export default function Footer() {
 
           {/* Col 3 — Services */}
           <div className="animate-on-scroll anim-delay-2">
-            <h4 className="text-sm font-semibold text-foreground mb-5 tracking-wide">
+            <p className="text-sm font-semibold text-foreground mb-5 tracking-wide">
               {t("footer.services")}
-            </h4>
+            </p>
             <ul className="flex flex-col gap-3">
               {serviceLinks.map((link) => (
                 <li key={link.label}>
@@ -158,9 +157,9 @@ export default function Footer() {
 
           {/* Col 4 — Legal */}
           <div className="animate-on-scroll anim-delay-3">
-            <h4 className="text-sm font-semibold text-foreground mb-5 tracking-wide">
+            <p className="text-sm font-semibold text-foreground mb-5 tracking-wide">
               {t("footer.legal.title")}
-            </h4>
+            </p>
             <ul className="flex flex-col gap-3">
               {legalLinks.map((link) => (
                 <li key={link.label}>

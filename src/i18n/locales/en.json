@@ -93,6 +93,60 @@
   "projects.Luxe.name": "Luxe",
   "projects.Luxe.category": "LUXURY E-COMMERCE",
   "projects.Luxe.description": "A refined e-commerce storefront designed to showcase premium collections with an editorial shopping experience and a seamless checkout flow.",
+
+  "projectsPage.modal.seeMore": "See More",
+  "projectsPage.modal.features": "Features",
+  "projectsPage.modal.techUsed": "Tech used",
+  "projectsPage.modal.overview": "Overview",
+  "projectsPage.modal.tags": "Tags",
+
+  "projects.tags.pos": "POS",
+  "projects.tags.restaurant": "Restaurant",
+  "projects.tags.saas": "SaaS",
+  "projects.tags.landingPage": "Landing Page",
+  "projects.tags.uiux": "UI/UX",
+  "projects.tags.dashboard": "Dashboard",
+  "projects.tags.analytics": "Analytics",
+  "projects.tags.admin": "Admin",
+  "projects.tags.ecommerce": "E-Commerce",
+  "projects.tags.onlineStore": "Online Store",
+  "projects.tags.woocommerce": "WooCommerce",
+  "projects.tags.logistics": "Logistics",
+  "projects.tags.tracking": "Tracking",
+  "projects.tags.delivery": "Delivery",
+  "projects.tags.pharmacy": "Pharmacy",
+  "projects.tags.inventory": "Inventory",
+  "projects.tags.healthcare": "Healthcare",
+  "projects.tags.luxury": "Luxury",
+  "projects.tags.fashion": "Fashion",
+
+  "projects.RestFlow.features.0": "Restaurant POS system",
+  "projects.RestFlow.features.1": "Real-time finance dashboard",
+  "projects.RestFlow.features.2": "Order & table management",
+
+  "projects.saasLanding.features.0": "High-converting hero sections",
+  "projects.saasLanding.features.1": "Responsive marketing pages",
+  "projects.saasLanding.features.2": "SEO optimized performance",
+
+  "projects.storex.features.0": "Advanced admin dashboard",
+  "projects.storex.features.1": "Interactive sales analytics",
+  "projects.storex.features.2": "Real-time business insights",
+
+  "projects.aeroShop.features.0": "Modern shopping experience",
+  "projects.aeroShop.features.1": "Advanced product filtering",
+  "projects.aeroShop.features.2": "Optimized checkout flow",
+
+  "projects.Express.features.0": "Shipment tracking",
+  "projects.Express.features.1": "Live driver location",
+  "projects.Express.features.2": "Delivery management dashboard",
+
+  "projects.Shefaa.features.0": "Medicine inventory management",
+  "projects.Shefaa.features.1": "Customer & prescription records",
+  "projects.Shefaa.features.2": "Sales and stock reporting",
+
+  "projects.Luxe.features.0": "Premium shopping experience",
+  "projects.Luxe.features.1": "Wishlist & product collections",
+  "projects.Luxe.features.2": "Luxury brand storytelling",
   
   "contact.badge": "Get In Touch",
   "contact.title": "Let's Build Something",
@@ -118,6 +172,7 @@
   "contact.response.value": "< 24 hrs",
   "contact.response.description": "We respond to all inquiries within one business day.",
   "contact.social.label": "Follow Us",
+  "contact.location.text": "Cairo, Egypt",
 
   "footer.copyright": "© {{year}} Aero Team. All rights reserved.",
   "footer.tagline": "Crafting exceptional digital experiences for forward-thinking businesses.",
