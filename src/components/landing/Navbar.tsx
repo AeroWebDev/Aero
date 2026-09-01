@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useTheme } from "@/hooks/use-theme";
 
@@ -53,18 +54,18 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between px-6">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 drop-shadow-lg">
             <img src="/logo.png" alt="Aero Logo" className="w-full h-full object-contain scale-[1.15]" />
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className={`text-sm font-medium transition-colors duration-200 border-b-2 pb-0.5 ${
                 activeSection === link.id
                   ? "text-foreground border-aero-blue"
@@ -72,7 +73,7 @@ export default function Navbar() {
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -86,12 +87,12 @@ export default function Navbar() {
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
           <LanguageSwitcher className="h-9 text-sm bg-secondary border-border text-foreground" />
-          <a
-            href="/#contact"
+          <Link
+            to="/#contact"
             className="px-5 py-2 rounded-lg text-sm font-semibold bg-gradient-primary text-white hover:opacity-90 transition-opacity duration-200 shadow-lg"
           >
             {t("nav.cta")}
-          </a>
+          </Link>
         </div>
 
         {/* Mobile menu toggle */}
@@ -110,9 +111,9 @@ export default function Navbar() {
       {menuOpen && (
         <div id="mobile-nav-menu" className="md:hidden glass-strong px-6 py-4 flex flex-col gap-4" style={{ border: "none !important" }}>
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               onClick={() => setMenuOpen(false)}
               className={`text-sm font-medium transition-colors border-b pb-2 ${
                 activeSection === link.id
@@ -121,7 +122,7 @@ export default function Navbar() {
               }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <LanguageSwitcher className="bg-secondary border-border text-foreground" />
           
@@ -133,13 +134,13 @@ export default function Navbar() {
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             {theme === "dark" ? "Light mode" : "Dark mode"}
           </button>
-          <a
-            href="/#contact"
+          <Link
+            to="/#contact"
             onClick={() => setMenuOpen(false)}
             className="mt-1 px-5 py-2.5 rounded-lg text-sm font-semibold bg-gradient-primary text-white text-center"
           >
             {t("nav.cta")}
-          </a>
+          </Link>
         </div>
       )}
     </header>

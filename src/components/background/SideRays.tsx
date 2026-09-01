@@ -211,7 +211,7 @@ void main() {
         try {
           renderer.render({ scene: mesh });
           animationIdRef.current = requestAnimationFrame(loop);
-        } catch (e) {
+        } catch {
           return;
         }
       };

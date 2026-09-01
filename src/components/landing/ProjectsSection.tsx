@@ -6,7 +6,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import projectsData from "@/data/projects.json";
 import { Project } from "@/types/project";
 
-const projectsMeta: Project[] = (projectsData as unknown as Project[]).slice(0, 3);
+const projectsMeta: Project[] = (projectsData as Project[]).slice(0, 3);
 
 export default function ProjectsSection() {
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ export default function ProjectsSection() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="projects" className="animate-section-entry py-24 relative overflow-hidden">
+    <section ref={ref} id="projects" className="animate-section-entry py-24 relative overflow-hidden">
       <div
         className="pointer-events-none absolute top-1/2 right-0 w-[500px] h-[500px] -translate-y-1/2"
         style={{

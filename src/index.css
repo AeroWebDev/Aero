@@ -59,6 +59,8 @@
   --gradient-text: linear-gradient(135deg, white, hsl(188 86% 70%));
   --glass-bg: hsl(223 40% 100% / .04);
   --glass-border: hsl(217 50% 100% / .08);
+  --glass-surface: hsl(223 40% 100% / .04);
+  --glass-surface-fallback: hsl(221 41% 14%);
 }
 
 /* LIGHT */
@@ -118,6 +120,8 @@
   --gradient-text: linear-gradient(135deg, hsl(222 47% 11%), hsl(192 91% 36%));
   --glass-bg: hsl(222 47% 0% / .03);
   --glass-border: hsl(217 33% 0% / .06);
+  --glass-surface: hsl(210 40% 98% / .75);
+  --glass-surface-fallback: hsl(0 0% 100%);
 }
 
 @layer base {
@@ -195,7 +199,7 @@ html {
   }
 
   .glass {
-    background: rgba(20, 20, 25, 0.75);
+    background: var(--glass-surface);
     border: 1px solid var(--glass-border);
 
     -webkit-backdrop-filter: blur(12px);
@@ -204,7 +208,7 @@ html {
 
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     .glass {
-      background: rgba(20, 20, 25, .95);
+      background: var(--glass-surface-fallback);
     }
   }
 

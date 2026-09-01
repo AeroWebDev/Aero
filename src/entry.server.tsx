@@ -5,8 +5,6 @@ import App from "./App";
 
 import "./i18n/config";
 
-import "./index.css";
-
 export function render(url: string): string {
   return renderToString(
     <StaticRouter location={url}>

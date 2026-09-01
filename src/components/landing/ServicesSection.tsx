@@ -39,7 +39,7 @@ export default function ServicesSection({
 
   return (
     <section
-      ref={ref as React.RefObject<HTMLElement>}
+      ref={ref}
       id="services"
       className="animate-section-entry py-24 relative overflow-hidden"
     >

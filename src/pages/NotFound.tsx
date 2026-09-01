@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { Zap } from "lucide-react";
 import Seo from "@/components/Seo";
 
@@ -8,12 +7,6 @@ const NotFound = () => {
   const location = useLocation();
   const { t } = useTranslation();
 
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-6">
@@ -34,13 +27,13 @@ const NotFound = () => {
         <p className="text-muted-foreground text-sm mb-8">
           {t("notFound.description")}
         </p>
-        <a
-          href="/"
+        <Link
+          to="/"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-gradient-primary text-aero-dark hover:opacity-90 transition-opacity"
           style={{ boxShadow: "0 0 30px hsl(217 91% 60% / 0.3)" }}
         >
           {t("notFound.actions.backHome")}
-        </a>
+        </Link>
       </div>
     </div>
   );

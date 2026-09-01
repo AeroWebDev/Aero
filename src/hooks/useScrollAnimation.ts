@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 
 /**
  * useScrollAnimation
@@ -13,8 +13,8 @@ import { useEffect, useRef } from "react";
 export function useScrollAnimation(
   threshold: number = 0.15,
   rootMargin: string = "0px"
-) {
-  const ref = useRef<HTMLElement | null>(null);
+): RefObject<HTMLElement> {
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const el = ref.current;

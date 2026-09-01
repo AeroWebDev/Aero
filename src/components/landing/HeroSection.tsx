@@ -10,7 +10,7 @@ export default function HeroSection() {
 
   return (
     <section
-      ref={ref as React.RefObject<HTMLElement>}
+      ref={ref}
       className="animate-section-entry relative isolate min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16"
     >
       {/* Background */}

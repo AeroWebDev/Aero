@@ -84,7 +84,7 @@ export default function LegalLayout({
             {subtitle}
           </p>
           <p className="text-xs text-muted-foreground">
-            Last updated: {lastUpdated}
+            {t("legal.lastUpdated")} {lastUpdated}
           </p>
         </div>
       </div>

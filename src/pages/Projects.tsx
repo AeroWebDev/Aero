@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -9,19 +9,22 @@ import Seo from "@/components/Seo";
 import projectsData from "@/data/projects.json";
 import { Project } from "@/types/project";
 
-const mockProjects: Project[] = projectsData as unknown as Project[];
+const projects: Project[] = projectsData as Project[];
 
 export default function ProjectsPage() {
   const { t } = useTranslation();
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
+  // Close modal on Escape key
   useEffect(() => {
-    const frame = requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    });
-
-    return () => cancelAnimationFrame(frame);
-  }, []);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActiveProject(null);
+    };
+    if (activeProject) {
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [activeProject]);
 
   const defaultTechUsed = ["React", "TypeScript", "Tailwind CSS"];
 
@@ -63,7 +66,7 @@ export default function ProjectsPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {mockProjects.map((project) => (
+            {projects.map((project) => (
               <article
                 key={project.id}
                 className="glass rounded-2xl border border-transparent p-5 transition duration-300 hover:-translate-y-1 group project-hover-border"
@@ -148,7 +151,7 @@ export default function ProjectsPage() {
                 className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-slate-950/90 text-white transition hover:bg-slate-900"
                 aria-label="Close project details"
               >
-                ×
+                <X className="w-5 h-5" />
               </button>
 
               <div className="grid w-full grid-cols-1 overflow-hidden lg:grid-cols-[0.9fr_1.1fr]">
