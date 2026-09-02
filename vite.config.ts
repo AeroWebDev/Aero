@@ -20,6 +20,9 @@ export default defineConfig(() => {
     base: "/",
     build: {
       outDir: "dist",
+      target: "esnext",
+      cssMinify: true,
+      reportCompressedSize: false,
       ssrManifest: true,
       rollupOptions: {
         output: {

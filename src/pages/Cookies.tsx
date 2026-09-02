@@ -82,10 +82,10 @@ export default function Cookies() {
           <p>
             إذا كانت لديك أي استفسارات أو بحاجة إلى تفاصيل حول كيفية استخدامنا لملفات تعريف الارتباط، يرجى التواصل معنا عبر:{" "}
             <a
-              href="mailto:aero1code@gmail.com"
+              href="mailto:aeroteam.agency@gmail.com"
               className="text-aero-blue hover:underline"
             >
-              aero1code@gmail.com
+              aeroteam.agency@gmail.com
             </a>
           </p>
         </LegalSection>
@@ -170,10 +170,10 @@ export default function Cookies() {
         <p>
           If you have any inquiries or require details on how we use cookies, please contact us at:{" "}
           <a
-            href="mailto:aero1code@gmail.com"
+            href="mailto:aeroteam.agency@gmail.com"
             className="text-aero-blue hover:underline"
           >
-            aero1code@gmail.com
+            aeroteam.agency@gmail.com
           </a>
         </p>
       </LegalSection>

@@ -65,7 +65,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
   };
 
   return (
-    <section ref={ref} id="contact" className="animate-section-entry py-24 relative overflow-hidden">
+    <section ref={ref} id="contact" aria-labelledby="contact-heading" className="animate-section-entry py-24 relative overflow-hidden">
       <div
         className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px]"
         style={{
@@ -78,10 +78,10 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
+          <p aria-hidden="true" className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
             {t("contact.badge")}
-          </div>
-          <h2 className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+          </p>
+          <h2 id="contact-heading" className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             {t("contact.title")}{" "}
             <span className="gradient-primary-text">{t("contact.title.highlight")}</span>
           </h2>
@@ -211,11 +211,11 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
           </div>
 
           {/* Contact info sidebar */}
-          <div className="animate-on-scroll-right anim-delay-4 lg:col-span-2 flex flex-col gap-4">
+          <aside aria-label="Contact information" className="animate-on-scroll-right anim-delay-4 lg:col-span-2 flex flex-col gap-4">
             {/* Email */}
             {/* TODO: Change email to custom domain email when domain is ready */}
             <a
-              href="mailto:aero1code@gmail.com"
+              href="mailto:aeroteam.agency@gmail.com"
               className="glass rounded-2xl p-6 flex items-center gap-4 hover:border-aero-blue/30 transition-all duration-300 hover:-translate-y-0.5 group"
             >
               <div
@@ -227,7 +227,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
               <div>
                 <div className="text-xs text-muted-foreground mb-0.5 font-medium">{t("contact.email.label")}</div>
                 <div className="text-sm font-semibold text-foreground group-hover:text-aero-blue transition-colors">
-                  aero1code@gmail.com
+                  aeroteam.agency@gmail.com
                 </div>
               </div>
             </a>
@@ -293,7 +293,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
                   </svg>
                 </a>
                 <a
-                  href="https://www.facebook.com/profile.php?id=61589766098660"
+                  href="https://www.facebook.com/profile.php?id=61592368843875"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -329,7 +329,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/aerotechdev/"
+                  href="https://www.instagram.com/aeroteamdev/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -342,7 +342,7 @@ export default function ContactSection({ prefilledService }: ContactSectionProps
                 </a>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>

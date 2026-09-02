@@ -1,9 +1,9 @@
 [
   {
     "id": "RestFlow",
-    "nameKey": "projectsPage.items.RestFlow.name",
-    "categoryKey": "projectsPage.items.RestFlow.category",
-    "descKey": "projectsPage.items.RestFlow.description",
+    "nameKey": "projects.RestFlow.name",
+    "categoryKey": "projects.RestFlow.category",
+    "descKey": "projects.RestFlow.description",
     "tags": [
       "projects.tags.pos",
       "projects.tags.restaurant",

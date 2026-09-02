@@ -15,13 +15,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Basic SEO -->
-  <title>Aero | Web Development & SaaS Solutions</title>
+  <title>Aero Team | Web Development &amp; SaaS Solutions</title>
   <meta name="description"
-    content="Aero builds fast, modern web apps, SaaS platforms, and digital products that help businesses grow and scale online." />
+    content="Aero Team builds fast, modern web apps, SaaS platforms, and digital products that help businesses grow and scale online. Based in Cairo, Egypt." />
   <meta name="keywords"
-    content="Aero, Aero Team, Aero web, Aero development, web development, SaaS, React, Vite, frontend, backend, custom websites, web apps" />
+    content="Aero Team, Aero, web development agency, SaaS development, React, Next.js, TypeScript, custom web apps, UI/UX design, e-commerce, Cairo, Egypt" />
   <meta name="author" content="Aero Team" />
   <meta name="theme-color" content="#0f172a" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
   <!-- Canonical -->
   <!-- TODO: Update URL references when custom domain is connected -->
@@ -40,17 +41,17 @@
 
   <!-- Open Graph (Facebook / WhatsApp) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Aero — Modern Web Development" />
-  <meta property="og:description" content="We build scalable SaaS platforms and modern web apps for businesses." />
+  <meta property="og:title" content="Aero Team | Web Development &amp; SaaS Solutions" />
+  <meta property="og:description" content="Aero Team builds scalable SaaS platforms and modern web apps for businesses. Based in Cairo, Egypt." />
   <!-- TODO: Update Vercel domain in og:image and og:url below when custom domain is connected -->
-  <meta property="og:image" content="https://aeroteam.vercel.app/og-image.png" />
+  <meta property="og:image" content="https://aeroteam.vercel.app/og-image.jpg" />
   <meta property="og:url" content="https://aeroteam.vercel.app/" />
   <meta property="og:site_name" content="Aero Team" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Aero — Modern Web Development" />
-  <meta name="twitter:description" content="We build scalable SaaS platforms and modern web apps for businesses." />
+  <meta name="twitter:title" content="Aero Team | Web Development &amp; SaaS Solutions" />
+  <meta name="twitter:description" content="Aero Team builds scalable SaaS platforms and modern web apps for businesses. Based in Cairo, Egypt." />
   <meta name="twitter:image" content="https://aeroteam.vercel.app/og-image.png" />
 
   <!-- JSON-LD Structured Data -->
@@ -59,18 +60,41 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Aero Team",
-    "alternateName": "Aero",
+    "alternateName": ["Aero", "AeroTeam", "Aero Team Agency"],
     "url": "https://aeroteam.vercel.app",
+    "logo": "https://aeroteam.vercel.app/logo.png",
+    "email": "aeroteam.agency@gmail.com",
     "description": "Aero Team builds fast, modern web apps, SaaS platforms, and digital products that help businesses grow and scale online.",
-    "sameAs": ["https://x.com/aeroteam_eg"]
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cairo",
+      "addressCountry": "EG"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "aeroteam.agency@gmail.com",
+      "availableLanguage": ["English", "Arabic"]
+    },
+    "sameAs": [
+      "https://x.com/aeroteam_eg",
+      "https://www.facebook.com/profile.php?id=61592368843875",
+      "https://www.instagram.com/aeroteamdev/",
+      "https://www.linkedin.com/in/aero-team-4b5712377",
+      "https://www.tiktok.com/@aero_team_"
+    ]
   }
   </script>
 
-  <!-- Fonts -->
+  <!-- Fonts: non-render-blocking async load -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </noscript>
 </head>
 
 <body>

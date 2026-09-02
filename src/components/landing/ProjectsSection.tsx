@@ -14,7 +14,7 @@ export default function ProjectsSection() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   return (
-    <section ref={ref} id="projects" className="animate-section-entry py-24 relative overflow-hidden">
+    <section ref={ref} id="projects" aria-labelledby="projects-heading" className="animate-section-entry py-24 relative overflow-hidden">
       <div
         className="pointer-events-none absolute top-1/2 right-0 w-[500px] h-[500px] -translate-y-1/2"
         style={{
@@ -27,10 +27,10 @@ export default function ProjectsSection() {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
+          <p aria-hidden="true" className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
             {t("projects.badge")}
-          </div>
-          <h2 className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+          </p>
+          <h2 id="projects-heading" className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             {t("projects.title")}{" "}
             <span className="gradient-primary-text">{t("projects.title.highlight")}</span>
           </h2>
@@ -69,7 +69,10 @@ export default function ProjectsSection() {
                   <img
                     src={project.imageUrl}
                     alt={t(project.nameKey)}
-                    loading="lazy"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "low"}
+                    width={800}
+                    height={600}
                     className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                   />
 

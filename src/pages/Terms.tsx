@@ -84,10 +84,10 @@ export default function Terms() {
           <p>
             إذا كانت لديك أي أسئلة أو بحاجة إلى استفسار بشأن شروط الخدمة هذه، يرجى التواصل معنا عبر:{" "}
             <a
-              href="mailto:aero1code@gmail.com"
+              href="mailto:aeroteam.agency@gmail.com"
               className="text-aero-blue hover:underline"
             >
-              aero1code@gmail.com
+              aeroteam.agency@gmail.com
             </a>
           </p>
         </LegalSection>
@@ -174,10 +174,10 @@ export default function Terms() {
         <p>
           If you have any questions or require clarification regarding these Terms of Service, please contact us at:{" "}
           <a
-            href="mailto:aero1code@gmail.com"
+            href="mailto:aeroteam.agency@gmail.com"
             className="text-aero-blue hover:underline"
           >
-            aero1code@gmail.com
+            aeroteam.agency@gmail.com
           </a>
         </p>
       </LegalSection>

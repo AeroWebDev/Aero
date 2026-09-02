@@ -79,10 +79,10 @@ export default function Privacy() {
           <p>
             إذا كانت لديك أي استفسارات أو ملاحظات أو مخاوف بشأن سياسة الخصوصية هذه، يرجى التواصل معنا عبر:{" "}
             <a
-              href="mailto:aero1code@gmail.com"
+              href="mailto:aeroteam.agency@gmail.com"
               className="text-aero-blue hover:underline"
             >
-              aero1code@gmail.com
+              aeroteam.agency@gmail.com
             </a>
           </p>
         </LegalSection>
@@ -164,10 +164,10 @@ export default function Privacy() {
         <p>
           If you have questions, feedback, or concerns regarding this Privacy Policy, please reach out to us at:{" "}
           <a
-            href="mailto:aero1code@gmail.com"
+            href="mailto:aeroteam.agency@gmail.com"
             className="text-aero-blue hover:underline"
           >
-            aero1code@gmail.com
+            aeroteam.agency@gmail.com
           </a>
         </p>
       </LegalSection>

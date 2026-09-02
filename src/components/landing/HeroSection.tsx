@@ -1,52 +1,74 @@
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { lazy, Suspense, useState, useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import SideRays from "@/components/background/SideRays";
-import DotField from "@/components/background/DotField";
+
+const SideRays = lazy(() => import("@/components/background/SideRays"));
+const DotField = lazy(() => import("@/components/background/DotField"));
 
 export default function HeroSection() {
   const { t } = useTranslation();
   const ref = useScrollAnimation(0.05);
+  // Delay heavy WebGL/Canvas init until after the first paint
+  const [showBg, setShowBg] = useState(false);
+
+  useEffect(() => {
+    if ("requestIdleCallback" in window) {
+      const id = requestIdleCallback(() => setShowBg(true), { timeout: 200 });
+      return () => cancelIdleCallback(id);
+    } else {
+      const id = setTimeout(() => setShowBg(true), 100);
+      return () => clearTimeout(id);
+    }
+  }, []);
 
   return (
     <section
+      id="hero"
+      aria-labelledby="hero-heading"
       ref={ref}
       className="animate-section-entry relative isolate min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16"
     >
-      {/* Background */}
-
+      {/* Background — deferred until after first paint */}
       <div className="absolute inset-0 -z-10">
-        <SideRays
-          speed={2.5}
-          rayColor1="#EAB308"
-          rayColor2="#96c8ff"
-          intensity={3}
-          spread={3}
-          origin="top-right"
-          tilt={0}
-          saturation={2}
-          blend={0.75}
-          falloff={0.5}
-          opacity={1}
-        />
+        {showBg && (
+          <Suspense fallback={null}>
+            <SideRays
+              speed={2.5}
+              rayColor1="#EAB308"
+              rayColor2="#96c8ff"
+              intensity={3}
+              spread={3}
+              origin="top-right"
+              tilt={0}
+              saturation={2}
+              blend={0.75}
+              falloff={0.5}
+              opacity={1}
+            />
+          </Suspense>
+        )}
       </div>
 
-
       <div className="absolute inset-0 -z-10 opacity-50">
-        <DotField
-          dotRadius={2}
-          dotSpacing={14}
-          bulgeStrength={86}
-          glowRadius={120}
-          sparkle
-          waveAmplitude={0}
-          cursorRadius={300}
-          cursorForce={1}
-          bulgeOnly
-          gradientFrom="#2563EB"
-          gradientTo="#06B6D4"
-          glowColor="#0B1220"
-        />
+        {showBg && (
+          <Suspense fallback={null}>
+            <DotField
+              dotRadius={2}
+              dotSpacing={14}
+              bulgeStrength={86}
+              glowRadius={120}
+              sparkle
+              waveAmplitude={0}
+              cursorRadius={300}
+              cursorForce={1}
+              bulgeOnly
+              gradientFrom="#2563EB"
+              gradientTo="#06B6D4"
+              glowColor="#0B1220"
+            />
+          </Suspense>
+        )}
       </div>
 
       {/* Overlay */}
@@ -54,14 +76,8 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-6 text-center">
-        {/* Badge */}
-        <div className="animate-[fade-up_0.9s_ease-out_forwards] opacity-0 anim-delay-1 inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 text-sm font-medium text-aero-cyan border-aero-cyan/20 border">
-          <span className="w-2 h-2 rounded-full bg-aero-cyan animate-pulse" />
-          {t("hero.badge")}
-        </div>
-
         {/* Headline */}
-        <h1 className="animate-[fade-up_1.1s_ease-out_forwards] opacity-0 anim-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6 max-w-5xl mx-auto">
+        <h1 id="hero-heading" className="animate-[fade-up_1.1s_ease-out_forwards] opacity-0 anim-delay-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6 max-w-5xl mx-auto">
           {t("hero.headline")}{" "}
           <span className="gradient-primary-text">{t("hero.headline.highlight")}</span>
         </h1>

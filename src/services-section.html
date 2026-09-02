@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #090b0f;
+    --panel: #0d1016;
+    --line: rgba(232,236,243,0.09);
+    --line-strong: rgba(232,236,243,0.16);
+    --text: #e8ecf3;
+    --muted: #838d9e;
+    --blue: #5b9dff;
+    --amber: #ffb454;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'Inter', sans-serif;
+    color:var(--text);
+  }
+  .section{
+    max-width:1160px;
+    margin:0 auto;
+    padding:96px 32px 120px;
+    position:relative;
+  }
+  .section::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(232,236,243,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,236,243,0.025) 1px, transparent 1px);
+    background-size:56px 56px;
+    pointer-events:none;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    position:relative;
+    z-index:1;
+  }
+  @media (max-width:900px){
+    .grid{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:640px){
+    .grid{grid-template-columns:1fr;}
+  }
+
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:36px 32px 28px;
+    position:relative;
+    transition:background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+  .card:hover{
+    background:#10141b;
+    border-color:var(--card-accent, var(--line-strong));
+    transform:translateY(-2px);
+  }
+
+  .card-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:28px;
+  }
+  .card-code{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--muted);
+  }
+  .card-code span{
+    color:var(--card-accent, var(--blue));
+  }
+  .card-icon{
+    width:34px; height:34px;
+    color:var(--card-accent, var(--blue));
+  }
+  .card-icon svg{
+    width:100%; height:100%;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:1.4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+
+  .card h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:20px;
+    font-weight:600;
+    margin:0 0 10px;
+    letter-spacing:-0.01em;
+  }
+  .card p{
+    font-size:14.5px;
+    line-height:1.65;
+    color:var(--muted);
+    margin:0 0 26px;
+    max-width:34ch;
+  }
+
+  .card-readout{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    padding-top:16px;
+    border-top:1px solid var(--line-strong);
+    font-family:'JetBrains Mono', monospace;
+  }
+  .readout-label{
+    font-size:11px;
+    color:var(--muted);
+  }
+  .readout-value{
+    font-size:12.5px;
+    color:var(--card-accent, var(--blue));
+    font-weight:500;
+  }
+</style>
+</head>
+<body>
+
+<div class="section">
+  <div class="grid">
+
+    <div class="card" style="--card-accent:#4f8ef7">
+      <div class="card-top">
+        <span class="card-code">SYS.01 — <span>WEB</span></span>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 8.5h18"/><circle cx="6" cy="6.2" r="0.6" fill="currentColor" stroke="none"/><path d="M8 13l2.2 2.2L8 17.4M13 17.4h3"/></svg>
+        </div>
+      </div>
+      <h3>Web development</h3>
+      <p>High-performance applications built on modern frameworks — scalable, secure, and tuned for speed from first paint onward.</p>
+      <div class="card-readout">
+        <span class="readout-label">Lighthouse target</span>
+        <span class="readout-value">≥ 95 / 100</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent:#22d3ee">
+      <div class="card-top">
+        <span class="card-code">SYS.02 — <span>SAAS</span></span>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="4.5" rx="1"/><rect x="4" y="10" width="16" height="4.5" rx="1"/><rect x="4" y="16" width="16" height="4.5" rx="1"/><circle cx="7.2" cy="6.25" r="0.5" fill="currentColor" stroke="none"/><circle cx="7.2" cy="12.25" r="0.5" fill="currentColor" stroke="none"/><circle cx="7.2" cy="18.25" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </div>
+      </div>
+      <h3>SaaS development</h3>
+      <p>End-to-end platform builds — architecture, multi-tenancy, billing, and deployment — engineered to hold up as you scale.</p>
+      <div class="card-readout">
+        <span class="readout-label">Tenancy model</span>
+        <span class="readout-value">Multi-tenant, day one</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent:#a78bfa">
+      <div class="card-top">
+        <span class="card-code">SYS.03 — <span>UXD</span></span>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 20l1.1-4.2L16.8 4.1a1.4 1.4 0 0 1 2 0l1.1 1.1a1.4 1.4 0 0 1 0 2L8.2 18.9 4 20z"/><path d="M14.7 6.2l3.1 3.1"/></svg>
+        </div>
+      </div>
+      <h3>UI/UX design</h3>
+      <p>Interfaces people move through without thinking twice — from wireframe logic to pixel-level detail and working prototypes.</p>
+      <div class="card-readout">
+        <span class="readout-label">Prototype turnaround</span>
+        <span class="readout-value">2–4 days</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent:#f59e0b">
+      <div class="card-top">
+        <span class="card-code">SYS.04 — <span>ECOM</span></span>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3.5 5h2l1.6 10.2a1.6 1.6 0 0 0 1.6 1.4h8.3a1.6 1.6 0 0 0 1.6-1.3L20.5 8H6.3"/><circle cx="9.5" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+        </div>
+      </div>
+      <h3>E-commerce solutions</h3>
+      <p>Full-featured storefronts with seamless checkout, inventory management, and conversion built into every step.</p>
+      <div class="card-readout">
+        <span class="readout-label">Checkout conversion</span>
+        <span class="readout-value">+18% avg. lift</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent:#34d399">
+      <div class="card-top">
+        <span class="card-code">SYS.05 — <span>API</span></span>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="5.5" cy="6" r="2"/><circle cx="18.5" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7.3 7.1L10.3 16.4M16.7 7.1L13.7 16.4M7.5 6h11"/></svg>
+        </div>
+      </div>
+      <h3>API integration</h3>
+      <p>Systems that talk to each other properly — payment gateways, CRMs, and third-party services wired in cleanly.</p>
+      <div class="card-readout">
+        <span class="readout-label">Uptime SLA</span>
+        <span class="readout-value">99.9%</span>
+      </div>
+    </div>
+
+    <div class="card" style="--card-accent:#f472b6">
+      <div class="card-top">
+        <span class="card-code">SYS.06 — <span>ADV</span></span>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3l1.9 4.4L18.5 9l-4.6 1.6L12 15l-1.9-4.4L5.5 9l4.6-1.6L12 3z"/><path d="M19 15.5l0.9 2.1 2.1 0.9-2.1 0.9-0.9 2.1-0.9-2.1-2.1-0.9 2.1-0.9z"/></svg>
+        </div>
+      </div>
+      <h3>Technical consulting</h3>
+      <p>Straight answers on architecture, stack selection, and code health — from engineers who'll say what won't work too.</p>
+      <div class="card-readout">
+        <span class="readout-label">Architecture review</span>
+        <span class="readout-value">1-week turnaround</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

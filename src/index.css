@@ -190,12 +190,17 @@ html {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Promote to composited layer only while waiting to animate in */
+  .animate-section-entry:not(.in-view) {
     will-change: opacity, transform;
   }
 
   .animate-section-entry.in-view {
     opacity: 1;
     transform: translateY(0);
+    will-change: auto;
   }
 
   .glass {

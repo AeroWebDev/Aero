@@ -38,14 +38,14 @@ export default function WhyChooseSection() {
   const ref = useScrollAnimation();
 
   return (
-    <section ref={ref} id="why-aero" className="animate-section-entry py-24 relative overflow-hidden">
+    <section ref={ref} id="why-aero" aria-labelledby="why-heading" className="animate-section-entry py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
+          <p aria-hidden="true" className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
             {t("why.badge")}
-          </div>
-          <h2 className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+          </p>
+          <h2 id="why-heading" className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
             {t("why.title")}{" "}
             <span className="gradient-primary-text">{t("why.title.highlight")}</span>
           </h2>
@@ -62,7 +62,7 @@ export default function WhyChooseSection() {
             const slideClass = index % 2 === 0 ? "animate-on-scroll-left" : "animate-on-scroll-right";
             const delayClass = `anim-delay-${Math.min(index + 1, 6)}`;
             return (
-              <div
+              <article
                 key={feature.titleKey}
                 className={`${slideClass} ${delayClass} group glass rounded-2xl p-7 border border-transparent transition-all duration-300 hover:-translate-y-0.5 service-card-hover`}
                 style={{
@@ -97,7 +97,7 @@ export default function WhyChooseSection() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>

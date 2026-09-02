@@ -30,28 +30,32 @@ const Index = () => {
   const homeSchema = [
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Aero Team",
-      alternateName: "Aero",
-      url: "https://aeroteam.vercel.app",
-      description:
-        "Aero Team builds fast, modern web apps, SaaS platforms, and digital products that help businesses grow and scale online.",
-    },
-    {
-      "@context": "https://schema.org",
       "@type": "WebSite",
       name: "Aero Team",
       url: "https://aeroteam.vercel.app",
       description:
-        "Aero builds modern websites, SaaS platforms, and custom web applications for ambitious companies.",
+        "Aero Team builds modern websites, SaaS platforms, and custom web applications for ambitious businesses.",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Aero Team",
+      url: "https://aeroteam.vercel.app",
+      email: "aeroteam.agency@gmail.com",
+      description: "Custom web development and SaaS agency based in Cairo, Egypt.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Cairo",
+        addressCountry: "EG",
+      },
     },
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Seo
-        title="Aero | Web Development & SaaS Solutions"
-        description="Aero builds fast, modern web apps, SaaS platforms, and digital products that help businesses grow and scale online."
+        title="Aero Team | Web Development & SaaS Solutions"
+        description="Aero Team builds fast, modern web apps, SaaS platforms, and digital products that help businesses grow and scale online. Based in Cairo, Egypt."
         canonical="https://aeroteam.vercel.app/"
         jsonLd={homeSchema}
       />
