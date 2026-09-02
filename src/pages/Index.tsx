@@ -52,7 +52,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-clip">
       <Seo
         title="Aero Team | Web Development & SaaS Solutions"
         description="Aero Team builds fast, modern web apps, SaaS platforms, and digital products that help businesses grow and scale online. Based in Cairo, Egypt."
