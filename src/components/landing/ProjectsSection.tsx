@@ -1,0 +1,170 @@
+import { ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import projectsData from "@/data/projects.json";
+import { Project } from "@/types/project";
+
+const projectsMeta: Project[] = (projectsData as Project[]).slice(0, 3);
+
+export default function ProjectsSection() {
+  const { t } = useTranslation();
+  const ref = useScrollAnimation();
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+
+  return (
+    <section ref={ref} id="projects" aria-labelledby="projects-heading" className="animate-section-entry py-24 relative overflow-hidden">
+      <div
+        className="pointer-events-none absolute top-1/2 right-0 w-[500px] h-[500px] -translate-y-1/2"
+        style={{
+          background: "radial-gradient(circle, hsl(217 91% 60% / 0.06) 0%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p aria-hidden="true" className="animate-on-scroll inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 text-xs font-semibold text-aero-cyan uppercase tracking-widest border border-aero-cyan/20">
+            {t("projects.badge")}
+          </p>
+          <h2 id="projects-heading" className="animate-on-scroll anim-delay-1 text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
+            {t("projects.title")}{" "}
+            <span className="gradient-primary-text">{t("projects.title.highlight")}</span>
+          </h2>
+          <p className="animate-on-scroll anim-delay-2 text-muted-foreground text-lg max-w-xl mx-auto">
+            {t("projects.subtitle")}
+          </p>
+        </div>
+
+        {/* Projects grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {projectsMeta.map((project, index) => {
+            const CardTag = Link;
+            const delayClass = `anim-delay-${Math.min(index + 1, 6)}`;
+            return (
+              <CardTag
+                key={project.nameKey}
+                to="/projects"
+                onMouseEnter={() => setHoveredProject(project.nameKey)}
+                onMouseLeave={() => setHoveredProject(null)}
+                className={`animate-scale-in ${delayClass} group rounded-2xl overflow-hidden border transition-all duration-300 block no-underline cursor-pointer`}
+                style={{
+                  background:
+                    hoveredProject === project.nameKey
+                      ? `linear-gradient(145deg, color-mix(in srgb, ${project.accentColor} 8%, #060608) 0%, #040406 100%)`
+                      : `linear-gradient(145deg, color-mix(in srgb, ${project.accentColor} 4%, #050507) 0%, #030304 100%)`,
+                  borderColor:
+                    hoveredProject === project.nameKey
+                      ? `color-mix(in srgb, ${project.accentColor} 45%, transparent)`
+                      : "rgba(255, 255, 255, 0.07)",
+
+                  boxShadow:
+                    hoveredProject === project.nameKey
+                      ? `0 12px 35px color-mix(in srgb, ${project.accentColor} 18%, transparent)`
+                      : "0 0 0 transparent",
+                }}
+              >
+                {/* Visual area */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#0f1117]">
+                  <img
+                    src={project.imageUrl}
+                    alt={t(project.nameKey)}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "low"}
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-70 group-hover:opacity-20 transition-opacity duration-500" />
+
+                  <div
+                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+                    style={{
+                      background: "rgba(0,0,0,0.25)",
+                      backdropFilter: "blur(4px)",
+                    }}
+                  >
+                    <div
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-transform duration-300 group-hover:scale-105"
+                      style={{
+                        background: project.accentColor,
+                        color: "#fff",
+                        boxShadow: `0 10px 30px ${project.accentColor}40`,
+                      }}
+                    >
+                      {t("projectsPage.modal.seeMore")}
+                      <ArrowUpRight className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Info */}
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <span
+                        className="text-xs font-semibold uppercase tracking-widest mb-1 block"
+                        style={{ color: project.accentColor }}
+                      >
+                        {t(project.categoryKey)}
+                      </span>
+
+                      <h3 className="text-xl font-bold text-foreground">
+                        {t(project.nameKey)}
+                      </h3>
+                    </div>
+
+                    {project.isInteractive && (
+                      <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors duration-200 shrink-0 mt-1" />
+                    )}
+                  </div>
+
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {t(project.descKey)}
+                  </p>
+
+                  <div className="flex flex-wrap gap-3">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-all duration-300 hover:scale-105"
+                        style={{
+                          color: project.accentColor,
+                          backgroundColor: `color-mix(in srgb, ${project.accentColor} 12%, transparent)`,
+                          border: `1px solid color-mix(in srgb, ${project.accentColor} 30%, transparent)`,
+                          boxShadow: `0 0 20px color-mix(in srgb, ${project.accentColor} 15%, transparent)`,
+                        }}
+                      >
+                        <span
+                          className="w-2.5 h-2.5 rounded-full"
+                          style={{
+                            backgroundColor: project.accentColor,
+                          }}
+                        />
+                        {t(tag)}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </CardTag>
+            );
+          })}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            to="/projects"
+            className="animate-on-scroll inline-flex items-center gap-2 rounded-full border border-aero-cyan/30 bg-aero-cyan/10 px-5 py-3 text-sm font-semibold text-aero-cyan transition hover:-translate-y-0.5 hover:bg-aero-cyan/20"
+          >
+            {t("projects.cta")}
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}

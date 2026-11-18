@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://aeroteam.vercel.app/sitemap.xml
+
+# IMPORTANT: Once a custom domain is configured in Vercel (Settings → Domains),
+# replace "aeroteam.vercel.app" above with your custom domain.

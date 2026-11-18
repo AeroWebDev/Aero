@@ -1,0 +1,406 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── DARK THEME (default) ──────────────────────────────────── * */
+:root,
+[data-theme="dark"] {
+  --background: 0 0% 0%;
+  /* Black */
+  --foreground: 210 40% 96%;
+  /* F1F5F9 */
+  --card: 221 41% 14%;
+  /* 151E32 */
+  --card-foreground: 210 40% 96%;
+  /* F1F5F9 */
+  --popover: 221 41% 14%;
+  /* 151E32 */
+  --popover-foreground: 210 40% 96%;
+  /* F1F5F9 */
+  --primary: 217 91% 60%;
+  /* 3B82F6 */
+  --primary-foreground: 210 40% 98%;
+  --secondary: 217 33% 17%;
+  /* 1E293B */
+  --secondary-foreground: 210 40% 96%;
+  /* F1F5F9 */
+  --accent: 188 86% 53%;
+  /* 22D3EE */
+  --accent-foreground: 223 49% 8%;
+  /* 0B1120 */
+  --muted: 221 35% 12%;
+  /* بين الكارد والباكجراوند */
+  --muted-foreground: 215 20% 65%;
+  /* 94A3B8 */
+  --destructive: 0 72% 55%;
+  /* أحمر تحذير ثابت - مش جزء من الباليت */
+  --destructive-foreground: 0 0% 100%;
+  --border: 217 33% 17%;
+  /* 1E293B */
+  --input: 217 33% 17%;
+  /* 1E293B */
+  --ring: 217 91% 60%;
+  /* 3B82F6 */
+  --radius: 1rem;
+  --aero-blue: 217 91% 60%;
+  /* 3B82F6 */
+  --aero-cyan: 188 86% 53%;
+  /* 22D3EE */
+  --aero-dark: 223 49% 8%;
+  /* 0B1120 */
+  --aero-card: 221 41% 14%;
+  /* 151E32 */
+  --glow-blue: 0 0 50px hsl(217 91% 60% / .2);
+  --glow-cyan: 0 0 40px hsl(188 86% 53% / .15);
+  --glow-subtle: 0 0 80px hsl(217 91% 60% / .08);
+  --gradient-hero: radial-gradient(ellipse 80% 70% at 50% -10%, hsl(217 91% 60% / .18), transparent 75%);
+  --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(188 86% 53%));
+  --gradient-card: linear-gradient(145deg, hsl(221 41% 14%), hsl(221 35% 17%));
+  --gradient-text: linear-gradient(135deg, white, hsl(188 86% 70%));
+  --glass-bg: hsl(223 40% 100% / .04);
+  --glass-border: hsl(217 50% 100% / .08);
+  --glass-surface: hsl(223 40% 100% / .04);
+  --glass-surface-fallback: hsl(221 41% 14%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    /* color: hsl(47, 100%, 64%); */
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--aero-blue)) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--aero-blue)) 0%, hsl(var(--aero-cyan)) 100%);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--aero-cyan)) 0%, hsl(var(--aero-blue)) 100%);
+}
+
+@layer utilities {
+  .animate-section-entry {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Promote to composited layer only while waiting to animate in */
+  .animate-section-entry:not(.in-view) {
+    will-change: opacity, transform;
+  }
+
+  .animate-section-entry.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+  }
+
+  .glass {
+    background: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .glass {
+      background: var(--glass-surface-fallback);
+    }
+  }
+
+  .glass-strong {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+
+  .glow-subtle {
+    box-shadow: var(--glow-subtle);
+  }
+
+  .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-primary-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(3deg);
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.service-card-hover {
+  transition: all 1s ease;
+}
+
+.service-card-hover:hover {
+  border-color: var(--hover-border-color) !important;
+}
+
+.project-hover-border {
+  border-color: transparent;
+  transition: border-color 1s ease, transform 0.3s ease, box-shadow 1s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.project-hover-border:hover {
+  border-color: var(--hover-border-color) !important;
+  box-shadow: 0 0 25px var(--hover-border-color);
+}
+
+/* Base state — hidden, shifted down */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-scale-in {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Visible state — added by IntersectionObserver via useScrollAnimation */
+.in-view .animate-on-scroll,
+.in-view .animate-on-scroll-left,
+.in-view .animate-on-scroll-right,
+.in-view .animate-scale-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Staggered children delays */
+.in-view .anim-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.in-view .anim-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.in-view .anim-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.in-view .anim-delay-4 {
+  transition-delay: 0.4s;
+}
+
+.in-view .anim-delay-5 {
+  transition-delay: 0.5s;
+}
+
+.in-view .anim-delay-6 {
+  transition-delay: 0.6s;
+}
+
+/* ── Page-level smooth entrance animation ── */
+@keyframes page-transition-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.page-transition {
+  animation: page-transition-fade 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-section-entry {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-on-scroll,
+  .animate-on-scroll-left,
+  .animate-on-scroll-right,
+  .animate-scale-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .page-transition {
+    animation: none;
+  }
+}

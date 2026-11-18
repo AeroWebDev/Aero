@@ -1,0 +1,141 @@
+[
+  {
+    "id": "RestFlow",
+    "nameKey": "projects.RestFlow.name",
+    "categoryKey": "projects.RestFlow.category",
+    "descKey": "projects.RestFlow.description",
+    "tags": [
+      "projects.tags.pos",
+      "projects.tags.restaurant",
+      "projects.tags.saas"
+    ],
+    "features": [
+      "projects.RestFlow.features.0",
+      "projects.RestFlow.features.1",
+      "projects.RestFlow.features.2"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
+    "accentColor": "hsl(47, 80%, 55%)",
+    "imageUrl": "/projects/RestFlow.png"
+  },
+  {
+    "id": "SaaS-Landing",
+    "nameKey": "projects.saasLanding.name",
+    "categoryKey": "projects.saasLanding.category",
+    "descKey": "projects.saasLanding.description",
+    "tags": [
+      "projects.tags.landingPage",
+      "projects.tags.saas",
+      "projects.tags.uiux"
+    ],
+    "features": [
+      "projects.saasLanding.features.0",
+      "projects.saasLanding.features.1",
+      "projects.saasLanding.features.2"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "accentColor": "hsl(85 90% 55%)",
+    "imageUrl": "/projects/saas-landing-page.jpg",
+    "link": "#"
+  },
+  {
+    "id": "StoreX",
+    "nameKey": "projects.storex.name",
+    "categoryKey": "projects.storex.category",
+    "descKey": "projects.storex.description",
+    "tags": [
+      "projects.tags.dashboard",
+      "projects.tags.analytics",
+      "projects.tags.admin"
+    ],
+    "features": [
+      "projects.storex.features.0",
+      "projects.storex.features.1",
+      "projects.storex.features.2"
+    ],
+    "techUsed": ["React", "Chart.js", "TypeScript", "Tailwind CSS"],
+    "accentColor": "hsl(262, 100%, 71%)",
+    "imageUrl": "/projects/storex-admin-dashboard.png",
+    "link": "#"
+  },
+  {
+    "id": "AeroShop",
+    "nameKey": "projects.aeroShop.name",
+    "categoryKey": "projects.aeroShop.category",
+    "descKey": "projects.aeroShop.description",
+    "tags": [
+      "projects.tags.ecommerce",
+      "projects.tags.onlineStore",
+      "projects.tags.woocommerce"
+    ],
+    "features": [
+      "projects.aeroShop.features.0",
+      "projects.aeroShop.features.1",
+      "projects.aeroShop.features.2"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Stripe"],
+    "accentColor": "hsl(55 100% 55%)",
+    "imageUrl": "/projects/aero-shop.png",
+    "link": "#"
+  },
+  {
+    "id": "Express",
+    "nameKey": "projects.Express.name",
+    "categoryKey": "projects.Express.category",
+    "descKey": "projects.Express.description",
+    "tags": [
+      "projects.tags.logistics",
+      "projects.tags.tracking",
+      "projects.tags.delivery"
+    ],
+    "features": [
+      "projects.Express.features.0",
+      "projects.Express.features.1",
+      "projects.Express.features.2"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Google Maps API"],
+    "accentColor": "hsl(0, 65%, 25%)",
+    "imageUrl": "/projects/express.png",
+    "link": "#"
+  },
+  {
+    "id": "Shefaa",
+    "nameKey": "projects.Shefaa.name",
+    "categoryKey": "projects.Shefaa.category",
+    "descKey": "projects.Shefaa.description",
+    "tags": [
+      "projects.tags.pharmacy",
+      "projects.tags.inventory",
+      "projects.tags.healthcare"
+    ],
+    "features": [
+      "projects.Shefaa.features.0",
+      "projects.Shefaa.features.1",
+      "projects.Shefaa.features.2"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+    "accentColor": "hsl(135, 79%, 39%)",
+    "imageUrl": "/projects/shefaa.png",
+    "link": "#"
+  },
+  {
+    "id": "Luxe",
+    "nameKey": "projects.Luxe.name",
+    "categoryKey": "projects.Luxe.category",
+    "descKey": "projects.Luxe.description",
+    "tags": [
+      "projects.tags.luxury",
+      "projects.tags.ecommerce",
+      "projects.tags.fashion"
+    ],
+    "features": [
+      "projects.Luxe.features.0",
+      "projects.Luxe.features.1",
+      "projects.Luxe.features.2"
+    ],
+    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "accentColor": "hsl(47, 100%, 64%)",
+    "imageUrl": "/projects/luxe.png",
+    "link": "#"
+  }
+]

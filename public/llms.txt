@@ -1,0 +1,18 @@
+# Aero Team
+
+> Aero Team builds fast, modern web applications, custom SaaS platforms, e-commerce stores, and digital solutions designed to help ambitious businesses scale online.
+
+## Core Pages
+
+- [Home Page](https://aeroteam.vercel.app/): Overview of Aero Team's web development services, agency advantages, and client project highlights.
+- [All Projects](https://aeroteam.vercel.app/projects): Complete showcase of mockup concepts, SaaS landing pages, admin dashboards, and custom web platforms built by Aero Team.
+
+## Legal & Compliance
+
+- [Privacy Policy](https://aeroteam.vercel.app/privacy): Information on user data collection, privacy practices, and security measures.
+- [Terms of Service](https://aeroteam.vercel.app/terms): Terms and conditions governing the use of Aero Team's web services and platform.
+- [Cookie Policy](https://aeroteam.vercel.app/cookies): Details on cookie usage and tracking preferences across the website.
+
+## Optional Resources
+
+- [Sitemap](https://aeroteam.vercel.app/sitemap.xml): XML sitemap listing all indexable pages for search engines and crawlers.
