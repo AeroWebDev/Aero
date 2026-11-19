@@ -1,5 +1,51 @@
 [
   {
+    "id": "NAVIX",
+    "nameKey": "projects.NAVIX.name",
+    "categoryKey": "projects.NAVIX.category",
+    "descKey": "projects.NAVIX.description",
+    "tags": [
+      "projects.tags.accounting",
+      "projects.tags.businessManagement",
+      "projects.tags.financialReports",
+      "projects.tags.desktopApp"
+    ],
+    "features": [
+      "projects.NAVIX.features.0",
+      "projects.NAVIX.features.1",
+      "projects.NAVIX.features.2"
+    ],
+    "techUsed": [],
+    "accentColor": "hsl(160, 65%, 42%)",
+    "imageUrl": "/projects/navix.png",
+    "link": "https://navix-plum.vercel.app/"
+  },
+  {
+    "id": "RoBcodes",
+    "nameKey": "projects.RoBcodes.name",
+    "categoryKey": "projects.RoBcodes.category",
+    "descKey": "projects.RoBcodes.description",
+    "tags": [
+      "projects.tags.gaming",
+      "projects.tags.roblox",
+      "projects.tags.codeDirectory"
+    ],
+    "features": [
+      "projects.RoBcodes.features.0",
+      "projects.RoBcodes.features.1",
+      "projects.RoBcodes.features.2"
+    ],
+    "techUsed": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "accentColor": "hsl(142, 70%, 45%)",
+    "imageUrl": "/projects/robcodes.png",
+    "link": "https://robcodes.vercel.app/"
+  },
+  {
     "id": "RestFlow",
     "nameKey": "projects.RestFlow.name",
     "categoryKey": "projects.RestFlow.category",
@@ -14,9 +60,42 @@
       "projects.RestFlow.features.1",
       "projects.RestFlow.features.2"
     ],
-    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
+    "techUsed": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "PostgreSQL"
+    ],
     "accentColor": "hsl(47, 80%, 55%)",
     "imageUrl": "/projects/RestFlow.png"
+  },
+  {
+    "id": "ButterflyIPRN",
+    "nameKey": "projects.ButterflyIPRN.name",
+    "categoryKey": "projects.ButterflyIPRN.category",
+    "descKey": "projects.ButterflyIPRN.description",
+    "tags": [
+      "projects.tags.telecom",
+      "projects.tags.b2b",
+      "projects.tags.sms",
+      "projects.tags.voice",
+      "projects.tags.wordpress"
+    ],
+    "features": [
+      "projects.ButterflyIPRN.features.0",
+      "projects.ButterflyIPRN.features.1",
+      "projects.ButterflyIPRN.features.2"
+    ],
+    "techUsed": [
+      "WordPress",
+      "PHP",
+      "JavaScript",
+      "CSS"
+    ],
+    "accentColor": "hsl(210, 75%, 45%)",
+    "imageUrl": "/projects/butterflyiprn.png",
+    "link": "https://butterflyiprn.com/"
   },
   {
     "id": "SaaS-Landing",
@@ -33,7 +112,12 @@
       "projects.saasLanding.features.1",
       "projects.saasLanding.features.2"
     ],
-    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "techUsed": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
     "accentColor": "hsl(85 90% 55%)",
     "imageUrl": "/projects/saas-landing-page.jpg",
     "link": "#"
@@ -53,7 +137,12 @@
       "projects.storex.features.1",
       "projects.storex.features.2"
     ],
-    "techUsed": ["React", "Chart.js", "TypeScript", "Tailwind CSS"],
+    "techUsed": [
+      "React",
+      "Chart.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
     "accentColor": "hsl(262, 100%, 71%)",
     "imageUrl": "/projects/storex-admin-dashboard.png",
     "link": "#"
@@ -73,7 +162,12 @@
       "projects.aeroShop.features.1",
       "projects.aeroShop.features.2"
     ],
-    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Stripe"],
+    "techUsed": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Stripe"
+    ],
     "accentColor": "hsl(55 100% 55%)",
     "imageUrl": "/projects/aero-shop.png",
     "link": "#"
@@ -93,7 +187,12 @@
       "projects.Express.features.1",
       "projects.Express.features.2"
     ],
-    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Google Maps API"],
+    "techUsed": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Google Maps API"
+    ],
     "accentColor": "hsl(0, 65%, 25%)",
     "imageUrl": "/projects/express.png",
     "link": "#"
@@ -113,7 +212,12 @@
       "projects.Shefaa.features.1",
       "projects.Shefaa.features.2"
     ],
-    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+    "techUsed": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js"
+    ],
     "accentColor": "hsl(135, 79%, 39%)",
     "imageUrl": "/projects/shefaa.png",
     "link": "#"
@@ -133,7 +237,12 @@
       "projects.Luxe.features.1",
       "projects.Luxe.features.2"
     ],
-    "techUsed": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "techUsed": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
     "accentColor": "hsl(47, 100%, 64%)",
     "imageUrl": "/projects/luxe.png",
     "link": "#"
