@@ -6,142 +6,113 @@
   "nav.projects": "Projects",
   "nav.contact": "Contact",
   "nav.cta": "Start Your Project",
-
   "hero.headline": "We Build Digital Products",
   "hero.headline.highlight": "That Drive Growth",
   "hero.subheadline": "Custom web applications, SaaS platforms, and modern digital solutions designed to help businesses scale.",
   "hero.cta.primary": "Start Your Project",
   "hero.cta.secondary": "View Our Work",
-
   "services.badge": "What We Do",
   "services.title": "Services Built for",
   "services.title.highlight": "Modern Businesses",
   "services.subtitle": "From concept to deployment, we deliver full-spectrum digital solutions tailored to your goals.",
-
   "services.webDev.title": "Web Development",
   "services.webDev.description": "High-performance applications built on modern frameworks — scalable, secure, and tuned for speed from first paint onward.",
   "services.webDev.readoutLabel": "Lighthouse target",
   "services.webDev.readoutValue": "≥ 95 / 100",
-
   "services.saas.title": "SaaS Development",
   "services.saas.description": "End-to-end platform builds — architecture, multi-tenancy, billing, and deployment — engineered to hold up as you scale.",
   "services.saas.readoutLabel": "Tenancy model",
   "services.saas.readoutValue": "Multi-tenant, day one",
-
   "services.design.title": "UI/UX Design",
   "services.design.description": "Interfaces people move through without thinking twice — from wireframe logic to pixel-level detail and working prototypes.",
   "services.design.readoutLabel": "Prototype turnaround",
   "services.design.readoutValue": "2–4 days",
-
   "services.ecommerce.title": "E-commerce Solutions",
   "services.ecommerce.description": "Full-featured storefronts with seamless checkout, inventory management, and conversion built into every step.",
   "services.ecommerce.readoutLabel": "Checkout conversion",
   "services.ecommerce.readoutValue": "+18% avg. lift",
-
   "services.api.title": "API Integration",
   "services.api.description": "Systems that talk to each other properly — payment gateways, CRMs, and third-party services wired in cleanly.",
   "services.api.readoutLabel": "Uptime SLA",
   "services.api.readoutValue": "99.9%",
-
   "services.consulting.title": "Technical Consulting",
   "services.consulting.description": "Straight answers on architecture, stack selection, and code health — from engineers who'll say what won't work too.",
   "services.consulting.readoutLabel": "Architecture review",
   "services.consulting.readoutValue": "1-week turnaround",
-
   "why.badge": "Our Advantage",
   "why.title": "Why Businesses",
   "why.title.highlight": "Choose Aero",
   "why.subtitle": "We combine technical excellence with business strategy to build products that actually move the needle.",
-
   "why.fast.title": "Fast Delivery",
   "why.fast.description": "We move fast without cutting corners. Agile sprints, clear milestones, and on-time launches every time.",
   "why.fast.point1": "2-week sprint cycles",
   "why.fast.point2": "Daily progress updates",
   "why.fast.point3": "On-time delivery guarantee",
-
   "why.tech.title": "Modern Technologies",
   "why.tech.description": "We use the best tools in the industry — React, Next.js, TypeScript, Node.js, AWS, and more.",
   "why.tech.point1": "Latest frameworks",
   "why.tech.point2": "Cloud-native architecture",
   "why.tech.point3": "Performance-first approach",
-
   "why.scale.title": "Scalable Architecture",
   "why.scale.description": "Built to grow with your business. Clean code, solid architecture, and infrastructure that scales.",
   "why.scale.point1": "Microservices ready",
   "why.scale.point2": "Auto-scaling infra",
   "why.scale.point3": "Clean & documented code",
-
   "why.support.title": "Ongoing Support",
   "why.support.description": "We're your long-term partner. Post-launch support, maintenance, and continuous improvements.",
   "why.support.point1": "24/7 critical support",
   "why.support.point2": "Monthly maintenance",
   "why.support.point3": "Growth consulting",
-
   "why.trust.projects": "Projects Delivered",
   "why.trust.clients": "Happy Clients",
   "why.trust.years": "Years in Business",
   "why.trust.team": "Team Members",
-
   "projects.badge": "What We Can Build",
   "projects.title": "Sample of What",
   "projects.title.highlight": "We Build",
   "projects.subtitle": "A showcase of the types of products and platforms we can design, develop, and ship for you.",
-
   "projects.saasLanding.name": "Modern Dark Landing Page for SaaS",
   "projects.saasLanding.category": "SAAS LANDING PAGE",
   "projects.saasLanding.description": "A dark-themed landing page and dashboard concept for a SaaS deployment platform, featuring pricing tiers and a live-style analytics dashboard with deploy activity tracking.",
-
   "projects.storex.name": "E-commerce Admin Dashboard",
   "projects.storex.category": "ADMIN DASHBOARD",
   "projects.storex.description": "An e-commerce admin dashboard concept featuring revenue overview charts, order management, customer tracking, and top-products analytics in both dark and light mode.",
-
   "projects.aeroShop.name": "AERO.SHOP",
   "projects.aeroShop.category": "E-COMMERCE STOREFRONT",
   "projects.aeroShop.description": "A multi-page e-commerce storefront concept with product browsing, category filters, cart functionality, and a bold dark/yellow visual identity.",
-
   "projects.medcore.name": "MedCore",
   "projects.medcore.category": "Healthcare Portal",
   "projects.medcore.description": "A patient management platform concept covering telemedicine, appointment scheduling, EHR integration, and compliant data handling.",
-
   "projects.RestFlow.name": "RestFlow",
   "projects.RestFlow.category": "RestFlow Platform",
   "projects.RestFlow.description": "A modular finance workspace for teams managing cash flow, forecasting, and reporting.",
-
   "projects.Express.name": "Express",
   "projects.Express.category": "MOBILITY PLATFORM",
   "projects.Express.description": "A mobility platform for planning journeys, tracking trips in real time, and giving operators a clear view of every route.",
-
   "projects.Shefaa.name": "Shefaa",
   "projects.Shefaa.category": "BUSINESS MANAGEMENT PLATFORM",
   "projects.Shefaa.description": "An all-in-one business management platform for inventory, sales, customer accounts, and performance reporting in one streamlined workspace.",
-
   "projects.Luxe.name": "Luxe",
   "projects.Luxe.category": "LUXURY E-COMMERCE",
   "projects.Luxe.description": "A refined e-commerce storefront designed to showcase premium collections with an editorial shopping experience and a seamless checkout flow.",
-
   "projects.RoBcodes.name": "RoBcodes",
   "projects.RoBcodes.category": "GAMING CODES PLATFORM",
   "projects.RoBcodes.description": "A dedicated platform for discovering Roblox promo codes across a variety of games. Users can explore trending games, search by game name or category, access available codes, and copy them instantly to unlock in-game rewards.",
-
   "projects.NAVIX.name": "NAVIX",
   "projects.NAVIX.category": "ACCOUNTING & BUSINESS MANAGEMENT",
   "projects.NAVIX.description": "An all-in-one accounting and business management system designed to streamline business operations. It brings together sales, inventory, expenses, customer and supplier management, invoicing, and financial reporting in one platform, featuring an interactive dashboard for monitoring revenue, profits, and stock levels, alongside advanced role-based access control.",
-
   "projects.ButterflyIPRN.name": "ButterflyIPRN",
   "projects.ButterflyIPRN.category": "TELECOM CORPORATE WEBSITE",
   "projects.ButterflyIPRN.description": "A professional corporate website for an international telecommunications provider specializing in global messaging and voice solutions. Showcasing A2P and P2P SMS, IPRN traffic, SMS termination, SMPP and HTTP API connectivity, and wholesale voice services, alongside dedicated sections for business partnerships, operational workflows, and settlement models.",
-
   "projects.cta": "See more projects",
   "projectsPage.title": "All Projects",
   "projectsPage.subtitle": "A curated collection of mockup concepts and product ideas we can bring to life.",
   "projectsPage.back": "Back to home",
-
   "projectsPage.modal.seeMore": "See More",
   "projectsPage.modal.features": "Features",
   "projectsPage.modal.techUsed": "Tech used",
   "projectsPage.modal.overview": "Overview",
   "projectsPage.modal.tags": "Tags",
-
   "projects.tags.pos": "POS",
   "projects.tags.restaurant": "Restaurant",
   "projects.tags.saas": "SaaS",
@@ -161,71 +132,67 @@
   "projects.tags.healthcare": "Healthcare",
   "projects.tags.luxury": "Luxury",
   "projects.tags.fashion": "Fashion",
-
   "projects.tags.gaming": "Gaming",
   "projects.tags.roblox": "Roblox",
   "projects.tags.codeDirectory": "Code Directory",
   "projects.tags.search": "Search & Discovery",
-
   "projects.tags.accounting": "Accounting",
   "projects.tags.businessManagement": "Business Management",
   "projects.tags.financialReports": "Financial Reports",
   "projects.tags.desktopApp": "Desktop Application",
   "projects.tags.invoicing": "Invoicing",
   "projects.tags.rbac": "Access Control",
-
   "projects.tags.telecom": "Telecommunications",
   "projects.tags.b2b": "B2B",
   "projects.tags.sms": "SMS Solutions",
   "projects.tags.voice": "Voice Solutions",
   "projects.tags.wordpress": "WordPress",
   "projects.tags.corporate": "Corporate Website",
-
   "projects.RestFlow.features.0": "Restaurant POS system",
   "projects.RestFlow.features.1": "Real-time finance dashboard",
   "projects.RestFlow.features.2": "Order & table management",
-
   "projects.saasLanding.features.0": "High-converting hero sections",
   "projects.saasLanding.features.1": "Responsive marketing pages",
   "projects.saasLanding.features.2": "SEO optimized performance",
-
   "projects.storex.features.0": "Advanced admin dashboard",
   "projects.storex.features.1": "Interactive sales analytics",
   "projects.storex.features.2": "Real-time business insights",
-
   "projects.aeroShop.features.0": "Modern shopping experience",
   "projects.aeroShop.features.1": "Advanced product filtering",
   "projects.aeroShop.features.2": "Optimized checkout flow",
-
   "projects.Express.features.0": "Shipment tracking",
   "projects.Express.features.1": "Live driver location",
   "projects.Express.features.2": "Delivery management dashboard",
-
   "projects.Shefaa.features.0": "Medicine inventory management",
   "projects.Shefaa.features.1": "Customer & prescription records",
   "projects.Shefaa.features.2": "Sales and stock reporting",
-
   "projects.Luxe.features.0": "Premium shopping experience",
   "projects.Luxe.features.1": "Wishlist & product collections",
   "projects.Luxe.features.2": "Luxury brand storytelling",
-
   "projects.RoBcodes.features.0": "Roblox games and promo codes directory",
   "projects.RoBcodes.features.1": "Game search and category browsing",
   "projects.RoBcodes.features.2": "One-click code copying",
-
   "projects.NAVIX.features.0": "Sales, inventory & invoice management",
   "projects.NAVIX.features.1": "Interactive financial dashboard & reporting",
   "projects.NAVIX.features.2": "Customer, supplier & user access management",
-
   "projects.ButterflyIPRN.features.0": "SMS messaging and voice service showcase",
   "projects.ButterflyIPRN.features.1": "SMPP and HTTP API connectivity solutions",
   "projects.ButterflyIPRN.features.2": "Business partnerships and contact inquiries",
-
+  "projects.PSCafe.name": "PS Cafe Manager",
+  "projects.PSCafe.category": "PLAYSTATION CAFE MANAGEMENT",
+  "projects.PSCafe.description": "A comprehensive desktop management system built for PlayStation cafes and gaming lounges. It streamlines gaming sessions, reservations, PS4 and PS5 device management, flexible pricing, customer records, and payments. Featuring an interactive dashboard for revenue tracking, device performance analytics, staff management, and financial reporting.",
+  "projects.PSCafe.features.0": "Gaming session, device & booking management",
+  "projects.PSCafe.features.1": "Revenue dashboard & financial analytics",
+  "projects.PSCafe.features.2": "Customer, staff & reporting management",
+  "projects.tags.gamingCafe": "Gaming Cafe",
+  "projects.tags.playstation": "PlayStation",
+  "projects.tags.sessionManagement": "Session Management",
+  "projects.tags.booking": "Bookings",
+  "projects.tags.desktopApp": "Desktop Application",
   "contact.badge": "Get In Touch",
   "contact.title": "Let's Build Something",
   "contact.title.highlight": "Amazing Together",
   "contact.subtitle": "Tell us about your project. We'll review it and get back to you within 24 hours.",
-
   "contact.form.name.label": "Your Name",
   "contact.form.name.placeholder": "John Smith",
   "contact.form.email.label": "Email Address",
@@ -234,13 +201,11 @@
   "contact.form.project.placeholder": "Tell us about your project, goals, timeline, and budget...",
   "contact.form.project.prefill": "I am interested in the {{service}} service. Here are my project details: ",
   "contact.form.submit": "Send Message",
-
   "contact.sending": "Sending...",
   "contact.success.title": "Message Sent!",
   "contact.success.subtitle": "Thank you for reaching out. We'll be in touch within 24 hours.",
   "contact.error": "Something went wrong — please try again or reach out via WhatsApp.",
   "contact.rateLimited": "Too many submissions. Please wait a while before trying again.",
-
   "contact.email.label": "Email Us",
   "contact.whatsapp.label": "WhatsApp",
   "contact.location.label": "Our Location",
@@ -249,7 +214,6 @@
   "contact.response.description": "We respond to all inquiries within one business day.",
   "contact.social.label": "Follow Us",
   "contact.location.text": "Cairo, Egypt",
-
   "footer.copyright": "© {{year}} Aero Team. All rights reserved.",
   "footer.tagline": "Crafting exceptional digital experiences for forward-thinking businesses.",
   "footer.quickLinks": "Quick Links",
@@ -262,7 +226,6 @@
   "footer.legal.cookies": "Cookie Policy",
   "footer.madeWith": "Made with",
   "footer.byAero": "by Aero",
-
   "notFound.title": "Oops! Page not found",
   "notFound.description": "The page you are looking for doesn't exist or has been moved.",
   "notFound.actions.backHome": "Return to Home"

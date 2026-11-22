@@ -46,6 +46,28 @@
     "link": "https://robcodes.vercel.app/"
   },
   {
+    "id": "PSCafe",
+    "nameKey": "projects.PSCafe.name",
+    "categoryKey": "projects.PSCafe.category",
+    "descKey": "projects.PSCafe.description",
+    "tags": [
+      "projects.tags.gamingCafe",
+      "projects.tags.playstation",
+      "projects.tags.sessionManagement",
+      "projects.tags.booking",
+      "projects.tags.desktopApp"
+    ],
+    "features": [
+      "projects.PSCafe.features.0",
+      "projects.PSCafe.features.1",
+      "projects.PSCafe.features.2"
+    ],
+    "techUsed": [],
+    "accentColor": "hsl(145, 70%, 45%)",
+    "imageUrl": "/projects/ps-cafe.png",
+    "link": "https://ps-cafe-sys.vercel.app/"
+  },
+  {
     "id": "RestFlow",
     "nameKey": "projects.RestFlow.name",
     "categoryKey": "projects.RestFlow.category",
