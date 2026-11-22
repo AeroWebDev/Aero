@@ -68,29 +68,29 @@
     "link": "https://ps-cafe-sys.vercel.app/"
   },
   {
-    "id": "RestFlow",
-    "nameKey": "projects.RestFlow.name",
-    "categoryKey": "projects.RestFlow.category",
-    "descKey": "projects.RestFlow.description",
+    "id": "Shefaa",
+    "nameKey": "projects.Shefaa.name",
+    "categoryKey": "projects.Shefaa.category",
+    "descKey": "projects.Shefaa.description",
     "tags": [
-      "projects.tags.pos",
-      "projects.tags.restaurant",
-      "projects.tags.saas"
+      "projects.tags.pharmacy",
+      "projects.tags.inventory",
+      "projects.tags.healthcare"
     ],
     "features": [
-      "projects.RestFlow.features.0",
-      "projects.RestFlow.features.1",
-      "projects.RestFlow.features.2"
+      "projects.Shefaa.features.0",
+      "projects.Shefaa.features.1",
+      "projects.Shefaa.features.2"
     ],
     "techUsed": [
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Node.js",
-      "PostgreSQL"
+      "Node.js"
     ],
-    "accentColor": "hsl(47, 80%, 55%)",
-    "imageUrl": "/projects/RestFlow.png"
+    "accentColor": "hsl(135, 79%, 39%)",
+    "imageUrl": "/projects/shefaa.png",
+    "link": "#"
   },
   {
     "id": "ButterflyIPRN",
@@ -220,29 +220,29 @@
     "link": "#"
   },
   {
-    "id": "Shefaa",
-    "nameKey": "projects.Shefaa.name",
-    "categoryKey": "projects.Shefaa.category",
-    "descKey": "projects.Shefaa.description",
+    "id": "RestFlow",
+    "nameKey": "projects.RestFlow.name",
+    "categoryKey": "projects.RestFlow.category",
+    "descKey": "projects.RestFlow.description",
     "tags": [
-      "projects.tags.pharmacy",
-      "projects.tags.inventory",
-      "projects.tags.healthcare"
+      "projects.tags.pos",
+      "projects.tags.restaurant",
+      "projects.tags.saas"
     ],
     "features": [
-      "projects.Shefaa.features.0",
-      "projects.Shefaa.features.1",
-      "projects.Shefaa.features.2"
+      "projects.RestFlow.features.0",
+      "projects.RestFlow.features.1",
+      "projects.RestFlow.features.2"
     ],
     "techUsed": [
       "React",
       "TypeScript",
       "Tailwind CSS",
-      "Node.js"
+      "Node.js",
+      "PostgreSQL"
     ],
-    "accentColor": "hsl(135, 79%, 39%)",
-    "imageUrl": "/projects/shefaa.png",
-    "link": "#"
+    "accentColor": "hsl(47, 80%, 55%)",
+    "imageUrl": "/projects/RestFlow.png"
   },
   {
     "id": "Luxe",
